@@ -4,11 +4,13 @@ class CustomInputProps {
   final TextEditingController controller;
   final String hintText;
   final InputType type;
+  final Map<String, dynamic> textFieldProps;
 
   CustomInputProps({
     required this.controller,
     required this.hintText,
     this.type = InputType.text,
+    this.textFieldProps = const {},
   });
 }
 
@@ -31,7 +33,7 @@ class SelectInputProps extends CustomInputProps {
 class TextInputProps extends CustomInputProps {
   TextInputProps({
     required TextEditingController controller,
-    required String hintText,
+    required String hintText, required Map<String, Object> textFieldProps,
   }) : super(controller: controller, hintText: hintText);
 }
 

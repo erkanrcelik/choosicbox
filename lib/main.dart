@@ -21,6 +21,12 @@ class MyApp extends StatelessWidget {
             props: TextInputProps(
               controller: _textEditingController,
               hintText: 'Enter your text...',
+              textFieldProps: {
+                'autofocus': true,
+                'enabled': true,
+                'onChanged': (text) {
+                },
+              },
             ),
           ),
       ),
