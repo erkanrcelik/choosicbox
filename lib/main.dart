@@ -1,15 +1,30 @@
+import 'package:choosicbox/utils/ui/Input/inputs.dart';
+import 'package:choosicbox/utils/ui/Input/models.dart';
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(const Choosicbox());
+  runApp(MyApp());
 }
 
-class Choosicbox extends StatelessWidget {
-  const Choosicbox({Key? key}) : super(key: key);
+class MyApp extends StatelessWidget {
+  final TextEditingController _textEditingController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return MaterialApp(
+      home: Scaffold(
+        appBar: AppBar(
+          title: Text('Ölçeklendirilebilir TextField'),
+        ),
+        body: Center(
+          child: createCustomInput<TextInputProps>(
+            props: TextInputProps(
+              controller: _textEditingController,
+              hintText: 'Enter your text...',
+            ),
+          ),
+      ),
+      ),
+    );
   }
 }
-
