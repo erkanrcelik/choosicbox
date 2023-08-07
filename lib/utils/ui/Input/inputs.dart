@@ -7,7 +7,7 @@ import 'models.dart';
 class CustomInput<T extends CustomInputProps> extends StatelessWidget {
   final T props;
 
-  CustomInput({required this.props});
+  const CustomInput({super.key, required this.props});
 
   @override
   Widget build(BuildContext context) {

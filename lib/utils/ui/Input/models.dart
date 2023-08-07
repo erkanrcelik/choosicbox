@@ -19,10 +19,7 @@ enum InputType {
 }
 
 class SelectInputProps extends CustomInputProps {
-  final List<String> items;
-
   SelectInputProps({
-    required this.items,
     required TextEditingController controller,
     required String hintText,
   }) : super(controller: controller, hintText: hintText);
