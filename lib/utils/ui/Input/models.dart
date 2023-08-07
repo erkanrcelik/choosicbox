@@ -16,6 +16,8 @@ enum InputType {
   text,
   select,
   password,
+  email,
+  confPassword,
 }
 
 class SelectInputProps extends CustomInputProps {
@@ -37,4 +39,17 @@ class PasswordInputProps extends CustomInputProps {
     required TextEditingController controller,
     required String hintText,
   }) : super(controller: controller, hintText: hintText);
+}
+
+class EmailInputProps extends CustomInputProps {
+  EmailInputProps({
+    required TextEditingController controller,
+    required String hintText,
+  }) : super (controller: controller, hintText: hintText);
+}
+class ConfirmPasswordInputProps extends CustomInputProps {
+  ConfirmPasswordInputProps({
+    required TextEditingController controller,
+    required String hintText,
+  }) : super (controller: controller, hintText: hintText);
 }

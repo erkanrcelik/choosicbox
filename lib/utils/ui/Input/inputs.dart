@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'ConfirmPassword/confirm_input.dart';
+import 'Email/email_input.dart';
 import 'Password/password_input.dart';
 import 'Select/select_input.dart';
 import 'Text/text_input.dart';
@@ -29,11 +31,15 @@ class CustomInput<T extends CustomInputProps> extends StatelessWidget {
       return SelectInput(props: props as SelectInputProps);
     } else if (props is PasswordInputProps) {
       return PasswordInput(props: props as PasswordInputProps);
-    } else {
-      return Container();
+    } else if(props is EmailInputProps) {
+      return EmailInput(props: props as EmailInputProps);
+    }else if (props is ConfirmPasswordInputProps){
+      return ConfirmPasswordInput(props: props as ConfirmPasswordInputProps);
+    }{
+        return Container();
+      }
     }
   }
-}
 
 CustomInput<T> createCustomInput<T extends CustomInputProps>({
   required T props,
