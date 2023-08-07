@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 
 import '../models.dart';
 
-class PasswordInput extends StatelessWidget {
-  const PasswordInput({Key? key, required this.props}) : super(key: key);
-  final PasswordInputProps props;
+class ConfirmPasswordInput extends StatelessWidget {
+  const ConfirmPasswordInput({Key? key, required this.props}) : super(key: key);
+  final ConfirmPasswordInputProps props;
 
   @override
   Widget build(BuildContext context) {

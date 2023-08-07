@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 
 import '../models.dart';
 
-class PasswordInput extends StatelessWidget {
-  const PasswordInput({Key? key, required this.props}) : super(key: key);
-  final PasswordInputProps props;
+class EmailInput extends StatelessWidget {
+  const EmailInput({Key? key, required this.props}) : super(key: key);
+  final EmailInputProps props;
 
   @override
   Widget build(BuildContext context) {
@@ -20,7 +20,6 @@ class PasswordInput extends StatelessWidget {
       ),
       child: TextField(
         controller: props.controller,
-        obscureText: true, // Mask input for password
         decoration: InputDecoration(
           hintText: props.hintText,
           border: InputBorder.none, // Remove the default TextField border

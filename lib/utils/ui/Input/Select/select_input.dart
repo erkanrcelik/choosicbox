@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import '../models.dart';
@@ -9,12 +8,21 @@ class SelectInput extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return TextField(
-      controller: props.controller,
-      decoration: InputDecoration(
-        hintText: props.hintText,
-        border: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(10.0),
+    return Container(
+      width: 400,
+      height: 50,
+      decoration: ShapeDecoration(
+        color: const Color(0xBE737EFF),
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(40),
+        ),
+      ),
+      child: TextField(
+        controller: props.controller,
+        decoration: InputDecoration(
+          hintText: props.hintText,
+          border: InputBorder.none, // Remove the default TextField border
+          contentPadding: EdgeInsets.all(15), // Adjust content padding
         ),
       ),
     );

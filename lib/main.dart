@@ -1,36 +1,23 @@
-import 'package:choosicbox/utils/ui/Input/inputs.dart';
-import 'package:choosicbox/utils/ui/Input/models.dart';
+import 'package:choosicbox/modules/Login/View/login.dart';
+
 import 'package:flutter/material.dart';
 
+import 'modules/Register/View/register.dart';
+
 void main() {
-  runApp(MyApp());
+  runApp(MyApp(registerScreen: RegisterScreen()));
 }
 
 class MyApp extends StatelessWidget {
-  final TextEditingController _textEditingController = TextEditingController();
+  final Widget registerScreen;
+
+  const MyApp({super.key, required this.registerScreen});
+
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: Scaffold(
-        appBar: AppBar(
-          title: Text('Ölçeklendirilebilir TextField'),
-        ),
-        body: Center(
-          child: createCustomInput<TextInputProps>(
-            props: TextInputProps(
-              controller: _textEditingController,
-              hintText: 'Enter your text...',
-              textFieldProps: {
-                'autofocus': true,
-                'enabled': true,
-                'onChanged': (text) {
-                },
-              },
-            ),
-          ),
-      ),
-      ),
+      home: RegisterScreen(),
     );
   }
 }
