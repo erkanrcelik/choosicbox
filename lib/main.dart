@@ -57,7 +57,7 @@ class MyApp extends StatelessWidget {
                   createCustomInput<TextInputProps>(
                     props: TextInputProps(
                       controller: _usernameController,
-                      hintText: 'Username...',
+                      hintText: 'Username@gmail.com',
                     ),
                   ),
                 ],
