@@ -1,7 +1,10 @@
+import 'package:choosicbox/utils/ui/Input/passwordInput/password_input.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:choosicbox/utils/ui/Input/inputs.dart';
-import 'package:choosicbox/utils/ui/Input/models.dart';
+
+import '../../../utils/ui/Button/GeneralButton/general_button.dart';
+import '../../../utils/ui/Button/SocialButton/social_button.dart';
+import '../../../utils/ui/Input/eMailInput/email_input.dart';
 
 class LoginScreen extends StatelessWidget {
   final TextEditingController _usernameController = TextEditingController();
@@ -13,9 +16,6 @@ class LoginScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Placeholder(
       child: Scaffold(
-        appBar: AppBar(
-          title: const Text('Ölçeklendirilebilir TextField'),
-        ),
         body: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -40,67 +40,28 @@ class LoginScreen extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 50),
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  const Text(
-                    'Username',
-                    style: TextStyle(
-                      color: Color(0xFF414042),
-                      fontSize: 14,
-                      fontFamily: 'Gilroy',
-                      fontWeight: FontWeight.w400,
-                    ),
-                  ),
-                  createCustomInput<TextInputProps>(
-                    props: TextInputProps(
-                      controller: _usernameController,
-                      hintText: 'Username',
-                    ),
-                  ),
-                ],
+              EmailInput(
+                controller: _usernameController,
+                hintText: 'E-mail adresinizi girin',
+                labelText: 'E-Mail',
               ),
               const SizedBox(height: 16), // Boşluk ekleniyor
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  const Text(
-                    'Password', // Password metni ekleniyor
-                    style: TextStyle(
-                      color: Color(0xFF414042),
-                      fontSize: 14,
-                      fontFamily: 'Gilroy',
-                      fontWeight: FontWeight.w400,
-                    ),
-                  ),
-                  createCustomInput<PasswordInputProps>(
-                    props: PasswordInputProps(
-                      controller: _passwordController,
-                      hintText: 'Password...',
-                    ),
-                  ),
-                ],
+              PasswordInput(
+                controller: _passwordController,
+                hintText: 'Şifrenizi girin',
+                labelText: 'Şifre',
               ),
               const SizedBox(height: 25), // Boşluk ekleniyor
-              Container(
+              CustomButton(
+                onPressed: () {
+                  // Sign In düğmesinin tıklama işlemlerini burada yapabilirsiniz.
+                },
+                text: 'Log In',
+                backgroundColor: const Color(0xFFA93159),
+                textColor: Colors.white,
                 width: 200,
                 height: 50,
-                decoration: BoxDecoration(
-                  color: const Color(0xFFA93159),
-                  borderRadius: BorderRadius.circular(40),
-                ),
-                child: TextButton(
-                  onPressed: () {
-                    // Burada Sign In düğmesinin tıklama işlemlerini yapabilirsiniz.
-                  },
-                  child: const Text(
-                    'Log In',
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 18,
-                    ),
-                  ),
-                ),
+                borderRadius: 40,
               ),
               const SizedBox(height: 50), // Boşluk ekleniyor
               const Text(
@@ -116,34 +77,28 @@ class LoginScreen extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Container(
+                  SocialLoginButton(
+                    icon: Icons.facebook,
+                    onPressed: () {
+                      // Facebook girişi tıklama işlemlerini burada yapabilirsiniz.
+                    },
+                    backgroundColor: Colors.white,
+                    iconColor: Colors.black,
                     width: 125,
                     height: 50,
-                    decoration: ShapeDecoration(
-                      image: const DecorationImage(
-                          image: AssetImage("lib/assets/images/apple.png")
-                      ),
-                      color: Colors.white,
-                      shape: RoundedRectangleBorder(
-                        side: const BorderSide(width: 0.50, color: Color(0xFFBCBEC0)),
-                        borderRadius: BorderRadius.circular(40),
-                      ),
-                    ),
+                    borderRadius: 40,
                   ),
                   const SizedBox(width: 25), // Yatay boşluk ekleniyor
-                  Container(
+                  SocialLoginButton(
+                    icon: Icons.facebook,
+                    onPressed: () {
+                      // Facebook girişi tıklama işlemlerini burada yapabilirsiniz.
+                    },
+                    backgroundColor: Colors.white,
+                    iconColor: Colors.black,
                     width: 125,
                     height: 50,
-                    decoration: ShapeDecoration(
-                      image: const DecorationImage(
-                        image: AssetImage("lib/assets/images/google.png"),
-                      ),
-                      color: Colors.white,
-                      shape: RoundedRectangleBorder(
-                        side: const BorderSide(width: 0.50, color: Color(0xFFBCBEC0)),
-                        borderRadius: BorderRadius.circular(40),
-                      ),
-                    ),
+                    borderRadius: 40,
                   ),
                 ],
               ),
