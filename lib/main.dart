@@ -1,11 +1,13 @@
 import 'package:choosicbox/modules/Login/View/login.dart';
+import 'package:choosicbox/modules/Main/View/home.dart';
+import 'package:choosicbox/modules/Profile/View/profile.dart';
 
 import 'package:flutter/material.dart';
 
 import 'modules/Register/View/register.dart';
 
 void main() {
-  runApp(MyApp(registerScreen: RegisterScreen()));
+  runApp(MyApp(registerScreen: ProfileScreen()));
 }
 
 class MyApp extends StatelessWidget {
@@ -17,7 +19,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: LoginScreen(),
+      home: ProfileScreen(),
     );
   }
 }

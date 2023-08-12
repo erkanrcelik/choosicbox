@@ -26,7 +26,7 @@ class _PasswordInputState extends State<PasswordInput> {
       children: [
         Text(
           widget.labelText,
-          style: TextStyle(
+          style: const TextStyle(
             color: Color(0xFF414042),
             fontSize: 14,
             fontFamily: 'Gilroy',
