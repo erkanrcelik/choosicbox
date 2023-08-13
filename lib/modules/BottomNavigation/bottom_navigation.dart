@@ -32,9 +32,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
   /// widget list
   final List<Widget> bottomBarPages = [
-    const CategoryScreen(),
     HomeScreen(),
-    RestaurantDetailScreen(),
     const CategoryScreen(),
     ProfileScreen(),
   ];
@@ -73,17 +71,6 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
             itemLabel: 'Page 1',
           ),
-          const BottomBarItem(
-            inActiveItem: Icon(
-              Icons.star,
-              color: Colors.blueGrey,
-            ),
-            activeItem: Icon(
-              Icons.star,
-              color: Colors.blueAccent,
-            ),
-            itemLabel: 'Page 2',
-          ),
           BottomBarItem(
             inActiveItem: Icon(
               Icons.search,
@@ -93,18 +80,7 @@ class _MyHomePageState extends State<MyHomePage> {
               Icons.search,
               color: Colors.white,
             ),
-            itemLabel: 'Page 3',
-          ),
-          const BottomBarItem(
-            inActiveItem: Icon(
-              Icons.settings,
-              color: Colors.blueGrey,
-            ),
-            activeItem: Icon(
-              Icons.settings,
-              color: Colors.pink,
-            ),
-            itemLabel: 'Page 4',
+            itemLabel: 'Page 2',
           ),
           const BottomBarItem(
             inActiveItem: Icon(
@@ -115,7 +91,7 @@ class _MyHomePageState extends State<MyHomePage> {
               Icons.person,
               color: Colors.yellow,
             ),
-            itemLabel: 'Page 5',
+            itemLabel: 'Page 3',
           ),
         ],
         onTap: (index) {
