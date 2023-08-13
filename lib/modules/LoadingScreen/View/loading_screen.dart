@@ -1,55 +1,44 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'dart:async';
+import 'package:simple_ripple_animation/simple_ripple_animation.dart';
+import '../../BottomNavigation/bottom_navigation.dart';
 
 class LoadingScreen extends StatefulWidget {
   @override
   _LoadingScreenState createState() => _LoadingScreenState();
 }
 
-class _LoadingScreenState extends State<LoadingScreen>
-    with SingleTickerProviderStateMixin {
-  late AnimationController _animationController;
-  late Animation<double> _animation;
-
+class _LoadingScreenState extends State<LoadingScreen> {
   @override
   void initState() {
     super.initState();
-    _animationController = AnimationController(
-      vsync: this,
-      duration: Duration(milliseconds: 500), // Animasyon süresi (kısa süre)
-    )..repeat(reverse: true);
-
-    _animation = Tween<double>(
-      begin: 1.0,  // Başlangıç boyutu
-      end: 0.9375, // Hedef boyut (80 / 85)
-    ).animate(_animationController);
+    // 3 saniye sonra MyHomePage sayfasına yönlendirme yap
+    Timer(const Duration(seconds: 3), () {
+      Get.off(const MyHomePage()); // Get.to yerine Get.off kullanarak sayfanın geri düğmesini devre dışı bırakıyoruz
+    });
   }
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return const Scaffold(
       backgroundColor: Colors.white,
       body: Center(
-        child: ScaleTransition(
-          scale: _animation,
-          child: Container(
-            width: 180,
-            height: 180,
-            decoration: BoxDecoration(
-              color: Colors.blue,
-              shape: BoxShape.circle,
-            ),
-            child: Center(
-              child: Image.asset('assets/your_image.png'), // Resim yolunu buraya ekleyin
-            ),
+        child: RippleAnimation(
+          color: Colors.deepOrange,
+          delay: Duration(milliseconds: 300),
+          repeat: true,
+          minRadius: 75,
+          ripplesCount: 6,
+          duration: Duration(milliseconds: 6 * 300),
+          child: CircleAvatar(
+            minRadius: 75,
+            maxRadius: 75,
+            backgroundImage: NetworkImage(
+                'https://gravatar.com/avatar/1f82b0492a0a938288c2d5b70534a1fb?s=400&d=robohash&r=x'),
           ),
         ),
       ),
     );
-  }
-
-  @override
-  void dispose() {
-    _animationController.dispose();
-    super.dispose();
   }
 }
