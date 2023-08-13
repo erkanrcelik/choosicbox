@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class HomeScreen extends StatelessWidget {
-  const HomeScreen({Key? key}) : super(key: key);
+class CategoryScreen extends StatelessWidget {
+  const CategoryScreen({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -13,17 +13,66 @@ class HomeScreen extends StatelessWidget {
               locationSection,
               SizedBox(height: 20),
               searchSection,
+              const Row(
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: [
+                  Padding(
+                    padding: EdgeInsets.only(left: 20.0, top: 20), // Add left padding
+                    child: Text(
+                      "Category",
+                      style: TextStyle(
+                        color: Color(0xFF121212),
+                        fontSize: 18,
+                        fontFamily: 'Poppins',
+                        fontWeight: FontWeight.w700,
+                      ),
+                    ),
+                  ),
+                ],
+              ),
               SizedBox(height: 20),
               menuSection,
               SizedBox(height: 20),
-              nearFromYouSection,
+              const Row(
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: [
+                  Padding(
+                    padding: EdgeInsets.only(left: 20.0, top: 20), // Add left padding
+                    child: Text(
+                      "Near From You",
+                      style: TextStyle(
+                        color: Color(0xFF121212),
+                        fontSize: 14,
+                        fontFamily: 'Poppins',
+                        fontWeight: FontWeight.w700,
+                      ),
+                    ),
+                  ),
+                ],
+              ),
               SizedBox(height: 20),
               SingleChildScrollView(
                 scrollDirection: Axis.horizontal,
                 child: storeSection,
               ),
               SizedBox(height: 20),
-              bestForYouSection,
+              const Row(
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: [
+                  Padding(
+                    padding: EdgeInsets.only(left: 20.0, top: 20), // Add left padding
+                    child: Text(
+                      "Best For You",
+                      style: TextStyle(
+                        color: Color(0xFF121212),
+                        fontSize: 14,
+                        fontFamily: 'Poppins',
+                        fontWeight: FontWeight.w700,
+                      ),
+                    ),
+                  ),
+                ],
+              ),
               SizedBox(height: 20),
               additionalSection,
             ],
@@ -37,6 +86,7 @@ class HomeScreen extends StatelessWidget {
 Widget locationSection = Container(
   padding: const EdgeInsets.all(20),
   child: Row(
+    mainAxisAlignment: MainAxisAlignment.spaceBetween, // Adjust alignment
     children: [
       Expanded(
         child: Column(
@@ -69,10 +119,16 @@ Widget locationSection = Container(
           ],
         ),
       ),
-      Spacer(), // Use Spacer to push the notifications icon to the end
-      Icon(
-        Icons.notifications,
-        color: Colors.blue[500],
+      Container(
+        width: 37.17,
+        height: 55.76,
+        decoration: const BoxDecoration(
+          shape: BoxShape.circle,
+          image: DecorationImage(
+            image: NetworkImage("https://via.placeholder.com/37x56"),
+            fit: BoxFit.fill,
+          ),
+        ),
       ),
     ],
   ),
@@ -90,11 +146,6 @@ Widget searchSection = Container(
             ),
           ),
         ),
-      ),
-      SizedBox(width: 8),
-      Icon(
-        Icons.settings,
-        color: Colors.blue[500],
       ),
     ],
   ),
