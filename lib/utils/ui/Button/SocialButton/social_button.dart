@@ -25,7 +25,7 @@ class SocialLoginButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: ()=>{},
+      onTap: onPressed,
       child: Container(
         width: width,
         height: height,
@@ -36,6 +36,11 @@ class SocialLoginButton extends StatelessWidget {
             side: BorderSide(width: 0.50, color: Color(0xFFBCBEC0)),
             borderRadius: BorderRadius.circular(borderRadius),
           ),
+        ),
+        child: Icon(
+          icon, // Display the provided icon
+          color: iconColor,
+          size: iconSize,
         ),
       ),
     );

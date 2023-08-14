@@ -35,13 +35,38 @@ class _PasswordInputState extends State<PasswordInput> {
         ),
         SizedBox(height: 16),
         Container(
-          width: 317,
-          height: 56,
+          width: 350,
+          height: 60,
           decoration: ShapeDecoration(
             color: Colors.white,
             shape: RoundedRectangleBorder(
               side: BorderSide(width: 0.50, color: Color(0xFFE4DEDE)),
               borderRadius: BorderRadius.circular(12),
+            ),
+          ),
+          child: TextFormField(
+            controller: widget.controller,
+            validator: _validatePassword,
+            obscureText: _obscureText,
+            decoration: InputDecoration(
+              hintText: widget.hintText,
+              border: InputBorder.none,
+              contentPadding: const EdgeInsets.all(15),
+              suffixIcon: GestureDetector(
+                onTap: () {
+                  setState(() {
+                    _obscureText = !_obscureText;
+                  });
+                },
+                child: Icon(
+                  _obscureText ? Icons.visibility : Icons.visibility_off,
+                  color: Colors.grey,
+                ),
+              ),
+              prefixIcon: Icon(
+                Icons.lock,
+                color: Colors.grey, // Change the color as needed
+              ),
             ),
           ),
         )
