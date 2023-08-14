@@ -1,5 +1,7 @@
-import 'package:flutter/material.dart';
+import 'package:choosicbox/screens/home/home/View/home.dart';
+import 'package:choosicbox/screens/home/profile/View/profile.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
+import 'package:flutter/material.dart';
 
 class AppFrame extends StatefulWidget {
   @override
@@ -7,17 +9,23 @@ class AppFrame extends StatefulWidget {
 }
 
 class _AppFrameState extends State<AppFrame> {
-  int _page = 1; // Başlangıçta Home sayfası için _page değerini 1 olarak ayarlayın.
+  int _page = 1;
   GlobalKey<CurvedNavigationBarState> _bottomNavigationKey = GlobalKey();
+
+  final List<Widget> _pages = [
+    HomePageView(),
+    HomePageView(),
+    ProfilePageView(),
+  ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       bottomNavigationBar: CurvedNavigationBar(
         key: _bottomNavigationKey,
-        index: _page, // _page değerini buraya ayarlayın
+        index: _page,
         height: 60.0,
-        items: <Widget>[
+        items: [
           Icon(Icons.search, size: 30),
           Icon(Icons.home, size: 30),
           Icon(Icons.person, size: 30),
@@ -34,25 +42,7 @@ class _AppFrameState extends State<AppFrame> {
         },
         letIndexChange: (index) => true,
       ),
-      body: Container(
-        color: Colors.blueAccent,
-        child: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>[
-              Text(_page.toString(), textScaleFactor: 10.0),
-              ElevatedButton(
-                child: Text('Go To Page of index 1'),
-                onPressed: () {
-                  final CurvedNavigationBarState? navBarState =
-                      _bottomNavigationKey.currentState;
-                  navBarState?.setPage(1);
-                },
-              )
-            ],
-          ),
-        ),
-      ),
+      body: _pages[_page],
     );
   }
 }
