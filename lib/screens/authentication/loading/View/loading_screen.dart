@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'dart:async';
 import 'package:simple_ripple_animation/simple_ripple_animation.dart';
-import '../../BottomNavigation/bottom_navigation.dart';
+import '../../../navigation/bottom_navigation.dart';
 
 class LoadingScreen extends StatefulWidget {
   @override
@@ -15,7 +15,7 @@ class _LoadingScreenState extends State<LoadingScreen> {
     super.initState();
     // 3 saniye sonra MyHomePage sayfasına yönlendirme yap
     Timer(const Duration(seconds: 3), () {
-      Get.off(const MyHomePage()); // Get.to yerine Get.off kullanarak sayfanın geri düğmesini devre dışı bırakıyoruz
+      Get.off( AppFrame()); // Get.to yerine Get.off kullanarak sayfanın geri düğmesini devre dışı bırakıyoruz
     });
   }
 
