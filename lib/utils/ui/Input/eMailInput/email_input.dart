@@ -36,23 +36,15 @@ class EmailInput extends StatelessWidget {
             fontWeight: FontWeight.w400,
           ),
         ),
+        SizedBox(height: 16),
         Container(
-          width: 400,
-          height: 50,
+          width: 317,
+          height: 56,
           decoration: ShapeDecoration(
             color: Colors.white,
             shape: RoundedRectangleBorder(
-              side: const BorderSide(width: 0.50, color: Color(0xFFBCBEC0)),
-              borderRadius: BorderRadius.circular(40),
-            ),
-          ),
-          child: TextFormField(
-            controller: controller,
-            validator: _validateEmail,
-            decoration: InputDecoration(
-              hintText: hintText,
-              border: InputBorder.none,
-              contentPadding: const EdgeInsets.all(15),
+              side: BorderSide(width: 0.50, color: Color(0xFFE4DEDE)),
+              borderRadius: BorderRadius.circular(12),
             ),
           ),
         )

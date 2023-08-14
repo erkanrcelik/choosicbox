@@ -37,7 +37,6 @@ class SocialLoginButton extends StatelessWidget {
             borderRadius: BorderRadius.circular(borderRadius),
           ),
         ),
-        child: Image.asset("lib/assets/images/apple.png",)
       ),
     );
   }
