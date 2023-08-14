@@ -1,25 +1,34 @@
-import 'package:choosicbox/modules/Home/View/home.dart';
-import 'package:choosicbox/modules/Login/View/login.dart';
-import 'package:choosicbox/modules/Profile/View/profile.dart';
-import 'package:choosicbox/modules/Register/View/register.dart';
-import 'package:choosicbox/modules/SplashScreen/View/splash_screen.dart';
-
+import 'package:choosicbox/config/routes/app_pages.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
-import 'modules/Category/View/category.dart';
-import 'modules/LoadingScreen/View/loading_screen.dart';
-
-void main() {
-  runApp(MyApp());
+void main()  {
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
+  const MyApp({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
-    return GetMaterialApp(
-      title: 'My App',
-      home: SplashScreen(),
+    return ScreenUtilInit(
+      designSize: const Size(360, 690),
+      minTextAdapt: true,
+      splitScreenMode: true,
+      builder: (BuildContext c,child) => GetMaterialApp(
+        title: "Beta Fitness",
+        themeMode: ThemeMode.light,
+        debugShowCheckedModeBanner: false,
+        defaultTransition: Transition.cupertino,
+        opaqueRoute: Get.isOpaqueRouteDefault,
+        transitionDuration: const Duration(milliseconds: 230),
+        popGesture: Get.isPopGestureEnable,
+        initialRoute: AppPages.INITIAL,
+        getPages: AppPages.routes,
+      ),
     );
   }
 }

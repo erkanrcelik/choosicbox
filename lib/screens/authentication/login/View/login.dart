@@ -1,10 +1,10 @@
 import 'package:choosicbox/utils/ui/Input/passwordInput/password_input.dart';
 import 'package:flutter/material.dart';
 
-import '../../../utils/ui/Button/GeneralButton/general_button.dart';
-import '../../../utils/ui/Button/SocialButton/social_button.dart';
-import '../../../utils/ui/Input/eMailInput/email_input.dart';
-import '../../LoadingScreen/View/loading_screen.dart';
+import '../../../../utils/ui/Button/GeneralButton/general_button.dart';
+import '../../../../utils/ui/Button/SocialButton/social_button.dart';
+import '../../../../utils/ui/Input/eMailInput/email_input.dart';
+import '../../loading/View/loading_screen.dart';
 
 class LoginScreen extends StatelessWidget {
   final TextEditingController _usernameController = TextEditingController();

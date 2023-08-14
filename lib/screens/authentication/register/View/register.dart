@@ -2,8 +2,8 @@ import 'package:choosicbox/utils/ui/Input/GeneralInput/general_input.dart';
 import 'package:choosicbox/utils/ui/Input/passwordInput/password_input.dart';
 import 'package:flutter/material.dart';
 
-import '../../../utils/ui/Button/GeneralButton/general_button.dart';
-import '../../../utils/ui/Input/eMailInput/email_input.dart';
+import '../../../../utils/ui/Button/GeneralButton/general_button.dart';
+import '../../../../utils/ui/Input/eMailInput/email_input.dart';
 
 class RegisterScreen extends StatelessWidget {
   final TextEditingController _usernameController = TextEditingController();
