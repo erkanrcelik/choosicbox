@@ -1,8 +1,8 @@
 import 'package:choosicbox/screens/authentication/login/View/login.dart';
 import 'package:choosicbox/screens/authentication/register/View/register.dart';
+import 'package:choosicbox/screens/authentication/welcome/View/welcome_screen.dart';
 import 'package:get/get.dart';
 
-import '../../screens/authentication/splash/View/splash_screen.dart';
 import '../../screens/navigation/bottom_navigation.dart';
 
 part 'app_routes.dart';
@@ -25,7 +25,7 @@ class AppPages {
     ),
     GetPage(
       name: Routes.SPLASH,
-      page: () => SplashScreen(),
+      page: () => WelcomeScreen(),
     ),
   ];
 }

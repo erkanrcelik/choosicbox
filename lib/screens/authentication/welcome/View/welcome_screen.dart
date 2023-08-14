@@ -5,14 +5,14 @@ import 'package:introduction_screen/introduction_screen.dart';
 
 import '../../login/View/login.dart';
 
-class SplashScreen extends StatefulWidget {
-  const SplashScreen({Key? key}) : super(key: key);
+class WelcomeScreen extends StatefulWidget {
+  const WelcomeScreen({Key? key}) : super(key: key);
 
   @override
-  SplashScreenState createState() => SplashScreenState();
+  WelcomeScreenState createState() => WelcomeScreenState();
 }
 
-class SplashScreenState extends State<SplashScreen> {
+class WelcomeScreenState extends State<WelcomeScreen> {
   final introKey = GlobalKey<IntroductionScreenState>();
 
   void _onIntroEnd(context) {
@@ -167,7 +167,7 @@ class SplashScreenState extends State<SplashScreen> {
         ),
       ),
       dotsContainerDecorator: const ShapeDecoration(
-        color: Colors.black87,
+        color: Colors.white,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.all(Radius.circular(8.0)),
         ),
