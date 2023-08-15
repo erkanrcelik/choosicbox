@@ -1,5 +1,5 @@
-import 'package:choosicbox/screens/home/home/View/home.dart';
-import 'package:choosicbox/screens/home/profile/View/profile.dart';
+import 'package:choosicbox/screens/home/home/View/home_view.dart';
+import 'package:choosicbox/screens/home/profile/View/profile_view.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
 
@@ -32,7 +32,7 @@ class _AppFrameState extends State<AppFrame> {
         ],
         color: Colors.white,
         buttonBackgroundColor: Colors.white,
-        backgroundColor: Colors.blueAccent,
+        backgroundColor: Color(0xFFff7f00),
         animationCurve: Curves.easeInOut,
         animationDuration: Duration(milliseconds: 600),
         onTap: (index) {
