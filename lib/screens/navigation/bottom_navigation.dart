@@ -3,6 +3,8 @@ import 'package:choosicbox/screens/home/profile/View/profile_view.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
 
+import '../home/search/search.dart';
+
 class AppFrame extends StatefulWidget {
   @override
   _AppFrameState createState() => _AppFrameState();
@@ -13,7 +15,7 @@ class _AppFrameState extends State<AppFrame> {
   GlobalKey<CurvedNavigationBarState> _bottomNavigationKey = GlobalKey();
 
   final List<Widget> _pages = [
-    HomePageView(),
+    RestaurantDetailPage(),
     HomePageView(),
     ProfilePageView(),
   ];

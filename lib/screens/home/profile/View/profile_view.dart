@@ -28,14 +28,14 @@ class ProfilePageView extends StatelessWidget {
                         children: [
                           IconButton(
                             onPressed: () {},
-                            icon: SvgImageWidget(
-                              svgPath: 'notification_icon.svg',
+                            icon: SvgPath(
+                              svgPath: 'notification_icon',
                             ),
                           ),
                           IconButton(
                             onPressed: () {},
-                            icon: SvgImageWidget(
-                              svgPath: 'dotted_icon.svg',
+                            icon: SvgPath(
+                              svgPath: 'dotted_icon',
                             ),
                           ),
                         ],
@@ -103,24 +103,24 @@ class ProfilePageView extends StatelessWidget {
                   child: Column(
                     children: [
                       SettingsRow(
-                          icon: SvgImageWidget(
-                            svgPath: 'profile_information_icon.svg',
+                          icon: SvgPath(
+                            svgPath: 'profile_information_icon',
                           ),
                           title: 'Language'),
                       SizedBox(
                         height: 13,
                       ),
                       SettingsRow(
-                          icon: SvgImageWidget(
-                            svgPath: 'notifications_icon.svg',
+                          icon: SvgPath(
+                            svgPath: 'notifications_icon',
                           ),
                           title: 'Security'),
                       SizedBox(
                         height: 13,
                       ),
                       SettingsRow(
-                          icon: SvgImageWidget(
-                            svgPath: 'language_icon.svg',
+                          icon: SvgPath(
+                            svgPath: 'language_icon',
                           ),
                           title: 'Privacy'),
                     ],
@@ -146,16 +146,16 @@ class ProfilePageView extends StatelessWidget {
                   child: Column(
                     children: [
                       SettingsRow(
-                          icon: SvgImageWidget(
-                            svgPath: 'security_icon.svg',
+                          icon: SvgPath(
+                            svgPath: 'security_icon',
                           ),
                           title: 'Language'),
                       SizedBox(
                         height: 13,
                       ),
                       SettingsRow(
-                          icon: SvgImageWidget(
-                            svgPath: 'theme_icon.svg',
+                          icon: SvgPath(
+                            svgPath: 'theme_icon',
                           ),
                           title: 'Security'),
                     ],
@@ -181,24 +181,24 @@ class ProfilePageView extends StatelessWidget {
                   child: Column(
                     children: [
                       SettingsRow(
-                          icon: SvgImageWidget(
-                            svgPath: 'language_icon.svg',
+                          icon: SvgPath(
+                            svgPath: 'language_icon',
                           ),
                           title: 'Language'),
                       SizedBox(
                         height: 13,
                       ),
                       SettingsRow(
-                          icon: SvgImageWidget(
-                            svgPath: 'help_and_support_icon.svg',
+                          icon: SvgPath(
+                            svgPath: 'help_and_support_icon',
                           ),
                           title: 'Security'),
                       SizedBox(
                         height: 13,
                       ),
                       SettingsRow(
-                          icon: SvgImageWidget(
-                            svgPath: 'privacy_icon.svg',
+                          icon: SvgPath(
+                            svgPath: 'privacy_icon',
                           ),
                           title: 'Privacy'),
                     ],
