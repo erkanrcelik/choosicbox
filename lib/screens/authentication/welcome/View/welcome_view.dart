@@ -2,6 +2,8 @@ import 'package:choosicbox/config/path/svg_path.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../config/theme/colors.dart';
+import '../../../home/home/View/home_view.dart';
+import '../../../navigation/bottom_navigation.dart';
 
 class WelcomeView extends StatefulWidget {
   const WelcomeView({Key? key}) : super(key: key);
@@ -176,7 +178,11 @@ class _WelcomeViewState extends State<WelcomeView> {
                           width: 5,
                         ),
                         InkWell(
-                            onTap: () {},
+                            onTap: () {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(builder: (context) => const AppFrame()));
+                            },
                             child: Text(
                               'Sign In',
                               style: TextStyle(

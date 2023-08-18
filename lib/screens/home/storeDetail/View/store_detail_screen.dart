@@ -1,7 +1,8 @@
 import 'package:choosicbox/screens/home/home/View/home_view.dart';
-import 'package:contained_tab_bar_view/contained_tab_bar_view.dart';
+import 'package:choosicbox/screens/navigation/bottom_navigation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_stars/flutter_rating_stars.dart';
+import 'package:tab_indicator_styler/tab_indicator_styler.dart';
 
 class StoreDetailScreen extends StatefulWidget {
   @override
@@ -23,7 +24,7 @@ class _StoreDetailScreenState extends State<StoreDetailScreen> {
           onPressed: () {
             Navigator.push(
               context,
-              MaterialPageRoute(builder: (context) => HomePageView()),
+              MaterialPageRoute(builder: (context) => AppFrame()),
             );
           },
         ),
@@ -41,14 +42,16 @@ class _StoreDetailScreenState extends State<StoreDetailScreen> {
             width: double.infinity,
             height: double.infinity,
           ),
+          SizedBox(height: 600),
+
           SingleChildScrollView(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                SizedBox(height: 300),
+                SizedBox(height: 400),
                 Container(
                   width: double.infinity,
-                  height: 700,
+                  height: 800,
                   decoration: ShapeDecoration(
                     color: Colors.white,
                     shape: RoundedRectangleBorder(
@@ -103,7 +106,6 @@ class _StoreDetailScreenState extends State<StoreDetailScreen> {
                                 RatingStars(
                                   value: value,
                                   onValueChanged: (v) {
-                                    //
                                     setState(() {
                                       value = v;
                                     });
@@ -125,12 +127,10 @@ class _StoreDetailScreenState extends State<StoreDetailScreen> {
                                   starSpacing: 2,
                                   maxValueVisibility: true,
                                   valueLabelVisibility: true,
-                                  animationDuration:
-                                      Duration(milliseconds: 1000),
+                                  animationDuration: Duration(milliseconds: 1000),
                                   valueLabelPadding: const EdgeInsets.symmetric(
                                       vertical: 1, horizontal: 8),
-                                  valueLabelMargin:
-                                      const EdgeInsets.only(right: 8),
+                                  valueLabelMargin: const EdgeInsets.only(right: 8),
                                   starOffColor: const Color(0xffe7e8ea),
                                   starColor: Colors.yellow,
                                 ),
@@ -139,10 +139,40 @@ class _StoreDetailScreenState extends State<StoreDetailScreen> {
                           ],
                         ),
                       ),
-                      SizedBox(
-                        height: 20,
-                      ),
+                      DefaultTabController(
+                          initialIndex: 1,  //optional, starts from 0, select the tab by default
+                          length:3,
+                          child:Scaffold(
+                              appBar: AppBar(
+                                title: Text("Tab in Flutter"),
+                                backgroundColor: Colors.lightGreen,
+                                bottom: TabBar(
+                                    tabs: [
+                                      Tab(text: "Home",),
+                                      Tab(text: "About Us",),
+                                      Tab(text: "Contact Us",)
+                                    ]
+                                ),
+                              ),
 
+                              body: TabBarView(
+                                  children: [
+                                    Container( //for first tab
+                                      height: 400,
+                                      color: Colors.red,
+                                    ),
+                                    Container( //for second tab
+                                      height: 400,
+                                      color: Colors.green,
+                                    ),
+                                    Container( //for third tab
+                                      height: 400,
+                                      color: Colors.blue,
+                                    )
+                                  ]
+                              )
+                          )
+                      ),
                     ],
                   ),
                 ),

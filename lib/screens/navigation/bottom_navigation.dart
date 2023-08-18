@@ -6,6 +6,8 @@ import 'package:flutter/material.dart';
 import '../home/search/search.dart';
 
 class AppFrame extends StatefulWidget {
+  const AppFrame({super.key});
+
   @override
   _AppFrameState createState() => _AppFrameState();
 }

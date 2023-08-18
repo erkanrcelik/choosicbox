@@ -6,7 +6,6 @@ import 'package:get/get.dart';
 
 import '../../../../utils/ui/Button/GeneralButton/general_button.dart';
 import '../../../../utils/ui/Button/SocialButton/social_button.dart';
-import '../../../../utils/ui/Input/eMailInput/email_input.dart';
 import '../../loading/View/loading_screen.dart';
 
 class LoginScreen extends StatelessWidget {
