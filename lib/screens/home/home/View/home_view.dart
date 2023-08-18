@@ -1,92 +1,106 @@
 import 'package:flutter/material.dart';
 
+import '../../storeDetail/View/store_detail_screen.dart';
+
 
 class HomePageView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
-        children: [//FF6F61 56CCF2
-          Container(
-            height: 128,
-            decoration: BoxDecoration(
-              color: Color(0xFFff7f00),
-              borderRadius: BorderRadius.only(
-                bottomLeft: Radius.circular(33),
-                bottomRight: Radius.circular(33),
+      body: SingleChildScrollView(
+        physics: BouncingScrollPhysics(),
+        child: Column(
+          children: [//FF6F61 56CCF2
+            Container(
+              height: 128,
+              decoration: BoxDecoration(
+                color: Color(0xFFff7f00),
+                borderRadius: BorderRadius.only(
+                  bottomLeft: Radius.circular(33),
+                  bottomRight: Radius.circular(33),
+                ),
               ),
-            ),
-            child: Stack(
-              children: [
-                Align(
-                  alignment: Alignment.topRight,
-                  child: Padding(
-                    padding: EdgeInsets.only(top: 50, right: 16),
-                    child: Icon(
-                      Icons.notifications,
-                      color: Colors.white,
-                      size: 24,
+              child: Stack(
+                children: [
+                  Align(
+                    alignment: Alignment.topRight,
+                    child: Padding(
+                      padding: EdgeInsets.only(top: 50, right: 16),
+                      child: Icon(
+                        Icons.notifications,
+                        color: Colors.white,
+                        size: 24,
+                      ),
                     ),
                   ),
-                ),
-                Align(
-                  alignment: Alignment.center,
-                  child: Padding(
-                    padding: EdgeInsets.only(top: 65),
-                    child: Column(
-                      children: [
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Text(
-                              'Select Location',
+                  Align(
+                    alignment: Alignment.center,
+                    child: Padding(
+                      padding: EdgeInsets.only(top: 65),
+                      child: Column(
+                        children: [
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Text(
+                                'Select Location',
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 12,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                              SizedBox(width: 8),
+                              Icon(
+                                Icons.keyboard_arrow_down,
+                                color: Colors.white,
+                              ),
+                            ],
+                          ),
+                          Container(
+                            child: Text(
+                              'New York, USA',
                               style: TextStyle(
                                 color: Colors.white,
-                                fontSize: 12,
+                                fontSize: 13,
                                 fontWeight: FontWeight.bold,
                               ),
                             ),
-                            SizedBox(width: 8),
-                            Icon(
-                              Icons.keyboard_arrow_down,
-                              color: Colors.white,
-                            ),
-                          ],
-                        ),
-                        Container(
-                          child: Text(
-                            'New York, USA',
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 13,
-                              fontWeight: FontWeight.bold,
-                            ),
                           ),
-                        ),
-                      ],
+                        ],
+                      ),
                     ),
                   ),
-                ),
-              ],
+                ],
+              ),
             ),
-          ),
-          SizedBox(height: 16),
-          SingleChildScrollView(
-            scrollDirection: Axis.horizontal,
-            child: Row(
-              children: List.generate(
-                10,
-                    (index) => PlaceCard(
-                  category: 'Restaurant',
-                  imageUrl: 'https://i.lezzet.com.tr/images-xxlarge-secondary/1-michelin-yildizli-restoran-neolokal-nerede-nedir-kimdir-23419ec4-819a-44d6-976c-4c38a2733cb1.jpg', // Restoran resmi URL'sini buraya ekleyin
-                  name: 'Place $index',
-                  location: 'New York, USA',
-                  distance: '$index m',
+            SizedBox(height: 16),
+            SingleChildScrollView(
+              scrollDirection: Axis.horizontal,
+              child: Row(
+                children: List.generate(
+                  10,
+                      (index) => InkWell(
+                        onTap: (){
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => StoreDetailScreen()
+                            ),
+                          );
+                        },
+                        child: PlaceCard(
+                          category: 'Restaurant',
+                          imageUrl: 'https://i.lezzet.com.tr/images-xxlarge-secondary/1-michelin-yildizli-restoran-neolokal-nerede-nedir-kimdir-23419ec4-819a-44d6-976c-4c38a2733cb1.jpg',
+                          name: 'Place $index',
+                          location: 'New York, USA',
+                          distance: '$index  ',
+                        ),
+                      ),
                 ),
               ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
