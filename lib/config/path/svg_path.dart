@@ -1,19 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-class SvgImageWidget extends StatelessWidget {
+class SvgPath extends StatelessWidget {
   final String svgPath;
+  final double? width;
+  final double? height;
 
-  SvgImageWidget({
-    required this.svgPath,
+  const SvgPath({super.key,
+    required this.svgPath, this.width, this.height,
   });
 
   @override
   Widget build(BuildContext context) {
     return SvgPicture.asset(
-      'assets/icons/$svgPath',
-      width: 24,
-      height: 24,
+      'assets/icons/$svgPath.svg',
+      width: width ?? 24,
+      height: height ?? 24,
     );
   }
 }
