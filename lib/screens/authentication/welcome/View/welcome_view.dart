@@ -1,9 +1,12 @@
 import 'package:choosicbox/config/path/svg_path.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
+import '../../../../config/routes/app_pages.dart';
 import '../../../../config/theme/colors.dart';
 import '../../../home/home/View/home_view.dart';
 import '../../../navigation/bottom_navigation.dart';
+import '../../login/View/login_view.dart';
 
 class WelcomeView extends StatefulWidget {
   const WelcomeView({Key? key}) : super(key: key);
@@ -95,7 +98,7 @@ class _WelcomeViewState extends State<WelcomeView> {
                                     width: 16,
                                   ),
                                   Text(
-                                    'Facebook',
+                                    'FACEBOOK',
                                     style: TextStyle(
                                         fontSize: 16,
                                         fontWeight: FontWeight.w600,
@@ -129,7 +132,7 @@ class _WelcomeViewState extends State<WelcomeView> {
                                     width: 16,
                                   ),
                                   Text(
-                                    'Google',
+                                    'G00GLE',
                                     style: TextStyle(
                                         fontSize: 16,
                                         fontWeight: FontWeight.w600,
@@ -179,9 +182,7 @@ class _WelcomeViewState extends State<WelcomeView> {
                         ),
                         InkWell(
                             onTap: () {
-                              Navigator.push(
-                                  context,
-                                  MaterialPageRoute(builder: (context) => const AppFrame()));
+                              Get.toNamed('/login');
                             },
                             child: Text(
                               'Sign In',

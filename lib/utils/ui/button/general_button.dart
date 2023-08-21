@@ -1,4 +1,7 @@
+import 'package:choosicbox/utils/ui/text/custom_text.dart';
 import 'package:flutter/material.dart';
+
+import '../../../config/theme/colors.dart';
 
 class CustomButton extends StatelessWidget {
   const CustomButton({
@@ -23,20 +26,25 @@ class CustomButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: width,
-      height: height,
+      width: 248,
+      alignment: Alignment.center,
       decoration: BoxDecoration(
-        color: backgroundColor,
-        borderRadius: BorderRadius.circular(20),
+        color: ColorConstants.firstColor,
+        boxShadow: const [
+          BoxShadow(
+            color: Color.fromRGBO(122, 129, 190, 0.16),
+            offset: Offset(0, 10),
+            blurRadius: 40,
+            spreadRadius: 0,
+          )
+        ],
+        borderRadius: BorderRadius.circular(28.5),
       ),
       child: TextButton(
         onPressed: onPressed,
         child: Text(
           text,
-          style: TextStyle(
-            color: textColor,
-            fontSize: 18,
-          ),
+          style: CustomTextStyle.buttonText
         ),
       ),
     );

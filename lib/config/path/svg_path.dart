@@ -13,7 +13,7 @@ class SvgPath extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SvgPicture.asset(
-      'assets/icons/$svgPath.svg',
+      'assets/icons/${svgPath}_icon.svg',
       width: width ?? 24,
       height: height ?? 24,
     );

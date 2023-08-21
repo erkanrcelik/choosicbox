@@ -1,3 +1,4 @@
+import 'package:choosicbox/screens/home/category/View/category_view.dart';
 import 'package:choosicbox/screens/home/home/View/home_view.dart';
 import 'package:choosicbox/screens/home/profile/View/profile_view.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
@@ -17,8 +18,8 @@ class _AppFrameState extends State<AppFrame> {
   GlobalKey<CurvedNavigationBarState> _bottomNavigationKey = GlobalKey();
 
   final List<Widget> _pages = [
-    RestaurantDetailPage(),
-    HomePageView(),
+    CategoryView(),
+    HomeView(),
     ProfilePageView(),
   ];
 
