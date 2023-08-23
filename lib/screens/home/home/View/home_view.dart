@@ -15,15 +15,16 @@ class _HomeViewState extends State<HomeView> {
     return Scaffold(
       drawer: DrawerPage(screenWidth: screenWidth),
       appBar: AppBar(
+        toolbarHeight: 80,
         backgroundColor: Colors.transparent,
         elevation: 0,
         leading: Builder(
           builder: (BuildContext context) {
             return IconButton(
               icon: Icon(
-                Icons.menu, // Açma butonunun simgesini burada değiştirebilirsiniz
+                Icons.menu,
                 color: Colors.grey,
-                size: 30,
+                size: 25,
               ),
               onPressed: () {
                 Scaffold.of(context).openDrawer();

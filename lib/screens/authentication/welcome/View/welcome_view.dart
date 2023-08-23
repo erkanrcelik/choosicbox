@@ -90,7 +90,7 @@ class _WelcomeViewState extends State<WelcomeView> {
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
                                   SvgPath(
-                                    svgPath: 'facebook_icon',
+                                    svgPath: 'facebook',
                                     width: 24,
                                     height: 24,
                                   ),
@@ -124,7 +124,7 @@ class _WelcomeViewState extends State<WelcomeView> {
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
                                   SvgPath(
-                                    svgPath: 'google_icon',
+                                    svgPath: 'google',
                                     width: 24,
                                     height: 24,
                                   ),
