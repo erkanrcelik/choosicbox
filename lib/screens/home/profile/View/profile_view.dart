@@ -10,7 +10,7 @@ import '../editView/historyView/View/music_history_view.dart';
 import '../editView/languageView/View/language_view.dart';
 import '../editView/paymentView/View/payment_view.dart';
 import '../editView/privacyView/View/privacy_view.dart';
-import '../editView/securityView/View/security_view.dart';
+
 import '../editView/settingsView/View/settings_view.dart';
 
 class ProfilePageView extends StatelessWidget {
@@ -67,13 +67,26 @@ class ProfilePageView extends StatelessWidget {
                   top: 180,
                   left: 0,
                   right: 0,
-                  child: Center(
-                    child: CircleAvatar(
-                      radius: 60,
-                      backgroundImage: AssetImage('assets/images/gecici.png'),
+                  child: GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => FullScreenProfilePicture(
+                            imageAssetPath: 'assets/images/gecici.png',
+                          ),
+                        ),
+                      );
+                    },
+                    child: Center(
+                      child: CircleAvatar(
+                        radius: 60,
+                        backgroundImage: AssetImage('assets/images/gecici.png'),
+                      ),
                     ),
                   ),
                 ),
+
               ],
             ),
             Padding(
@@ -304,6 +317,34 @@ class ProfilePageView extends StatelessWidget {
               ),
             )
           ],
+        ),
+      ),
+    );
+  }
+}
+
+class FullScreenProfilePicture extends StatelessWidget {
+  final String imageAssetPath;
+
+  FullScreenProfilePicture({required this.imageAssetPath});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: Colors.black,
+      appBar: AppBar(
+        backgroundColor: Colors.transparent,
+        leading: IconButton(
+          icon: Icon(Icons.arrow_back),
+          onPressed: () {
+            Navigator.pop(context);
+          },
+        ),
+      ),
+      body: Center(
+        child: Hero(
+          tag: imageAssetPath,
+          child: Image.asset(imageAssetPath),
         ),
       ),
     );
