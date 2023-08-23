@@ -8,7 +8,6 @@ class HomeView extends StatefulWidget {
 }
 
 class _HomeViewState extends State<HomeView> {
-
   @override
   Widget build(BuildContext context) {
     final screenWidth = MediaQuery.of(context).size.width;
@@ -21,7 +20,8 @@ class _HomeViewState extends State<HomeView> {
           builder: (BuildContext context) {
             return IconButton(
               icon: Icon(
-                Icons.menu, // Açma butonunun simgesini burada değiştirebilirsiniz
+                Icons.menu,
+                // Açma butonunun simgesini burada değiştirebilirsiniz
                 color: Colors.grey,
                 size: 30,
               ),
@@ -152,7 +152,7 @@ class _HomeViewState extends State<HomeView> {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Text(
-                        'Featured Restaurants',
+                        'Near From You',
                         style: TextStyle(
                             color: Color(0xff323643),
                             fontSize: 18,
@@ -167,27 +167,32 @@ class _HomeViewState extends State<HomeView> {
                   )),
               const SizedBox(height: 15),
               SizedBox(
-                  height: 230,
-                  child: ListView(
-                    scrollDirection: Axis.horizontal,
-                    children: [
-                      musicCard('restaurant', 'McDonald\'s', [
+                height: 230,
+                child: ListView(
+                  scrollDirection: Axis.horizontal,
+                  children: [
+                    musicCard('restaurant', 'McDonald\'s', [
+                      cardText('BURGER'),
+                      cardText('CHICKEN'),
+                      cardText('FAST FOOD')
+                    ]),
+                    musicCard('restaurant', 'McDonald\'s', [
+                      cardText('BURGER'),
+                      cardText('CHICKEN'),
+                      cardText('FAST FOOD')
+                    ]),
+                    musicCard(
+                      'restaurant',
+                      'McDonald\'s',
+                      [
                         cardText('BURGER'),
                         cardText('CHICKEN'),
                         cardText('FAST FOOD')
-                      ]),
-                      musicCard('restaurant', 'McDonald\'s', [
-                        cardText('BURGER'),
-                        cardText('CHICKEN'),
-                        cardText('FAST FOOD')
-                      ]),
-                      musicCard('restaurant', 'McDonald\'s', [
-                        cardText('BURGER'),
-                        cardText('CHICKEN'),
-                        cardText('FAST FOOD')
-                      ]),
-                    ],
-                  ))
+                      ],
+                    ),
+                  ],
+                ),
+              )
             ],
           ),
         ),
