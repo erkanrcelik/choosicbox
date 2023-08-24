@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'dart:async';
 import 'package:simple_ripple_animation/simple_ripple_animation.dart';
-import '../../../navigation/bottom_navigation.dart';
+
+import '../../../appframe/app_frame.dart';
 
 class LoadingScreen extends StatefulWidget {
   @override

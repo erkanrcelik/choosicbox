@@ -4,8 +4,6 @@ import 'package:choosicbox/screens/home/profile/View/profile_view.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
 
-import '../home/search/search.dart';
-
 class AppFrame extends StatefulWidget {
   const AppFrame({super.key});
 

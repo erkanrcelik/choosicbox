@@ -1,8 +1,6 @@
-import 'package:choosicbox/screens/home/home/View/home_view.dart';
-import 'package:choosicbox/screens/navigation/bottom_navigation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_stars/flutter_rating_stars.dart';
-import 'package:tab_indicator_styler/tab_indicator_styler.dart';
+import '../../../appframe/app_frame.dart';
 
 class StoreDetailScreen extends StatefulWidget {
   @override
@@ -43,7 +41,6 @@ class _StoreDetailScreenState extends State<StoreDetailScreen> {
             height: double.infinity,
           ),
           SizedBox(height: 600),
-
           SingleChildScrollView(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -127,10 +124,12 @@ class _StoreDetailScreenState extends State<StoreDetailScreen> {
                                   starSpacing: 2,
                                   maxValueVisibility: true,
                                   valueLabelVisibility: true,
-                                  animationDuration: Duration(milliseconds: 1000),
+                                  animationDuration:
+                                      Duration(milliseconds: 1000),
                                   valueLabelPadding: const EdgeInsets.symmetric(
                                       vertical: 1, horizontal: 8),
-                                  valueLabelMargin: const EdgeInsets.only(right: 8),
+                                  valueLabelMargin:
+                                      const EdgeInsets.only(right: 8),
                                   starOffColor: const Color(0xffe7e8ea),
                                   starColor: Colors.yellow,
                                 ),
@@ -140,39 +139,39 @@ class _StoreDetailScreenState extends State<StoreDetailScreen> {
                         ),
                       ),
                       DefaultTabController(
-                          initialIndex: 1,  //optional, starts from 0, select the tab by default
-                          length:3,
-                          child:Scaffold(
+                          initialIndex: 1,
+                          //optional, starts from 0, select the tab by default
+                          length: 3,
+                          child: Scaffold(
                               appBar: AppBar(
                                 title: Text("Tab in Flutter"),
                                 backgroundColor: Colors.lightGreen,
-                                bottom: TabBar(
-                                    tabs: [
-                                      Tab(text: "Home",),
-                                      Tab(text: "About Us",),
-                                      Tab(text: "Contact Us",)
-                                    ]
-                                ),
+                                bottom: TabBar(tabs: [
+                                  Tab(
+                                    text: "Home",
+                                  ),
+                                  Tab(
+                                    text: "About Us",
+                                  ),
+                                  Tab(
+                                    text: "Contact Us",
+                                  )
+                                ]),
                               ),
-
-                              body: TabBarView(
-                                  children: [
-                                    Container( //for first tab
-                                      height: 400,
-                                      color: Colors.red,
-                                    ),
-                                    Container( //for second tab
-                                      height: 400,
-                                      color: Colors.green,
-                                    ),
-                                    Container( //for third tab
-                                      height: 400,
-                                      color: Colors.blue,
-                                    )
-                                  ]
-                              )
-                          )
-                      ),
+                              body: TabBarView(children: [
+                                Container(
+                                  //for first tab
+                                  height: 400, color: Colors.red,
+                                ),
+                                Container(
+                                  //for second tab
+                                  height: 400, color: Colors.green,
+                                ),
+                                Container(
+                                  //for third tab
+                                  height: 400, color: Colors.blue,
+                                )
+                              ]))),
                     ],
                   ),
                 ),

@@ -7,4 +7,6 @@ abstract class Routes {
   static const REGISTER = '/register';
   static const APPFRAME = '/index';
   static const PROFILE = '/profile';
+  static const VERIFY_PHONE = '/verify-phone';
+  static const RESET_PASSWORD = '/reset-password';
 }

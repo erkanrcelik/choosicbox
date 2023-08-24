@@ -2,11 +2,7 @@ import 'package:choosicbox/config/path/svg_path.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../../../../config/routes/app_pages.dart';
 import '../../../../config/theme/colors.dart';
-import '../../../home/home/View/home_view.dart';
-import '../../../navigation/bottom_navigation.dart';
-import '../../login/View/login_view.dart';
 
 class WelcomeView extends StatefulWidget {
   const WelcomeView({Key? key}) : super(key: key);
@@ -50,7 +46,6 @@ class _WelcomeViewState extends State<WelcomeView> {
                           fontWeight: FontWeight.w700,
                           color: ColorConstants.firstColor),
                     ),
-
                   ],
                 ),
                 Column(
@@ -86,27 +81,26 @@ class _WelcomeViewState extends State<WelcomeView> {
                               borderRadius: BorderRadius.circular(27),
                             ),
                             child: Center(
-                              child: Row(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: [
-                                  SvgPath(
-                                    svgPath: 'facebook',
-                                    width: 24,
-                                    height: 24,
-                                  ),
-                                  SizedBox(
-                                    width: 16,
-                                  ),
-                                  Text(
-                                    'FACEBOOK',
-                                    style: TextStyle(
-                                        fontSize: 16,
-                                        fontWeight: FontWeight.w600,
-                                        color: Colors.black),
-                                  ),
-                                ],
-                              )
-                            ),
+                                child: Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                SvgPath(
+                                  svgPath: 'facebook',
+                                  width: 24,
+                                  height: 24,
+                                ),
+                                SizedBox(
+                                  width: 16,
+                                ),
+                                Text(
+                                  'FACEBOOK',
+                                  style: TextStyle(
+                                      fontSize: 16,
+                                      fontWeight: FontWeight.w600,
+                                      color: Colors.black),
+                                ),
+                              ],
+                            )),
                           ),
                         ),
                         SizedBox(
@@ -120,27 +114,26 @@ class _WelcomeViewState extends State<WelcomeView> {
                               borderRadius: BorderRadius.circular(27),
                             ),
                             child: Center(
-                              child: Row(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: [
-                                  SvgPath(
-                                    svgPath: 'google',
-                                    width: 24,
-                                    height: 24,
-                                  ),
-                                  SizedBox(
-                                    width: 16,
-                                  ),
-                                  Text(
-                                    'G00GLE',
-                                    style: TextStyle(
-                                        fontSize: 16,
-                                        fontWeight: FontWeight.w600,
-                                        color: Colors.black),
-                                  ),
-                                ],
-                              )
-                            ),
+                                child: Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                SvgPath(
+                                  svgPath: 'google',
+                                  width: 24,
+                                  height: 24,
+                                ),
+                                SizedBox(
+                                  width: 16,
+                                ),
+                                Text(
+                                  'G00GLE',
+                                  style: TextStyle(
+                                      fontSize: 16,
+                                      fontWeight: FontWeight.w600,
+                                      color: Colors.black),
+                                ),
+                              ],
+                            )),
                           ),
                         ),
                       ],
@@ -148,20 +141,25 @@ class _WelcomeViewState extends State<WelcomeView> {
                     SizedBox(
                       height: 23,
                     ),
-                    Container(
-                      alignment: Alignment.center,
-                      width: MediaQuery.sizeOf(context).width,
-                      height: 54,
-                      decoration: BoxDecoration(
-                          border: Border.all(color: Colors.white),
-                          borderRadius: BorderRadius.circular(30),
-                          color: Color(0x35ffffff)),
-                      child: Text(
-                        'Start with email or phone',
-                        style: TextStyle(
-                            fontSize: 16,
-                            fontWeight: FontWeight.w600,
-                            color: Colors.white),
+                    InkWell(
+                      onTap: () {
+                        Get.toNamed('/register');
+                      },
+                      child: Container(
+                        alignment: Alignment.center,
+                        width: MediaQuery.sizeOf(context).width,
+                        height: 54,
+                        decoration: BoxDecoration(
+                            border: Border.all(color: Colors.white),
+                            borderRadius: BorderRadius.circular(30),
+                            color: Color(0x35ffffff)),
+                        child: Text(
+                          'Start with email or phone',
+                          style: TextStyle(
+                              fontSize: 16,
+                              fontWeight: FontWeight.w600,
+                              color: Colors.white),
+                        ),
                       ),
                     ),
                     SizedBox(
@@ -203,24 +201,25 @@ class _WelcomeViewState extends State<WelcomeView> {
             top: 40, // Adjust the top position as needed
             right: 20, // Adjust the right position as needed
             child: TextButton(
-              onPressed: () {
-                // Add the action you want the "Skip" button to perform
-                // For example, you might want to navigate to another screen.
-              },
-              child: Container(
-                  width: 55,
-                  height: 32,
-                  alignment: Alignment.center,
-                  decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(27.405933380126953),
-                      color: Colors.white),
-                child: Text('Skip', style: TextStyle(
-                  fontSize: 14,
-                  fontWeight: FontWeight.w400,
-                  color: ColorConstants.firstColor,
-                ),)
-              )
-            ),
+                onPressed: () {
+                  // Add the action you want the "Skip" button to perform
+                  // For example, you might want to navigate to another screen.
+                },
+                child: Container(
+                    width: 55,
+                    height: 32,
+                    alignment: Alignment.center,
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(27.405933380126953),
+                        color: Colors.white),
+                    child: Text(
+                      'Skip',
+                      style: TextStyle(
+                        fontSize: 14,
+                        fontWeight: FontWeight.w400,
+                        color: ColorConstants.firstColor,
+                      ),
+                    ))),
           ),
         ],
       ),

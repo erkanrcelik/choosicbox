@@ -1,17 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 
 import '../../../../config/theme/colors.dart';
-import '../../../../utils/ui/button/general_button.dart';
-import '../../../../utils/ui/button/social_button.dart';
-import '../../../../utils/ui/linkText/link_text.dart';
 import '../../../../utils/ui/text/custom_text.dart';
-import '../../../../utils/ui/textField/custom_text_field.dart';
-import '../../../../utils/ui/widget/divider_text.dart';
-import '../../../../utils/ui/widget/row_link_text.dart';
 
-class LoginView extends StatelessWidget {
-  LoginView({Key? key}) : super(key: key);
+class ResetPasswordView extends StatelessWidget {
+  ResetPasswordView({Key? key}) : super(key: key);
   final TextEditingController controller = TextEditingController();
 
   @override
@@ -70,48 +63,11 @@ class LoginView extends StatelessWidget {
                       Align(
                         alignment: Alignment.centerLeft,
                         child: Text(
-                          'Giriş Yap',
+                          'Kayıt Ol',
                           style: CustomTextStyle.headline1,
                         ),
                       ),
                       SizedBox(height: 31),
-                      CustomTextField(
-                          controller: controller,
-                          hintText: 'E-mail',
-                          labelText: 'E-mail'),
-                      SizedBox(height: 29),
-                      CustomTextField(
-                          controller: controller,
-                          hintText: 'Şifre',
-                          labelText: 'Şifre'),
-                      SizedBox(height: 33),
-                      LinkText(title: 'Şifreni mi unuttun?'),
-                      SizedBox(height: 33),
-                      CustomButton(
-                          onPressed: () {
-                            Get.toNamed('/index');
-                          },
-                          text: 'GİRİŞ YAP'),
-                      SizedBox(height: 56),
-                      RowLinkText(
-                        title: 'Hesabın yok mu?',
-                        text: 'Kayıt Ol',
-                        onTap: () {
-                          Get.toNamed('/register');
-                        },
-                      ),
-                      SizedBox(height: 56),
-                      DividerText(title: 'veya', color: Colors.black),
-                      SizedBox(height: 40),
-                      Center(
-                        child: SocialLoginButton(
-                          icon: 'google',
-                          title: 'GOOGLE',
-                          width: 40,
-                          height: 40,
-                          onPressed: () {},
-                        ),
-                      )
                     ],
                   ),
                 ))
