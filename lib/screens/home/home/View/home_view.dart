@@ -1,4 +1,6 @@
+import 'package:choosicbox/generated/assets.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class HomeView extends StatefulWidget {
   const HomeView({super.key});
@@ -8,7 +10,6 @@ class HomeView extends StatefulWidget {
 }
 
 class _HomeViewState extends State<HomeView> {
-
   @override
   Widget build(BuildContext context) {
     final screenWidth = MediaQuery.of(context).size.width;
@@ -22,7 +23,8 @@ class _HomeViewState extends State<HomeView> {
           builder: (BuildContext context) {
             return IconButton(
               icon: Icon(
-                Icons.menu, // Açma butonunun simgesini burada değiştirebilirsiniz
+                Icons.menu,
+                // Açma butonunun simgesini burada değiştirebilirsiniz
                 color: Colors.grey,
                 size: 30,
               ),
@@ -32,29 +34,27 @@ class _HomeViewState extends State<HomeView> {
             );
           },
         ),
-        title: const Column(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              Row(mainAxisAlignment: MainAxisAlignment.center, children: [
-                Text(
-                  'Deliver To',
-                  style: TextStyle(color: Colors.grey, fontSize: 17),
-                ),
-                Icon(
-                  Icons.keyboard_arrow_down_outlined,
-                  color: Colors.grey,
-                  size: 17,
-                )
-              ]),
-              Text(
-                '4102 Pretty View Lane',
-                style: TextStyle(color: Colors.deepOrangeAccent, fontSize: 17),
-              ),
-            ]),
+        title: Column(crossAxisAlignment: CrossAxisAlignment.center, children: [
+          Row(mainAxisAlignment: MainAxisAlignment.center, children: [
+            Text(
+              'deliver_to'.tr,
+              style: const TextStyle(color: Colors.grey, fontSize: 17),
+            ),
+            const Icon(
+              Icons.keyboard_arrow_down_outlined,
+              color: Colors.grey,
+              size: 17,
+            )
+          ]),
+          const Text(
+            '4102 Pretty View Lane',
+            style: TextStyle(fontSize: 18),
+          )
+        ]),
         actions: [
           CircleAvatar(
             child: Image.asset(
-              'assets/images/pp.png',
+              Assets.imagesPp,
               fit: BoxFit.cover,
             ),
           ),

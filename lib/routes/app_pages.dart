@@ -1,3 +1,4 @@
+import 'package:choosicbox/routes/app_route_guard.dart';
 import 'package:choosicbox/screens/authentication/resetPassword/View/reset_password_view.dart';
 import 'package:choosicbox/screens/authentication/splash/View/splash_view.dart';
 import 'package:choosicbox/screens/authentication/verifyMail/View/verify_mail_view.dart';
@@ -32,11 +33,13 @@ class AppPages {
     ),
     GetPage(
       name: Routes.PROFILE,
-      page: () => ProfilePageView(),
+      page: () => const ProfilePageView(),
+      middlewares: [RouteGuard()]
     ),
     GetPage(
       name: Routes.VERIFY_PHONE,
       page: () => VerifyPhoneView(),
+
     ),
     GetPage(
       name: Routes.RESET_PASSWORD,
