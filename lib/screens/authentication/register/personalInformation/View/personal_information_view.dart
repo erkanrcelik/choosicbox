@@ -7,8 +7,8 @@ import '../../../../../utils/ui/button/general.dart';
 import '../../../../../utils/ui/textField/custom_text_field.dart';
 import '../../../../../utils/ui/widget/row_link_text.dart';
 
-class ResetPasswordView extends StatelessWidget {
-  ResetPasswordView({Key? key}) : super(key: key);
+class RegisterPersonalInformationView extends StatelessWidget {
+  RegisterPersonalInformationView({Key? key}) : super(key: key);
   final TextEditingController controller = TextEditingController();
 
   @override
@@ -25,9 +25,19 @@ class ResetPasswordView extends StatelessWidget {
               Align(
                 alignment: Alignment.centerLeft,
                 child: Text(
-                  'register'.tr,
+                  'Kişisel Bilgiler'.tr,
                   style: TextStyle(
                     fontSize: 36.sp,
+                    fontWeight: FontWeight.w700,
+                  ),
+                ),
+              ),
+              Align(
+                alignment: Alignment.centerLeft,
+                child: Text(
+                  'Kişisel Bilgilerinizi Girin'.tr,
+                  style: TextStyle(
+                    fontSize: 14.sp,
                     fontWeight: FontWeight.w700,
                   ),
                 ),
@@ -35,19 +45,19 @@ class ResetPasswordView extends StatelessWidget {
               SizedBox(height: 50.h),
               CustomTextField(
                 controller: controller,
-                hintText: 'password'.tr,
-                labelText: 'password'.tr,
+                hintText: 'Ad Soyad'.tr,
+                labelText: 'Ad Soyad'.tr,
               ),
               SizedBox(height: 50.h),
               CustomTextField(
                 controller: controller,
-                hintText: 'password_again'.tr,
-                labelText: 'password_again'.tr,
+                hintText: 'Telefon Numarası'.tr,
+                labelText: 'Telefon Numarası'.tr,
               ),
               SizedBox(height: 50.h),
               CustomButton(
                 onPressed: () {
-                  Get.toNamed('/index');
+                  Get.toNamed('/register-verify-phone');
                 },
                 text: 'continue'.tr,
               ),

@@ -5,10 +5,11 @@ import 'package:get/get.dart';
 
 import '../../../../../utils/ui/button/general.dart';
 import '../../../../../utils/ui/textField/custom_text_field.dart';
+import '../../../../../utils/ui/textField/pin_code.dart';
 import '../../../../../utils/ui/widget/row_link_text.dart';
 
-class ResetPasswordView extends StatelessWidget {
-  ResetPasswordView({Key? key}) : super(key: key);
+class RegisterVerifyMailView extends StatelessWidget {
+  RegisterVerifyMailView({Key? key}) : super(key: key);
   final TextEditingController controller = TextEditingController();
 
   @override
@@ -25,29 +26,34 @@ class ResetPasswordView extends StatelessWidget {
               Align(
                 alignment: Alignment.centerLeft,
                 child: Text(
-                  'register'.tr,
+                  'Mail Adresini Doğrula'.tr,
                   style: TextStyle(
-                    fontSize: 36.sp,
+                    fontSize: 30.sp,
                     fontWeight: FontWeight.w700,
                   ),
                 ),
               ),
-              SizedBox(height: 50.h),
-              CustomTextField(
-                controller: controller,
-                hintText: 'password'.tr,
-                labelText: 'password'.tr,
+              Align(
+                alignment: Alignment.centerLeft,
+                child: Text(
+                  'Lütfen prelookstudio@gmail.com adresine gönderilen doğrulama kodunu yazın.'.tr,
+                  style: TextStyle(
+                    fontSize: 14.sp,
+                    fontWeight: FontWeight.w700,
+                  ),
+                ),
               ),
-              SizedBox(height: 50.h),
-              CustomTextField(
-                controller: controller,
-                hintText: 'password_again'.tr,
-                labelText: 'password_again'.tr,
+              SizedBox(height: 31.h),
+              FractionallySizedBox(
+                widthFactor: 1,
+                child: PinCodeTextField(),
               ),
+              SizedBox(height: 32.h),
+              RowLinkText(title: 'Kod gelmedi mi', text: 'Tekrar gönder'),
               SizedBox(height: 50.h),
               CustomButton(
                 onPressed: () {
-                  Get.toNamed('/index');
+                  Get.toNamed('/register-password');
                 },
                 text: 'continue'.tr,
               ),

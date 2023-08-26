@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
+
+import '../../../../utils/ui/card/category_store_card.dart';
 
 class CategoryView extends StatefulWidget {
   const CategoryView({super.key});
@@ -13,28 +17,31 @@ class _CategoryViewState extends State<CategoryView> {
     return Scaffold(
       body: Stack(children: [
         Positioned(
-          top: 0,
-          right: 0,
-          child: Image.asset('assets/images/pizzaTopScreen.png'),
+          top: 0.h,
+          right: 0.w,
+          child: Image.asset(
+            'assets/images/pizzaTopScreen.png',
+            height: 290.h,
+          ),
         ),
         Positioned(
-          top: 37,
-          left: 27,
+          top: 37.h,
+          left: 27.w,
           child: InkWell(
             onTap: () {
-              print('aaa');
-              Navigator.of(context).pop();
+              Get.back();
             },
             child: Container(
-              height: 38,
-              width: 38,
+              height: 38.w,
+              width: 38.h,
               decoration: BoxDecoration(
                 color: Colors.white,
-                borderRadius: BorderRadius.circular(10),
-                boxShadow: const [
+                borderRadius: BorderRadius.circular(10).r,
+                boxShadow: [
                   BoxShadow(
-                    color: Color(0xffD3D1D8),
-                    offset: Offset(5, 10), // X, Y offset
+                    color: const Color(0xffD3D1D8),
+                    offset: Offset(5.h, 10.w),
+                    // X, Y offset
                     blurRadius: 20,
                     spreadRadius: 0,
                   ),
@@ -45,70 +52,63 @@ class _CategoryViewState extends State<CategoryView> {
           ),
         ),
         Positioned(
-            top: 112,
-            left: 26,
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                const Text(
-                  'Fast',
-                  style: TextStyle(
-                    fontSize: 45,
-                    fontWeight: FontWeight.w700,
-                    color: Color(0xff272D2F),
-                  ),
+          top: 110.h,
+          left: 26.w,
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                'Fast',
+                style: TextStyle(
+                  fontSize: 40.sp,
+                  fontWeight: FontWeight.w700,
+                  color: const Color(0xff272D2F),
                 ),
-                const Text(
-                  'Food',
-                  style: TextStyle(
-                    fontSize: 45,
-                    fontWeight: FontWeight.w700,
-                    color: Color(0xffFE724C),
-                  ),
+              ),
+              Text(
+                'Food',
+                style: TextStyle(
+                  fontSize: 40.sp,
+                  fontWeight: FontWeight.w700,
+                  color: const Color(0xffFE724C),
                 ),
-                const Text(
-                  '80 type of pizza',
-                  style: TextStyle(
-                    fontSize: 19,
-                    fontWeight: FontWeight.w400,
-                    color: Color(0xff9796A1),
-                  ),
-                ),
-              ],
-            )),
-        Padding(
-          padding: const EdgeInsets.only(top: 306, left: 26, right: 26),
-          child: SingleChildScrollView(
-              child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                Container(
-                  height: 20,
-                  padding: EdgeInsets.only(right: 10),
+              ),
+            ],
+          ),
+        ),
+        SingleChildScrollView(
+          child: Padding(
+            padding: EdgeInsets.only(top: 270.h),
+            child:
+                Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: 26.w),
+                child: Container(
+                  height: 20.h,
+                  padding: const EdgeInsets.only(right: 10).w,
                   child: Row(
                     children: [
-                      const Text(
+                      Text(
                         'Short by:',
                         style: TextStyle(
-                            fontSize: 14, fontWeight: FontWeight.w400),
+                            fontSize: 14.sp, fontWeight: FontWeight.w400),
                       ),
-                      const SizedBox(
-                        width: 10,
+                      SizedBox(
+                        width: 10.w,
                       ),
                       InkWell(
                         onTap: () {},
-                        child: Container(
-                            child: Row(children: [
-                          const Text('Popular',
-                              style: TextStyle(
-                                  fontSize: 14,
-                                  fontWeight: FontWeight.w400,
-                                  color: Color(0xffFE724C))),
-                          const SizedBox(
-                            width: 5,
+                        child: Row(children: [
+                          Text('Popular',
+                          style: TextStyle(
+                              fontSize: 14.sp,
+                              fontWeight: FontWeight.w400,
+                              color: const Color(0xffFE724C))),
+                          SizedBox(
+                        width: 5.w,
                           ),
                           Image.asset('assets/icons/arrowDown.png'),
-                        ])),
+                        ]),
                       ),
                       const Spacer(),
                       InkWell(
@@ -117,124 +117,40 @@ class _CategoryViewState extends State<CategoryView> {
                     ],
                   ),
                 ),
-                const SizedBox(height: 25),
-                CategoryViewCard(
-                    businessName: 'Chicken Hawaiian',
-                    description: 'Chicken, Cheese and pineapple',
-                    image: 'restaurant'),
-                CategoryViewCard(
-                    businessName: 'Chicken Hawaiian',
-                    description: 'Chicken, Cheese and pineapple',
-                    image: 'restaurant'),
-                CategoryViewCard(
-                    businessName: 'Chicken Hawaiian',
-                    description: 'Chicken, Cheese and pineapple',
-                    image: 'restaurant'),
-                CategoryViewCard(
-                    businessName: 'Chicken Hawaiian',
-                    description: 'Chicken, Cheese and pineapple',
-                    image: 'restaurant'),
-              ])),
+              ),
+              SizedBox(height: 20.h),
+              SizedBox(
+                height: 442.h,
+                child: SingleChildScrollView(
+                  child: Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 26.w),
+                    child: const Column(
+                      children: [
+                        CategoryStoreCard(
+                            businessName: 'Chicken Hawaiian',
+                            description: 'Chicken, Cheese and pineapple',
+                            image: 'restaurant'),
+                        CategoryStoreCard(
+                            businessName: 'Chicken Hawaiian',
+                            description: 'Chicken, Cheese and pineapple',
+                            image: 'restaurant'),
+                        CategoryStoreCard(
+                            businessName: 'Chicken Hawaiian',
+                            description: 'Chicken, Cheexse and pineapple',
+                            image: 'restaurant'),
+                        CategoryStoreCard(
+                            businessName: 'Chicken Hawaiian',
+                            description: 'Chicken, Cheese and pineapple',
+                            image: 'restaurant'),
+                      ],
+                    ),
+                  ),
+                ),
+              )
+            ]),
+          ),
         ),
       ]),
-    );
-  }
-}
-
-class CategoryViewCard extends StatelessWidget {
-  const CategoryViewCard({
-    super.key,
-    required this.image,
-    required this.businessName,
-    required this.description,
-  });
-
-  final String image;
-  final String businessName;
-  final String description;
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      height: 280,
-      margin: EdgeInsets.only(bottom: 30),
-      width: double.infinity,
-      decoration: BoxDecoration(boxShadow: const [
-        BoxShadow(
-          color: Color(0xffD3D1D8),
-          offset: Offset(0, 2), // X, Y offset
-          blurRadius: 15,
-          spreadRadius: 0,
-        ),
-      ], color: Colors.white, borderRadius: BorderRadius.circular(15)),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        mainAxisAlignment: MainAxisAlignment.start,
-        children: [
-          Stack(clipBehavior: Clip.none, children: [
-            Container(
-                clipBehavior: Clip.hardEdge,
-                decoration: const BoxDecoration(
-                    borderRadius: BorderRadius.only(
-                        bottomLeft: Radius.circular(15),
-                        bottomRight: Radius.circular(15))),
-                child: Image.asset('assets/images/$image.png',
-                    width: double.infinity, fit: BoxFit.contain)),
-            Positioned(
-                top: -14,
-                left: -15,
-                child: Image.asset('assets/icons/price.png')),
-            Positioned(
-              top: -5,
-              right: -3,
-              child: Container(
-                  padding: const EdgeInsets.only(
-                      top: 9, left: 8, bottom: 7, right: 6),
-                  child: Image.asset('assets/icons/favorite.png')),
-            ),
-            Positioned(
-              bottom: -12,
-              left: 13,
-              child: Container(
-                  decoration: BoxDecoration(
-                      color: Colors.white,
-                      boxShadow: const [
-                        BoxShadow(
-                          color: Color(0xffD3D1D8),
-                          offset: Offset(0, 2), // X, Y offset
-                          blurRadius: 15,
-                          spreadRadius: 0,
-                        ),
-                      ],
-                      borderRadius: BorderRadius.circular(100)),
-                  padding: const EdgeInsets.only(
-                      top: 9, left: 8, bottom: 7, right: 6),
-                  child: Image.asset('assets/icons/rating.png')),
-            ),
-          ]),
-          Container(
-            padding: const EdgeInsets.only(left: 14, top: 26),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  businessName,
-                  style: TextStyle(fontSize: 18, fontWeight: FontWeight.w700),
-                ),
-                SizedBox(height: 10),
-                Text(
-                  description,
-                  style: TextStyle(
-                      color: Color(0xff5B5B5E),
-                      fontSize: 15,
-                      fontWeight: FontWeight.w400),
-                ),
-              ],
-            ),
-          ),
-        ],
-      ),
     );
   }
 }

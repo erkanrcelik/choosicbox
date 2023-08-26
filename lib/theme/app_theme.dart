@@ -25,7 +25,7 @@ class AppThemeConfig {
           foregroundColor: Colors.teal
         ),
       ),
-      scaffoldBackgroundColor: Colors.grey[200],
+      scaffoldBackgroundColor: Colors.white,
       textTheme: const TextTheme(
         bodyMedium: TextStyle(color: Colors.red),
         bodyLarge: TextStyle(fontFamily: 'Sofia Pro'),

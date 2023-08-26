@@ -7,8 +7,8 @@ import '../../../../../utils/ui/button/general.dart';
 import '../../../../../utils/ui/textField/custom_text_field.dart';
 import '../../../../../utils/ui/widget/row_link_text.dart';
 
-class ResetPasswordView extends StatelessWidget {
-  ResetPasswordView({Key? key}) : super(key: key);
+class RegisterPasswordView extends StatelessWidget {
+  RegisterPasswordView({Key? key}) : super(key: key);
   final TextEditingController controller = TextEditingController();
 
   @override
@@ -25,9 +25,19 @@ class ResetPasswordView extends StatelessWidget {
               Align(
                 alignment: Alignment.centerLeft,
                 child: Text(
-                  'register'.tr,
+                  'Şifre'.tr,
                   style: TextStyle(
                     fontSize: 36.sp,
+                    fontWeight: FontWeight.w700,
+                  ),
+                ),
+              ),
+              Align(
+                alignment: Alignment.centerLeft,
+                child: Text(
+                  'Lütfen şifrenizi girin'.tr,
+                  style: TextStyle(
+                    fontSize: 14.sp,
                     fontWeight: FontWeight.w700,
                   ),
                 ),
@@ -47,7 +57,7 @@ class ResetPasswordView extends StatelessWidget {
               SizedBox(height: 50.h),
               CustomButton(
                 onPressed: () {
-                  Get.toNamed('/index');
+                  Get.toNamed('/register-personal-information');
                 },
                 text: 'continue'.tr,
               ),

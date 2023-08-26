@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../../../home/View/home_view.dart';
+import '../../../../home/View/drawer/drawer.dart';
 import '../../../View/profile_view.dart';
 
 class PaymentSettingsScreen extends StatelessWidget {

@@ -1,9 +1,10 @@
+import 'package:choosicbox/utils/ui/layout/authenticatin_layout.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../config/theme/colors.dart';
-import '../../../../utils/ui/button/general_button.dart';
-import '../../../../utils/ui/button/social_button.dart';
+import '../../../../utils/ui/button/general.dart';
+import '../../../../utils/ui/button/social.dart';
 import '../../../../utils/ui/linkText/link_text.dart';
 import '../../../../utils/ui/text/custom_text.dart';
 import '../../../../utils/ui/textField/custom_text_field.dart';
@@ -16,107 +17,57 @@ class LoginView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      resizeToAvoidBottomInset: false,
-      body: SizedBox(
-        width: MediaQuery.of(context).size.width,
-        height: MediaQuery.of(context).size.height,
-        child: Stack(
-          children: [
-            Positioned(
-              top: -10,
-              left: -40,
-              child: Container(
-                  height: 120,
-                  width: 120,
-                  decoration: BoxDecoration(
-                    border: Border.all(
-                      color: ColorConstants.firstColor,
-                      width: 30,
-                    ),
-                    borderRadius: BorderRadius.circular(150),
-                  )),
+    return AuthenticationLayout(
+      isBackButton: true,
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.end,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          Text(
+            'login'.tr,
+            style: TextStyle(
+              fontSize: 30.sp,
+              fontWeight: FontWeight.w700,
             ),
-            Positioned(
-              top: -80,
-              left: 10,
-              child: Container(
-                  height: 165,
-                  width: 165,
-                  decoration: BoxDecoration(
-                    color: Color(0xFFFFECE7),
-                    borderRadius: BorderRadius.circular(150),
-                  )),
-            ),
-            Positioned(
-              top: -80,
-              right: -60,
-              child: Container(
-                  height: 181,
-                  width: 181,
-                  decoration: BoxDecoration(
-                    color: ColorConstants.firstColor,
-                    borderRadius: BorderRadius.circular(150),
-                  )),
-            ),
-            Positioned(
-                left: 25,
-                right: 25,
-                bottom: 60,
-                child: SizedBox(
-                  width: MediaQuery.of(context).size.width,
-                  child: Column(
-                    children: [
-                      Align(
-                        alignment: Alignment.centerLeft,
-                        child: Text(
-                          'Giriş Yap',
-                          style: CustomTextStyle.headline1,
-                        ),
-                      ),
-                      SizedBox(height: 31),
-                      CustomTextField(
-                          controller: controller,
-                          hintText: 'E-mail',
-                          labelText: 'E-mail'),
-                      SizedBox(height: 29),
-                      CustomTextField(
-                          controller: controller,
-                          hintText: 'Şifre',
-                          labelText: 'Şifre'),
-                      SizedBox(height: 33),
-                      LinkText(title: 'Şifreni mi unuttun?'),
-                      SizedBox(height: 33),
-                      CustomButton(
-                          onPressed: () {
-                            Get.toNamed('/index');
-                          },
-                          text: 'GİRİŞ YAP'),
-                      SizedBox(height: 56),
-                      RowLinkText(
-                        title: 'Hesabın yok mu?',
-                        text: 'Kayıt Ol',
-                        onTap: () {
-                          Get.toNamed('/register');
-                        },
-                      ),
-                      SizedBox(height: 56),
-                      DividerText(title: 'veya', color: Colors.black),
-                      SizedBox(height: 40),
-                      Center(
-                        child: SocialLoginButton(
-                          icon: 'google',
-                          title: 'GOOGLE',
-                          width: 40,
-                          height: 40,
-                          onPressed: () {},
-                        ),
-                      )
-                    ],
-                  ),
-                ))
-          ],
-        ),
+          ),
+          SizedBox(height: 31.h),
+          CustomTextField(
+            controller: controller,
+            hintText: 'email'.tr,
+            labelText: 'email'.tr,
+          ),
+          SizedBox(height: 31.h),
+          CustomTextField(
+            controller: controller,
+            hintText: 'password'.tr,
+            labelText: 'password'.tr,
+          ),
+          SizedBox(height: 28.h),
+          LinkText(title: 'Şifreni mi unuttun?'),
+          SizedBox(height: 33.h),
+          CustomButton(
+            onPressed: () {
+              Get.toNamed('/index');
+            },
+            text: 'login'.tr,
+          ),
+          SizedBox(height: 33.h),
+          RowLinkText(
+            title: 'dont_have_account'.tr,
+            text: 'register'.tr,
+            onTap: () {
+              Get.toNamed('/register');
+            },
+          ),
+          SizedBox(height: 60.h),
+          DividerText(title: 'or'.tr, color: Colors.black),
+          SizedBox(height: 15.h),
+          SocialLoginButton(
+            icon: 'google',
+            title: 'GOOGLE',
+            onPressed: () {},
+          ),
+        ],
       ),
     );
   }

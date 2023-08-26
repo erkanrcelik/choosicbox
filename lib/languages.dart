@@ -10,9 +10,17 @@ class Languages extends Translations{
     },
     'tr_TR':{
       'welcome':'Hoş Geldiniz',
-      'deliver_to':'Transfer'
+      'login':'Giriş Yap',
+      'email':'E-Posta',
+      'password':'Şifre',
+      'password_again':'Şifre Tekrar',
+      'forgot_password':'Şifreni mi unuttun?',
+      'dont_have_account':'Hesabın yok mu?',
+      'register':'Kayıt Ol',
+      'or':'veya',
+      'have_account':'Zaten bir hesabın var mı?',
+      'continue':'Devam',
     }
-
   };
 
 

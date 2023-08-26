@@ -1,5 +1,6 @@
 import 'package:choosicbox/utils/ui/text/custom_text.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class DividerText extends StatelessWidget {
   DividerText({Key? key, required this.title, required this.color}) : super(key: key);
@@ -13,10 +14,14 @@ class DividerText extends StatelessWidget {
       children: [
         Expanded(child: Divider(color: color)),
         Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 16),
+          padding: const EdgeInsets.symmetric(horizontal: 16).r,
           child: Text(
             title,
-            style: CustomTextStyle.headline4
+            style: TextStyle(
+              color: color,
+              fontSize: 14.sp,
+              fontWeight: FontWeight.w600,
+            ),
           ),
         ),
         Expanded(child: Divider(color: color)),

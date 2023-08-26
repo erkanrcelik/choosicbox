@@ -1,5 +1,6 @@
 import 'package:choosicbox/utils/ui/linkText/link_text.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../text/custom_text.dart';
 
@@ -17,10 +18,12 @@ class RowLinkText extends StatelessWidget {
       children: [
         Text(
           title,
-          style: CustomTextStyle.bodyText1,
+          style: TextStyle(
+            fontSize: 14.sp,
+          )
         ),
-        const SizedBox(
-          width: 5,
+        SizedBox(
+          width: 5.w,
         ),
         LinkText(title: text ,onTap: onTap, )
       ],
