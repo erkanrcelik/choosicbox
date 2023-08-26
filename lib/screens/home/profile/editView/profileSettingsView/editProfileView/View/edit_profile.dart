@@ -1,19 +1,18 @@
+import 'package:choosicbox/routes/app_pages.dart';
+import 'package:choosicbox/screens/home/profile/View/profile_view.dart';
+import 'package:choosicbox/utils/ui/textField/custom_text_field.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../../../../../../config/theme/colors.dart';
-import '../../../../../../utils/ui/Input/cardInput/car_expired_date_input.dart';
-import '../../../../../../utils/ui/Input/cardInput/card_cvv_input.dart';
-import '../../../../../../utils/ui/Input/cardInput/card_name_input.dart';
-import '../../../../../../utils/ui/Input/cardInput/card_number_input.dart';
-import '../../../../../../utils/ui/button/general.dart';
+import '../../../../../../../config/theme/colors.dart';
+import '../../../../../../../utils/ui/Input/GeneralInput/general_input.dart';
+import '../../../../../../../utils/ui/Input/passwordInput/password_input.dart';
 
-class PaymentSettingsScreen extends StatelessWidget {
-  PaymentSettingsScreen({Key? key}) : super(key: key);
-  TextEditingController _cardNameController = TextEditingController();
-  TextEditingController _cardNumberController = TextEditingController();
-  TextEditingController _cardExpiredDateController = TextEditingController();
-  TextEditingController _cardCvvController = TextEditingController();
+import '../../../securityView/passwordView/View/password_view.dart';
+
+
+class EditProfileScreen extends StatelessWidget {
+  EditProfileScreen({Key? key}) : super(key: key);
   final TextEditingController controller = TextEditingController();
 
   @override
@@ -84,38 +83,32 @@ class PaymentSettingsScreen extends StatelessWidget {
                 child: Column(
                   children: [
                     SizedBox(height: 37),
-                    CardNameInput(
-                      controller: _cardNameController,
+                    GeneralInput(
+                      controller: controller,
                       hintText: "Bruce Williams",
                       labelText: "Full Name",
                     ),
                     SizedBox(height: 47),
-                    CardNumberInput(
-                      controller: _cardNumberController,
-                      hintText: '****-****-****-****',
-                      labelText: 'Card Number',
+                    CustomTextField(
+                      controller: controller,
+                      hintText: 'Phone Number',
+                      labelText: 'Phone Number',
                     ),
                     SizedBox(height: 47),
-                    Row(
-                      children: [
-                        CardExpiredDateInput(
-                          controller: _cardExpiredDateController,
-                          hintText: '**/**',
-                          labelText: 'Expired Date',
+                    InkWell(
+                      onTap:() {Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => ChangePasswordPageState(),
                         ),
-                        SizedBox(width: 5),
-                        CardCvvInput(
-                          controller: _cardCvvController,
-                          hintText: '***',
-                          labelText: 'CVV',
-                        ),
-                      ],
+                      );},
+                      child: PasswordInput(
+                        controller: controller,
+                        hintText: 'Password',
+                        labelText: 'Change Password',
+                      ),
                     ),
                     SizedBox(height: 47),
-                    CustomButton(
-                      onPressed: () {},
-                      text: 'Submit',
-                    )
                   ],
                 ),
               ),

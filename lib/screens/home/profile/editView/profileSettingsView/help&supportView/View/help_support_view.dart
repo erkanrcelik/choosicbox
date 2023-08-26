@@ -1,19 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../../../../../../config/theme/colors.dart';
-import '../../../../../../utils/ui/Input/cardInput/car_expired_date_input.dart';
-import '../../../../../../utils/ui/Input/cardInput/card_cvv_input.dart';
-import '../../../../../../utils/ui/Input/cardInput/card_name_input.dart';
-import '../../../../../../utils/ui/Input/cardInput/card_number_input.dart';
-import '../../../../../../utils/ui/button/general.dart';
+import '../../../../../../../config/theme/colors.dart';
+import '../../../../../../../utils/ui/ListTile/profile_list_tile.dart';
+import '../faqView/View/faq_Support_view.dart';
+import '../feedbackView/View/feedback_view.dart';
 
-class PaymentSettingsScreen extends StatelessWidget {
-  PaymentSettingsScreen({Key? key}) : super(key: key);
-  TextEditingController _cardNameController = TextEditingController();
-  TextEditingController _cardNumberController = TextEditingController();
-  TextEditingController _cardExpiredDateController = TextEditingController();
-  TextEditingController _cardCvvController = TextEditingController();
+
+
+class HelpAndSupportScreen extends StatelessWidget {
+  HelpAndSupportScreen({Key? key}) : super(key: key);
   final TextEditingController controller = TextEditingController();
 
   @override
@@ -78,44 +74,44 @@ class PaymentSettingsScreen extends StatelessWidget {
             Positioned(
               left: 25,
               right: 25,
-              bottom: 150,
+              bottom: 200,
               child: SizedBox(
                 width: MediaQuery.of(context).size.width,
                 child: Column(
                   children: [
                     SizedBox(height: 37),
-                    CardNameInput(
-                      controller: _cardNameController,
-                      hintText: "Bruce Williams",
-                      labelText: "Full Name",
-                    ),
-                    SizedBox(height: 47),
-                    CardNumberInput(
-                      controller: _cardNumberController,
-                      hintText: '****-****-****-****',
-                      labelText: 'Card Number',
-                    ),
-                    SizedBox(height: 47),
-                    Row(
-                      children: [
-                        CardExpiredDateInput(
-                          controller: _cardExpiredDateController,
-                          hintText: '**/**',
-                          labelText: 'Expired Date',
-                        ),
-                        SizedBox(width: 5),
-                        CardCvvInput(
-                          controller: _cardCvvController,
-                          hintText: '***',
-                          labelText: 'CVV',
-                        ),
-                      ],
-                    ),
-                    SizedBox(height: 47),
-                    CustomButton(
-                      onPressed: () {},
-                      text: 'Submit',
-                    )
+                    ProfileListTile(
+                        title: "Frequently Asked Questions",
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => FAQSupportScreen()),
+                          );
+                        },
+                        image: 'assets/icons/edit-account.png'),
+                    SizedBox(height: 37),
+                    ProfileListTile(
+                        title: "Feedback",
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => FeedbackScreen()),
+                          );
+                        },
+                        image: 'assets/icons/feedback.png'),
+                    SizedBox(height: 37),
+                    ProfileListTile(
+                        title: "Support",
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => FeedbackScreen()),
+                          );
+                        },
+                        image: 'assets/icons/support.png'),
                   ],
                 ),
               ),

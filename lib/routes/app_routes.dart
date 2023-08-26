@@ -10,6 +10,7 @@ abstract class Routes {
   static const REGISTER_PERSONAL_INFORMATION = '/register-personal-information';
   static const REGISTER_VERIFY_MAIL = '/register-verify-mail';
   static const APPFRAME = '/index';
+  static const PASSWORD = '/password';
   static const PROFILE = '/profile';
   static const RESET_PASSWORD = '/reset-password';
   static const CATEGORY_DETAIL = '/category-detail';

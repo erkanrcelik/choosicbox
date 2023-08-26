@@ -1,19 +1,13 @@
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../../../../../../config/theme/colors.dart';
-import '../../../../../../utils/ui/Input/cardInput/car_expired_date_input.dart';
-import '../../../../../../utils/ui/Input/cardInput/card_cvv_input.dart';
-import '../../../../../../utils/ui/Input/cardInput/card_name_input.dart';
-import '../../../../../../utils/ui/Input/cardInput/card_number_input.dart';
-import '../../../../../../utils/ui/button/general.dart';
 
-class PaymentSettingsScreen extends StatelessWidget {
-  PaymentSettingsScreen({Key? key}) : super(key: key);
-  TextEditingController _cardNameController = TextEditingController();
-  TextEditingController _cardNumberController = TextEditingController();
-  TextEditingController _cardExpiredDateController = TextEditingController();
-  TextEditingController _cardCvvController = TextEditingController();
+import '../../../../../../utils/ui/ListTile/activity_list_view.dart';
+
+class ActivitiesPage extends StatelessWidget {
+  ActivitiesPage({Key? key}) : super(key: key);
   final TextEditingController controller = TextEditingController();
 
   @override
@@ -78,44 +72,27 @@ class PaymentSettingsScreen extends StatelessWidget {
             Positioned(
               left: 25,
               right: 25,
-              bottom: 150,
+              bottom: 60,
               child: SizedBox(
                 width: MediaQuery.of(context).size.width,
                 child: Column(
                   children: [
                     SizedBox(height: 37),
-                    CardNameInput(
-                      controller: _cardNameController,
-                      hintText: "Bruce Williams",
-                      labelText: "Full Name",
-                    ),
-                    SizedBox(height: 47),
-                    CardNumberInput(
-                      controller: _cardNumberController,
-                      hintText: '****-****-****-****',
-                      labelText: 'Card Number',
-                    ),
-                    SizedBox(height: 47),
-                    Row(
-                      children: [
-                        CardExpiredDateInput(
-                          controller: _cardExpiredDateController,
-                          hintText: '**/**',
-                          labelText: 'Expired Date',
-                        ),
-                        SizedBox(width: 5),
-                        CardCvvInput(
-                          controller: _cardCvvController,
-                          hintText: '***',
-                          labelText: 'CVV',
-                        ),
-                      ],
-                    ),
-                    SizedBox(height: 47),
-                    CustomButton(
-                      onPressed: () {},
-                      text: 'Submit',
-                    )
+                    ActivitiesListTile(
+                        title: "Connected Places", onTap: (){}, image: 'assets/icons/bar-building.png'),
+                    SizedBox(height: 37),
+                    ActivitiesListTile(
+                        title: "Last Played", onTap: (){}, image: 'assets/icons/last-24-hours.png'),
+                    SizedBox(height: 37),
+                    ActivitiesListTile(
+                        title: "Most Listened", onTap: (){}, image: 'assets/icons/search-more.png'),
+                    SizedBox(height: 37),
+                    ActivitiesListTile(
+                        title: "Thoughts", onTap: (){}, image: 'assets/icons/neutral-decision.png'),
+                    SizedBox(height: 37),
+                    ActivitiesListTile(
+                        title: "Your Likes", onTap: (){}, image: 'assets/icons/like.png'),
+                    SizedBox(height: 37),
                   ],
                 ),
               ),

@@ -1,68 +1,111 @@
+import 'package:choosicbox/screens/home/profile/editView/securityView/languageView/View/language_view.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
-class SecuritySettingsScreen extends StatefulWidget {
-  @override
-  _SecuritySettingsScreenState createState() => _SecuritySettingsScreenState();
-}
+import '../../../../../../config/theme/colors.dart';
+import '../../../../../../utils/ui/ListTile/profile_list_tile.dart';
+import '../../../../../../utils/ui/button/general.dart';
+import '../passwordView/View/password_view.dart';
 
-class _SecuritySettingsScreenState extends State<SecuritySettingsScreen> {
-  bool _enableBiometricAuth = false;
+
+class SettingScreen extends StatelessWidget {
+  SettingScreen({Key? key}) : super(key: key);
+  final TextEditingController controller = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Security Settings'),
-      ),
-      body: Padding(
-        padding: EdgeInsets.all(16.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
+      resizeToAvoidBottomInset: false,
+      body: SizedBox(
+        width: MediaQuery.of(context).size.width,
+        height: MediaQuery.of(context).size.height,
+        child: Stack(
           children: [
-            Text(
-              'Biometric Authentication',
-              style: TextStyle(
-                fontSize: 20,
-                fontWeight: FontWeight.bold,
+            Positioned(
+              top: -10,
+              left: -40,
+              child: Container(
+                  height: 120,
+                  width: 120,
+                  decoration: BoxDecoration(
+                    border: Border.all(
+                      color: ColorConstants.firstColor,
+                      width: 30,
+                    ),
+                    borderRadius: BorderRadius.circular(150),
+                  )),
+            ),
+            Positioned(
+              top: -80,
+              left: 10,
+              child: Container(
+                  height: 165,
+                  width: 165,
+                  decoration: BoxDecoration(
+                    color: Color(0xFFFFECE7),
+                    borderRadius: BorderRadius.circular(150),
+                  )),
+            ),
+            Positioned(
+              top: -80,
+              right: -60,
+              child: Container(
+                  height: 181,
+                  width: 181,
+                  decoration: BoxDecoration(
+                    color: ColorConstants.firstColor,
+                    borderRadius: BorderRadius.circular(150),
+                  )),
+            ),
+            Positioned(
+              top: 50, // Adjust the position as needed
+              left: 20, // Adjust the position as needed
+              child: GestureDetector(
+                onTap: () {
+                  Get.toNamed("/index");
+                },
+                child: Icon(
+                  Icons.arrow_back,
+                  size: 30,
+                  color: Colors.black,
+                ),
               ),
             ),
-            SwitchListTile(
-              title: Text('Enable Biometric Authentication'),
-              value: _enableBiometricAuth,
-              onChanged: (value) {
-                setState(() {
-                  _enableBiometricAuth = value;
-                });
-              },
-            ),
-            SizedBox(height: 16),
-            Text(
-              'Change PIN',
-              style: TextStyle(
-                fontSize: 20,
-                fontWeight: FontWeight.bold,
+            Positioned(
+              left: 25,
+              right: 25,
+              bottom: 300,
+              child: SizedBox(
+                width: MediaQuery.of(context).size.width,
+                child: Column(
+                  children: [
+                    SizedBox(height: 37),
+                    ProfileListTile(
+                        title: "Language",
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => LanguageSelectionScreen()),
+                          );
+                        },
+                        image: 'assets/icons/edit-account.png'),
+                    SizedBox(height: 37),
+                    ProfileListTile(
+                        title: "Change Password",
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => ChangePasswordPageState()),
+                          );
+                        },
+                        image: 'assets/icons/edit-account.png'),
+                    SizedBox(height: 37),
+                    CustomButton(onPressed: () {  }, text: 'Sign Out',)
+                  ],
+                ),
               ),
-            ),
-            ElevatedButton(
-              onPressed: () {
-                // Implement logic to navigate to the change PIN screen
-              },
-              child: Text('Change PIN'),
-            ),
-            SizedBox(height: 16),
-            Text(
-              'Logout',
-              style: TextStyle(
-                fontSize: 20,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-            ElevatedButton(
-              onPressed: () {
-                // Implement logout logic here
-                // You can navigate to the login screen or clear user data
-              },
-              child: Text('Logout'),
             ),
           ],
         ),
