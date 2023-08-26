@@ -14,17 +14,17 @@ class DrawerPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Drawer(
+      width: screenWidth * 0.8,
       elevation: 0,
-      width: screenWidth * 0.6,
       child: Padding(
-        padding: EdgeInsets.all(16),
+        padding: EdgeInsets.only(left:16).r,
         child: SafeArea(
           child: SingleChildScrollView(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                const CircleAvatar(
-                  radius: 60,
+                CircleAvatar(
+                  radius: 60.r,
                   backgroundImage: AssetImage('assets/images/pp.png'),
                 ),
                 SizedBox(height: 20.h),
@@ -37,7 +37,7 @@ class DrawerPage extends StatelessWidget {
                 ),
                 SizedBox(height: 30.h),
                 const drawerListWidget(icon: 'document', text: 'My Orders'),
-                const drawerListWidget(icon: 'profile', text: 'My Profile'),
+                const drawerListWidget(icon: 'profile1', text: 'My Profile'),
                 const drawerListWidget(
                     icon: 'location', text: 'Delivery Adress'),
                 const drawerListWidget(icon: 'wallet', text: 'Payment Methods'),
