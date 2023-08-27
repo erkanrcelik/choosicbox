@@ -336,7 +336,7 @@ class _HomeViewState extends State<HomeView> {
                         ),
                         MusicTypeItem(
                           isOrange: pageIndex == 4 ? true : false,
-                          icon: SvgPath(svgPath: "alcohol_icon",height: 50,width:50),
+                          icon: SvgPath(svgPath: "alcohol",height: 50,width:50),
                           text: 'Restorant',
                           onTap: () {
                             setState(() {
