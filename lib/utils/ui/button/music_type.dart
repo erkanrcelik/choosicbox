@@ -10,7 +10,7 @@ class MusicTypeItem extends StatefulWidget {
     this.onTap,
   }) : super(key: key);
 
-  final String icon;
+  final Widget icon;
   final String text;
   bool isOrange;
   final VoidCallback? onTap;
@@ -65,7 +65,7 @@ class _MusicTypeItemState extends State<MusicTypeItem> {
         child: Column(
           children: [
             SizedBox(height: 5.h),
-            Image.asset('assets/images/${widget.icon}.png', height: 49.h, width: 49.w),
+            widget.icon,
             SizedBox(
               height: 11.h,
             ),

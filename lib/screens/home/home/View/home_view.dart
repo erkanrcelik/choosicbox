@@ -1,4 +1,5 @@
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:choosicbox/config/path/svg_path.dart';
 import 'package:choosicbox/screens/home/home/View/categories/tabs/tabs.dart';
 import 'package:choosicbox/screens/home/home/View/drawer/drawer.dart';
 import 'package:choosicbox/utils/ui/card/popular_store_card.dart';
@@ -294,8 +295,8 @@ class _HomeViewState extends State<HomeView> {
                       children: [
                         MusicTypeItem(
                           isOrange: pageIndex == 0 ? true : false,
-                          icon: 'hamburger',
-                          text: 'Alkol',
+                          icon: SvgPath(svgPath: "alcohol",height: 50,width:50),
+                          text: 'Alkollü',
                           onTap: () {
                             setState(() {
                               pageIndex = 0;
@@ -304,7 +305,7 @@ class _HomeViewState extends State<HomeView> {
                         ),
                         MusicTypeItem(
                           isOrange: pageIndex == 1 ? true : false,
-                          icon: 'hamburger',
+                          icon: SvgPath(svgPath: "alcohol",height: 50,width:50),
                           text: 'Cafe',
                           onTap: () {
                             setState(() {
@@ -314,7 +315,7 @@ class _HomeViewState extends State<HomeView> {
                         ),
                         MusicTypeItem(
                           isOrange: pageIndex == 2 ? true : false,
-                          icon: 'hamburger',
+                          icon: SvgPath(svgPath: "alcohol",height: 50,width:50),
                           text: 'Bar',
                           onTap: () {
                             setState(() {
@@ -324,7 +325,7 @@ class _HomeViewState extends State<HomeView> {
                         ),
                         MusicTypeItem(
                           isOrange: pageIndex == 3 ? true : false,
-                          icon: 'hamburger',
+                          icon: SvgPath(svgPath: "alcohol",height: 50,width:50),
                           text: 'Kahve',
                           onTap: () {
                             setState(() {
@@ -334,7 +335,7 @@ class _HomeViewState extends State<HomeView> {
                         ),
                         MusicTypeItem(
                           isOrange: pageIndex == 4 ? true : false,
-                          icon: 'hamburger',
+                          icon: SvgPath(svgPath: "alcohol_icon",height: 50,width:50),
                           text: 'Restorant',
                           onTap: () {
                             setState(() {
