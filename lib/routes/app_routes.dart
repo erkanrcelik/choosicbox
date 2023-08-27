@@ -14,4 +14,5 @@ abstract class Routes {
   static const PROFILE = '/profile';
   static const RESET_PASSWORD = '/reset-password';
   static const CATEGORY_DETAIL = '/category-detail';
+  static const STORE_DETAIL = '/store-detail';
 }

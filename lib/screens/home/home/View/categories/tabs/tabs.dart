@@ -1,14 +1,16 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 
 import '../../../../../../utils/ui/card/store_card.dart';
 import '../../../../../../utils/ui/card/store_features_card.dart';
 
 class CategoriesTabs extends StatelessWidget {
-  const CategoriesTabs({super.key, required this.onTap, required this.imgList});
+  const CategoriesTabs({super.key, required this.onTap, required this.imgList, this.onTapCard});
 
   final VoidCallback onTap;
+  final String? onTapCard;
   final List<Map<String, String>> imgList;
 
 
@@ -17,6 +19,9 @@ class CategoriesTabs extends StatelessWidget {
   Widget build(BuildContext context) {
     final List<Widget> imageSliders = imgList.map((item) {
       return StoreCard(
+        onTap: (){
+          Get.toNamed(onTapCard!);
+        },
         restaurant: item['image'] ?? '',
         businessName: item['storeName'] ?? '',
         cardTextList: const [

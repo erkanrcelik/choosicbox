@@ -7,6 +7,7 @@ import 'package:choosicbox/screens/authentication/register/verifyMail/View/verif
 import 'package:choosicbox/screens/authentication/register/verifyPhone/View/verify_phone_view.dart';
 import 'package:choosicbox/screens/authentication/resetPassword/View/reset_password_view.dart';
 import 'package:choosicbox/screens/authentication/splash/View/splash_view.dart';
+import 'package:choosicbox/screens/home/storeDetail/View/store_detail_view.dart';
 import 'package:get/get.dart';
 
 import '../../screens/appframe/app_frame.dart';
@@ -64,6 +65,10 @@ class AppPages {
     GetPage(
       name: Routes.CATEGORY_DETAIL,
       page: () => CategoryView(),
+    ),
+    GetPage(
+      name: Routes.STORE_DETAIL,
+      page: () => StoreDetailView(),
     ),
   ];
 }
