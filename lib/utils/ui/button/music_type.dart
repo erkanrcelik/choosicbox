@@ -65,7 +65,16 @@ class _MusicTypeItemState extends State<MusicTypeItem> {
         child: Column(
           children: [
             SizedBox(height: 5.h),
-            widget.icon,
+            Container(
+              height: 50.h,
+              width: 50.w,
+              padding: EdgeInsets.all(10.w),
+              decoration:BoxDecoration(
+                color: widget.isOrange ? Colors.white : Colors.white,
+                borderRadius: BorderRadius.circular(100).r,
+              ),
+              child: widget.icon,
+            ),
             SizedBox(
               height: 11.h,
             ),

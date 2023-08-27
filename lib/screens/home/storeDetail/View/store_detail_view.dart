@@ -1,3 +1,7 @@
+import 'package:choosicbox/screens/home/storeDetail/View/detailTab/about/View/store_detail_about.dart';
+import 'package:choosicbox/screens/home/storeDetail/View/detailTab/comment/View/store_detail_comment.dart';
+import 'package:choosicbox/screens/home/storeDetail/View/detailTab/musicConcept/View/store_detail_musicConcept.dart';
+import 'package:choosicbox/screens/home/storeDetail/View/detailTab/photo/View/store_detail_photo.dart';
 import 'package:choosicbox/utils/ui/button/tabbar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_stars/flutter_rating_stars.dart';
@@ -16,28 +20,23 @@ class _StoreDetailViewState extends State<StoreDetailView> {
   double value = 3.5;
   int pageIndex = 0;
 
-  /*Widget buildPage() {
+  Widget buildPage() {
     final categoriesList = [
-      alcoholCategoriesList,
-      coffeeCategoriesList,
-      pubCategoriesList,
-      coffeeConceptCategoriesList,
-      restaurantCategoriesList,
+      StoreDetailAboutView(),
+      StoreDetailCommentView(),
+      StoreDetailMusicConceptView(),
+      StoreDetailPhotoView(),
     ];
 
     if (pageIndex >= 0 && pageIndex < categoriesList.length) {
       return KeyedSubtree(
         key: ValueKey<int>(pageIndex),
-        child: CategoriesTabs(
-          onTap: () {},
-          onTapCard: 'store-detail',
-          imgList: categoriesList[pageIndex],
-        ),
+        child: categoriesList[pageIndex],
       );
     } else {
       return const Text('error');
     }
-  }*/
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -171,59 +170,66 @@ class _StoreDetailViewState extends State<StoreDetailView> {
                               ],
                             ),
                           ),
-                          Container(
-                            padding: EdgeInsets.fromLTRB(27.w, 27.h, 27.w, 0),
-                            decoration: BoxDecoration(
-                              border: Border(
-                                bottom: BorderSide(
-                                  color: Color(0xFFE5E5E5),
-                                  width: 1,
+                          Column(
+                            children: [
+                              Container(
+                                padding: EdgeInsets.fromLTRB(27.w, 27.h, 27.w, 0),
+                                decoration: BoxDecoration(
+                                  border: Border(
+                                    bottom: BorderSide(
+                                      color: Color(0xFFE5E5E5),
+                                      width: 1,
+                                    ),
+                                  ),
+                                ),
+                                child: Row(
+                                  children: [
+                                    TabbarButton(
+                                      isOrange: pageIndex == 0 ? true : false,
+                                      title: 'Hakkında',
+                                      onTap: () {
+                                        setState(() {
+                                          pageIndex = 0;
+                                        });
+                                      },
+                                    ),
+                                    Spacer(),
+                                    TabbarButton(
+                                      isOrange: pageIndex == 1 ? true : false,
+                                      title: 'Müzik Konsepti',
+                                      onTap: () {
+                                        setState(() {
+                                          pageIndex = 1;
+                                        });
+                                      },
+                                    ),
+                                    Spacer(),
+                                    TabbarButton(
+                                      isOrange: pageIndex == 2 ? true : false,
+                                      title: 'Fotoğraflar',
+                                      onTap: () {
+                                        setState(() {
+                                          pageIndex = 2;
+                                        });
+                                      },
+                                    ),
+                                    Spacer(),
+                                    TabbarButton(
+                                      isOrange: pageIndex == 3 ? true : false,
+                                      title: 'Yorumlar',
+                                      onTap: () {
+                                        setState(() {
+                                          pageIndex = 3;
+                                        });
+                                      },
+                                    ),
+                                  ],
                                 ),
                               ),
-                            ),
-                            child: Row(
-                              children: [
-                                TabbarButton(
-                                  isOrange: pageIndex == 0 ? true : false,
-                                  title: 'Hakkında',
-                                  onTap: () {
-                                    setState(() {
-                                      pageIndex = 1;
-                                    });
-                                  },
-                                ),
-                                Spacer(),
-                                TabbarButton(
-                                  isOrange: pageIndex == 1 ? true : false,
-                                  title: 'Müzik Konsepti',
-                                  onTap: () {
-                                    setState(() {
-                                      pageIndex = 1;
-                                    });
-                                  },
-                                ),
-                                Spacer(),
-                                TabbarButton(
-                                  isOrange: pageIndex == 2 ? true : false,
-                                  title: 'Fotoğraflar',
-                                  onTap: () {
-                                    setState(() {
-                                      pageIndex = 1;
-                                    });
-                                  },
-                                ),
-                                Spacer(),
-                                TabbarButton(
-                                  isOrange: pageIndex == 3 ? true : false,
-                                  title: 'Yorumlar',
-                                  onTap: () {
-                                    setState(() {
-                                      pageIndex = 1;
-                                    });
-                                  },
-                                ),
-                              ],
-                            ),
+                              Container(
+                                child: buildPage()
+                              )
+                            ],
                           )
                         ],
                       ),
@@ -234,17 +240,26 @@ class _StoreDetailViewState extends State<StoreDetailView> {
             ),
           ),
           Positioned(
-              bottom: 50.h,
+              bottom: 30.h,
               left: 27.w,
               right: 27.w,
               child: Container(
                 width: MediaQuery.of(context).size.width,
                 decoration: BoxDecoration(
-                  color: Colors.green,
+                  color: Color(0xFFFE724C),
                   borderRadius: BorderRadius.circular(36),
                 ),
                 height: 48,
-                child: Center(child: Text('slema')),
+                child: Center(
+                    child: Text(
+                  'Müzik Çal',
+                  style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 16,
+                      fontFamily: 'Poppins',
+                      fontWeight: FontWeight.w700),
+                  textAlign: TextAlign.center,
+                )),
               ))
         ],
       ),
