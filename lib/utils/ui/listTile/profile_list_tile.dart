@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_svg/svg.dart';
 
 class ProfileListTile extends StatelessWidget {
   ProfileListTile({
@@ -32,7 +34,10 @@ class ProfileListTile extends StatelessWidget {
         ),
         child: Center(
           child: ListTile(
-            leading: Image.asset(image),
+            leading:SvgPicture.asset(
+                image,
+              width: 34.w,
+            ),
             title: Text(title),
             trailing: Icon(Icons.arrow_right_alt_rounded),
           ),

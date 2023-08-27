@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:intl_phone_field2/country_picker_dialog.dart';
 import 'package:intl_phone_field2/intl_phone_field.dart';
 
 class PhoneNumberInput extends StatefulWidget {
@@ -36,23 +38,28 @@ class _PhoneNumberInputState extends State<PhoneNumberInput> {
         ),
         SizedBox(height: 16),
         Container(
-          width: 350,
-          height: 60,
-          decoration: ShapeDecoration(
-            color: Colors.white,
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(12),
+          width: 320.w,
+          height: 70.h,
+          child: IntlPhoneField(
+            textFieldPadding: EdgeInsets.all(0),
+            disableLengthCheck: true,
+
+            positionedPopup: false,
+            popupWidth: 300.w,
+            autovalidateMode: AutovalidateMode.onUserInteraction,
+
+            pickerDialogStyle: PickerDialogStyle(
+              searchFieldPadding: EdgeInsets.symmetric(horizontal: 10.w),
+              backgroundColor: Colors.white.withOpacity(0.85),
+              listTileDivider: const SizedBox(),
             ),
-          ),
-          child: const IntlPhoneField(
-            positionedPopup: true,
             textFieldIsDense: true,
             decoration: InputDecoration(
               labelText: 'Phone Number',
-              border: OutlineInputBorder(
-              ),
+              border: OutlineInputBorder(),
+
             ),
-            languageCode: "en",
+            languageCode: "tr_TR",
           ),
         ),
       ],

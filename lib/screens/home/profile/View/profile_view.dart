@@ -7,7 +7,7 @@ import '../editView/notificationsView/View/notifications_view.dart';
 import '../editView/paymentView/View/payment_view.dart';
 import '../editView/profileSettingsView/View/profile_setting_view.dart';
 import '../editView/profileSettingsView/help&supportView/View/help_support_view.dart';
-
+import 'package:choosicbox/generated/assets.dart';
 class ProfilePageView extends StatelessWidget {
   const ProfilePageView({Key? key}) : super(key: key);
 
@@ -123,7 +123,7 @@ class ProfilePageView extends StatelessWidget {
                         builder: (context) => ProfileSettingScreen()),
                   );
                 },
-                image: 'assets/icons/profile1.png',
+                image: Assets.iconsProfileIcon,
               ),
               SizedBox(height: 16),
               ProfileListTile(
