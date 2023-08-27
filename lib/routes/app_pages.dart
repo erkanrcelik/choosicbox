@@ -70,5 +70,9 @@ class AppPages {
       name: Routes.STORE_DETAIL,
       page: () => StoreDetailView(),
     ),
+    GetPage(
+      name: Routes.CATEGORY,
+      page: () => CategoryView(),
+    ),
   ];
 }

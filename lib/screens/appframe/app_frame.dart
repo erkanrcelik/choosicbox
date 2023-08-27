@@ -1,5 +1,5 @@
-import 'package:choosicbox/screens/home/category/View/category_view.dart';
 import 'package:choosicbox/screens/home/profile/View/profile_view.dart';
+import 'package:choosicbox/screens/home/search/View/search_view.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -17,7 +17,7 @@ class _AppFrameState extends State<AppFrame> {
   final GlobalKey<CurvedNavigationBarState> _bottomNavigationKey = GlobalKey();
 
   final List<Widget> _pages = [
-    const CategoryView(),
+    SearchView(),
     HomeView(),
     const ProfilePageView(),
   ];
@@ -36,7 +36,7 @@ class _AppFrameState extends State<AppFrame> {
         ],
         color: Colors.white,
         buttonBackgroundColor: Colors.white,
-        backgroundColor: const Color(0xFFff7f00),
+        backgroundColor: const Color(0xFFFE724C),
         animationCurve: Curves.easeInOut,
         animationDuration: const Duration(milliseconds: 600),
         onTap: (index) {

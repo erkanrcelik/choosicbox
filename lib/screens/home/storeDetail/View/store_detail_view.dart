@@ -6,6 +6,7 @@ import 'package:choosicbox/utils/ui/button/tabbar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_stars/flutter_rating_stars.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 
 import '../../../appframe/app_frame.dart';
 
@@ -22,10 +23,10 @@ class _StoreDetailViewState extends State<StoreDetailView> {
 
   Widget buildPage() {
     final categoriesList = [
-      StoreDetailAboutView(),
-      StoreDetailCommentView(),
-      StoreDetailMusicConceptView(),
-      StoreDetailPhotoView(),
+      const StoreDetailAboutView(),
+      const StoreDetailMusicConceptView(),
+      const StoreDetailPhotoView(),
+      const StoreDetailCommentView(),
     ];
 
     if (pageIndex >= 0 && pageIndex < categoriesList.length) {
@@ -41,21 +42,37 @@ class _StoreDetailViewState extends State<StoreDetailView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      extendBodyBehindAppBar: true,
       appBar: AppBar(
-        backgroundColor: Colors.transparent,
+        toolbarHeight: 50.h,
         elevation: 0,
-        leading: IconButton(
-          splashRadius: 0.00001,
-          icon: Icon(Icons.arrow_back),
-          onPressed: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => AppFrame()),
-            );
-          },
+        leadingWidth: 80.w,
+        backgroundColor: Colors.transparent,
+        leading: Center(
+          child: GestureDetector(
+            onTap: () {
+              Get.back();
+            },
+            child: Container(
+              height: 38,
+              width: 38,
+              decoration: BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.circular(10),
+                boxShadow: const [
+                  BoxShadow(
+                    color: Color(0xffD3D1D8),
+                    offset: Offset(2, 5), // X, Y offset
+                    blurRadius: 10,
+                    spreadRadius: 0,
+                  ),
+                ],
+              ),
+              child: Image.asset('assets/icons/back.png'),
+            ),
+          ),
         ),
       ),
-      extendBodyBehindAppBar: true,
       body: Stack(
         children: [
           Container(
@@ -68,12 +85,12 @@ class _StoreDetailViewState extends State<StoreDetailView> {
             width: double.infinity,
             height: double.infinity,
           ),
-          SizedBox(height: 600),
+          const SizedBox(height: 600),
           SingleChildScrollView(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                SizedBox(height: 459),
+                const SizedBox(height: 459),
                 Container(
                   width: double.infinity,
                   height: 550.h,
@@ -94,7 +111,7 @@ class _StoreDetailViewState extends State<StoreDetailView> {
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
-                                Text(
+                                const Text(
                                   'Myloks',
                                   style: TextStyle(
                                     color: Color(0xFF121212),
@@ -103,10 +120,10 @@ class _StoreDetailViewState extends State<StoreDetailView> {
                                     fontWeight: FontWeight.w700,
                                   ),
                                 ),
-                                SizedBox(
+                                const SizedBox(
                                   height: 13,
                                 ),
-                                Row(
+                                const Row(
                                   children: [
                                     Icon(
                                       Icons.location_on,
@@ -126,7 +143,7 @@ class _StoreDetailViewState extends State<StoreDetailView> {
                                     )
                                   ],
                                 ),
-                                SizedBox(
+                                const SizedBox(
                                   height: 20,
                                 ),
                                 Row(
@@ -156,7 +173,7 @@ class _StoreDetailViewState extends State<StoreDetailView> {
                                       maxValueVisibility: true,
                                       valueLabelVisibility: true,
                                       animationDuration:
-                                          Duration(milliseconds: 1000),
+                                          const Duration(milliseconds: 1000),
                                       valueLabelPadding:
                                           const EdgeInsets.symmetric(
                                               vertical: 1, horizontal: 8),
@@ -174,7 +191,7 @@ class _StoreDetailViewState extends State<StoreDetailView> {
                             children: [
                               Container(
                                 padding: EdgeInsets.fromLTRB(27.w, 27.h, 27.w, 0),
-                                decoration: BoxDecoration(
+                                decoration: const BoxDecoration(
                                   border: Border(
                                     bottom: BorderSide(
                                       color: Color(0xFFE5E5E5),
@@ -193,7 +210,7 @@ class _StoreDetailViewState extends State<StoreDetailView> {
                                         });
                                       },
                                     ),
-                                    Spacer(),
+                                    const Spacer(),
                                     TabbarButton(
                                       isOrange: pageIndex == 1 ? true : false,
                                       title: 'Müzik Konsepti',
@@ -203,7 +220,7 @@ class _StoreDetailViewState extends State<StoreDetailView> {
                                         });
                                       },
                                     ),
-                                    Spacer(),
+                                    const Spacer(),
                                     TabbarButton(
                                       isOrange: pageIndex == 2 ? true : false,
                                       title: 'Fotoğraflar',
@@ -213,7 +230,7 @@ class _StoreDetailViewState extends State<StoreDetailView> {
                                         });
                                       },
                                     ),
-                                    Spacer(),
+                                    const Spacer(),
                                     TabbarButton(
                                       isOrange: pageIndex == 3 ? true : false,
                                       title: 'Yorumlar',
@@ -246,11 +263,11 @@ class _StoreDetailViewState extends State<StoreDetailView> {
               child: Container(
                 width: MediaQuery.of(context).size.width,
                 decoration: BoxDecoration(
-                  color: Color(0xFFFE724C),
+                  color: const Color(0xFFFE724C),
                   borderRadius: BorderRadius.circular(36),
                 ),
                 height: 48,
-                child: Center(
+                child: const Center(
                     child: Text(
                   'Müzik Çal',
                   style: TextStyle(

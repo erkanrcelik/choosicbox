@@ -123,7 +123,9 @@ class _HomeViewState extends State<HomeView> {
         return KeyedSubtree(
           key: ValueKey<int>(pageIndex),
           child: CategoriesTabs(
-            onTap: () {},
+            onTap: () {
+              Get.toNamed('/category');
+            },
             onTapCard: 'store-detail',
             imgList: categoriesList[pageIndex],
           ),
