@@ -53,6 +53,20 @@ class _HomeViewState extends State<HomeView> {
         'storeName': 'coffeeCategoriesList3', // İkinci işletme adı
       },
     ];
+    final List<Map<String, String>> gymCategoriesList = [
+      {
+        'image': 'restaurant', // Birinci restoran adı
+        'storeName': 'gymCategoriesList', // Birinci işletme adı
+      },
+      {
+        'image': 'restaurant', // İkinci restoran adı
+        'storeName': 'gymCategoriesList', // İkinci işletme adı
+      },
+      {
+        'image': 'restaurant', // İkinci restoran adı
+        'storeName': 'gymCategoriesList', // İkinci işletme adı
+      },
+    ];
     final List<Map<String, String>> pubCategoriesList = [
       {
         'image': 'restaurant', // Birinci restoran adı
@@ -115,11 +129,12 @@ class _HomeViewState extends State<HomeView> {
 
     Widget buildPage() {
       final categoriesList = [
-        alcoholCategoriesList,
         coffeeCategoriesList,
         pubCategoriesList,
-        coffeeConceptCategoriesList,
         restaurantCategoriesList,
+        alcoholCategoriesList,
+        coffeeConceptCategoriesList,
+        gymCategoriesList,
       ];
 
       if (pageIndex >= 0 && pageIndex < categoriesList.length) {
@@ -305,8 +320,10 @@ class _HomeViewState extends State<HomeView> {
                       children: [
                         MusicTypeItem(
                           isOrange: pageIndex == 0 ? true : false,
-                          icon: SvgPath(svgPath: "alcohol"),
-                          text: 'Alkollü',
+                          icon: SvgPath(
+                            svgPath: "food-drink",
+                          ),
+                          text: 'Cafe',
                           onTap: () {
                             setState(() {
                               pageIndex = 0;
@@ -315,8 +332,8 @@ class _HomeViewState extends State<HomeView> {
                         ),
                         MusicTypeItem(
                           isOrange: pageIndex == 1 ? true : false,
-                          icon: SvgPath(svgPath: "food-drink",),
-                          text: 'Cafe',
+                          icon: SvgPath(svgPath: "night-club"),
+                          text: 'Bar',
                           onTap: () {
                             setState(() {
                               pageIndex = 1;
@@ -325,8 +342,8 @@ class _HomeViewState extends State<HomeView> {
                         ),
                         MusicTypeItem(
                           isOrange: pageIndex == 2 ? true : false,
-                          icon: SvgPath(svgPath: "night-club"),
-                          text: 'Bar',
+                          icon: SvgPath(svgPath: "food-dish"),
+                          text: 'Restorant',
                           onTap: () {
                             setState(() {
                               pageIndex = 2;
@@ -335,8 +352,8 @@ class _HomeViewState extends State<HomeView> {
                         ),
                         MusicTypeItem(
                           isOrange: pageIndex == 3 ? true : false,
-                          icon: SvgPath(svgPath: "coffee-mug-cup"),
-                          text: 'Kahve',
+                          icon: SvgPath(svgPath: "alcohol"),
+                          text: 'Alkollü',
                           onTap: () {
                             setState(() {
                               pageIndex = 3;
@@ -345,11 +362,23 @@ class _HomeViewState extends State<HomeView> {
                         ),
                         MusicTypeItem(
                           isOrange: pageIndex == 4 ? true : false,
-                          icon: SvgPath(svgPath: "food-dish"),
-                          text: 'Restorant',
+                          icon: SvgPath(svgPath: "coffee-mug-cup"),
+                          text: 'Kahve',
                           onTap: () {
                             setState(() {
                               pageIndex = 4;
+                            });
+                          },
+                        ),
+                        MusicTypeItem(
+                          isOrange: pageIndex == 5 ? true : false,
+                          icon: SvgPath(
+                            svgPath: "dumbbell",
+                          ),
+                          text: 'Gym',
+                          onTap: () {
+                            setState(() {
+                              pageIndex = 5;
                             });
                           },
                         ),
@@ -389,7 +418,7 @@ class _HomeViewState extends State<HomeView> {
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.fromLTRB(15,20,15,0),
+                padding: const EdgeInsets.fromLTRB(15, 20, 15, 0),
                 child: CarouselSlider(
                   disableGesture: true,
                   options: CarouselOptions(

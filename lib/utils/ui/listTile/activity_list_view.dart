@@ -4,18 +4,14 @@ class ActivitiesListTile extends StatelessWidget {
   ActivitiesListTile({
     Key? key,
     required this.title,
-    required this.onTap,
     required this.image,
   }) : super(key: key);
-
   final String title;
-  final VoidCallback onTap;
   final String image;
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: onTap,
       child: Container(
         width: 400,
         height: 110,
@@ -37,7 +33,6 @@ class ActivitiesListTile extends StatelessWidget {
                 title: Center(child: Text(title)),
                 trailing: Padding(
                   padding: const EdgeInsets.only(top: 40),
-                  child: Icon(Icons.arrow_right_alt_rounded),
                 ),
               ),
               Row(

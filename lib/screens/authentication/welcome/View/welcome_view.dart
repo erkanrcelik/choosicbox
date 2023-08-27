@@ -1,6 +1,8 @@
 import 'package:choosicbox/config/path/svg_path.dart';
+import 'package:choosicbox/generated/assets.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:video_player/video_player.dart';
 
 import '../../../../config/theme/colors.dart';
 
@@ -12,20 +14,44 @@ class WelcomeView extends StatefulWidget {
 }
 
 class _WelcomeViewState extends State<WelcomeView> {
+  late VideoPlayerController _controller;
+  // TODO: Write beforescreen get video or handle async wait time with loader
+  @override
+  void initState() {
+    super.initState();
+    _controller = VideoPlayerController.asset(Assets.videosBackground);
+    _controller.addListener(() {
+      setState(() {});
+    });
+    _controller.setLooping(true);
+    _controller.initialize().then((_) => setState(() {}));
+    _controller.play();
+  }
+  @override
+  void dispose() {
+    super.dispose();
+    _controller.dispose();
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Stack(
         children: [
+          SizedBox.expand(
+            child: FittedBox(
+              fit: BoxFit.cover,
+              child: SizedBox(
+                width: _controller.value.size.width ,
+                height: _controller.value.size.height ,
+                child: VideoPlayer(_controller),
+              ),
+            ),
+          ),
+
           Container(
             width: MediaQuery.of(context).size.width,
             padding: EdgeInsets.fromLTRB(28, 160, 28, 49),
-            decoration: BoxDecoration(
-              image: DecorationImage(
-                image: AssetImage('assets/images/welcome_background.jpg'),
-                fit: BoxFit.cover,
-              ),
-            ),
+            color: Colors.transparent,
             child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [

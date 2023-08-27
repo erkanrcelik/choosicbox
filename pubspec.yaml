@@ -63,6 +63,8 @@ dependencies:
   reorderable_tabbar: ^1.0.5
   bottom_sheet: ^4.0.0
   cupertino_range_slider_improved: ^2.0.1
+  intl_phone_field2: ^3.3.4
+  video_player: ^2.7.0
   avatar_glow: ^2.0.2
 
 dev_dependencies:
@@ -77,8 +79,7 @@ dev_dependencies:
   flutter_lints: ^2.0.0
   animated_notch_bottom_bar: ^1.0.0
   introduction_screen: ^3.1.11
-  particles_flutter: ^0.1.1
-  flutter_custom_clippers: ^2.1.0
+
 
 
 
@@ -100,6 +101,7 @@ flutter:
     - assets/buttons/
     - assets/
     - assets/fonts/
+    - assets/videos/
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

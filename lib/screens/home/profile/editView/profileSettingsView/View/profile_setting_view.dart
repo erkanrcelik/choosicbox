@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 import '../../../../../../utils/ui/Input/GeneralInput/general_input.dart';
 import '../../../../../../utils/ui/Input/passwordInput/password_input.dart';
 import '../../../../../../utils/ui/Input/phoneInput/phone_number.dart';
-import '../../../../../../utils/ui/textField/custom_text_field.dart';
 import '../../securityView/passwordView/View/password_view.dart';
 
 
@@ -19,6 +19,24 @@ class ProfileSettingScreen extends StatelessWidget {
           physics: BouncingScrollPhysics(),
           child: Column(
             children: [
+              Padding(
+                  padding: const EdgeInsets.only(top:40.0),
+                  child: GestureDetector(
+                    onTap: () {
+                      Get.back();
+                    },
+                    child: Container(
+                      alignment: Alignment.centerLeft,
+                      child: Padding(
+                        padding: const EdgeInsets.all(20.0),
+                        child: Icon(
+                          Icons.arrow_back,
+                          size: 30,
+                        ),
+                      ),
+                    ),
+                  )
+              ),
               SizedBox(
                 height: 100,
               ),

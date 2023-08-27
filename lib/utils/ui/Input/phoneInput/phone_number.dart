@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:intl_phone_field2/intl_phone_field.dart';
 
 class PhoneNumberInput extends StatefulWidget {
   const PhoneNumberInput({
@@ -40,32 +41,20 @@ class _PhoneNumberInputState extends State<PhoneNumberInput> {
           decoration: ShapeDecoration(
             color: Colors.white,
             shape: RoundedRectangleBorder(
-              side: BorderSide(width: 0.50, color: Color(0xFFE4DEDE)),
               borderRadius: BorderRadius.circular(12),
             ),
           ),
-          child: TextFormField(
-            controller: widget.controller,
-            validator: _validatePassword,
-            obscureText: _obscureText,
+          child: const IntlPhoneField(
+            positionedPopup: true,
+            textFieldIsDense: true,
             decoration: InputDecoration(
-              hintText: widget.hintText,
-              border: InputBorder.none,
-              contentPadding: const EdgeInsets.all(15),
-              suffixIcon: GestureDetector(
-                onTap: () {
-                  setState(() {
-                    _obscureText = !_obscureText;
-                  });
-                },
-                child: Icon(
-                  Icons.numbers,
-                  color: Colors.grey,
-                ),
+              labelText: 'Phone Number',
+              border: OutlineInputBorder(
               ),
             ),
+            languageCode: "en",
           ),
-        )
+        ),
       ],
     );
   }

@@ -19,27 +19,26 @@ class ProfilePageView extends StatelessWidget {
           child: Column(
             children: [
               Padding(
-                padding: const EdgeInsets.only(top:40.0),
-                child: GestureDetector(
-                  onTap: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => NotificationPage()),
-                    );
-                  },
-                  child: Container(
-                    alignment: Alignment.centerRight,
-                    child: Padding(
-                      padding: const EdgeInsets.all(20.0),
-                      child: Icon(
-                        Icons.notification_add_sharp,
-                        size: 30,
+                  padding: const EdgeInsets.only(top: 40.0),
+                  child: GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => NotificationPage()),
+                      );
+                    },
+                    child: Container(
+                      alignment: Alignment.centerRight,
+                      child: Padding(
+                        padding: const EdgeInsets.all(20.0),
+                        child: Icon(
+                          Icons.notification_add_sharp,
+                          size: 30,
+                        ),
                       ),
                     ),
-                  ),
-                )
-              ),
+                  )),
               GestureDetector(
                 onTap: () {
                   Navigator.push(
@@ -79,26 +78,44 @@ class ProfilePageView extends StatelessWidget {
                         Text('user@example.com'),
                       ],
                     ),
+                    SizedBox(height: 20),
+                    Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        InkWell(
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(builder: (context) => ActivitiesPage()),
+                            );
+                          },
+                          child: Text(
+                            'View Activity',
+                            style: TextStyle(
+                              color: Colors.deepOrange, // Use the hex color value for --red
+                              fontFamily: 'Metropolis',
+                              fontSize: 15,
+                              fontStyle: FontStyle.normal,
+                              fontWeight: FontWeight.w600,
+                            ),
+                          ),
+                        ),
+                      ],
+                    )
                   ],
                 ),
               ),
               Padding(
-                  padding: EdgeInsets.fromLTRB(24.0, 0, 24.0, 0),
-
+                padding: EdgeInsets.fromLTRB(24.0, 0, 24.0, 0),
               ),
               SizedBox(height: 16),
               ActivitiesListTile(
                 title: "Kalan Kullanimlarim",
-                onTap: () { Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                      builder: (context) => ActivitiesPage()),
-                );},
                 image: 'assets/icons/orderhistory.png',
               ),
               SizedBox(height: 30),
               ProfileListTile(
-                title: "Profil",
+                title: "Profil Bilgilerim",
                 onTap: () {
                   Navigator.push(
                     context,

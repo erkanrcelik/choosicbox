@@ -7,11 +7,28 @@ class Assets {
   static const String assetsImagesWelcomeBackground = 'assets/images/welcome_background.jpeg';
   static const String buttonsFilter = 'assets/buttons/filter.png';
   static const String buttonsLogOut = 'assets/buttons/log_out.png';
+  static const String fontsSofiaProBlackAz = 'assets/fonts/Sofia Pro Black Az.otf';
+  static const String fontsSofiaProBlackItalicAz = 'assets/fonts/Sofia Pro Black Italic Az.otf';
+  static const String fontsSofiaProBoldAz = 'assets/fonts/Sofia Pro Bold Az.otf';
+  static const String fontsSofiaProBoldItalicAz = 'assets/fonts/Sofia Pro Bold Italic Az.otf';
+  static const String fontsSofiaProExtraLightAz = 'assets/fonts/Sofia Pro ExtraLight Az.otf';
+  static const String fontsSofiaProExtraLightItalicAz = 'assets/fonts/Sofia Pro ExtraLight Italic Az.otf';
+  static const String fontsSofiaProLightAz = 'assets/fonts/Sofia Pro Light Az.otf';
+  static const String fontsSofiaProLightItalicAz = 'assets/fonts/Sofia Pro Light Italic Az.otf';
+  static const String fontsSofiaProMediumAz = 'assets/fonts/Sofia Pro Medium Az.otf';
+  static const String fontsSofiaProMediumItalicAz = 'assets/fonts/Sofia Pro Medium Italic Az.otf';
+  static const String fontsSofiaProRegularAz = 'assets/fonts/Sofia Pro Regular Az.otf';
+  static const String fontsSofiaProRegularItalicAz = 'assets/fonts/Sofia Pro Regular Italic Az.otf';
+  static const String fontsSofiaProSemiBoldAz = 'assets/fonts/Sofia Pro Semi Bold Az.otf';
+  static const String fontsSofiaProSemiBoldItalicAz = 'assets/fonts/Sofia Pro Semi Bold Italic Az.otf';
+  static const String fontsSofiaProUltraLightAz = 'assets/fonts/Sofia Pro UltraLight Az.otf';
+  static const String fontsSofiaProUltraLightItalicAz = 'assets/fonts/Sofia Pro UltraLight Italic Az.otf';
   static const String iconsAddpayment = 'assets/icons/addpayment.svg';
   static const String iconsAlcoholIcon = 'assets/icons/alcohol_icon.svg';
   static const String iconsArrowDown = 'assets/icons/arrowDown.png';
   static const String iconsBack = 'assets/icons/back.png';
   static const String iconsBarBuilding = 'assets/icons/bar-building.png';
+  static const String iconsBeerCheersIcon = 'assets/icons/beer-cheers_icon.svg';
   static const String iconsBike = 'assets/icons/bike.png';
   static const String iconsBookmark = 'assets/icons/bookmark.png';
   static const String iconsBottomNav1 = 'assets/icons/bottomNav1.png';
@@ -20,15 +37,19 @@ class Assets {
   static const String iconsBottomNav4 = 'assets/icons/bottomNav4.png';
   static const String iconsBottomNav5 = 'assets/icons/bottomNav5.png';
   static const String iconsChoosicbox = 'assets/icons/choosicbox.png';
+  static const String iconsCoffeeMugCupIcon = 'assets/icons/coffee-mug-cup_icon.svg';
   static const String iconsContactIcon = 'assets/icons/contact_icon.svg';
   static const String iconsDocument = 'assets/icons/document.png';
   static const String iconsDottedIcon = 'assets/icons/dotted_icon.svg';
+  static const String iconsDumbbellIcon = 'assets/icons/dumbbell_icon.svg';
   static const String iconsEditAccount = 'assets/icons/edit-account.png';
   static const String iconsEditpic = 'assets/icons/editpic.svg';
   static const String iconsFacebookIcon = 'assets/icons/facebook_icon.svg';
   static const String iconsFavorite = 'assets/icons/favorite.png';
   static const String iconsFeedback = 'assets/icons/feedback.png';
   static const String iconsFollow = 'assets/icons/follow.png';
+  static const String iconsFoodDishIcon = 'assets/icons/food-dish_icon.svg';
+  static const String iconsFoodDrinkIcon = 'assets/icons/food-drink_icon.svg';
   static const String iconsGoogleIcon = 'assets/icons/google_icon.svg';
   static const String iconsHelpAndSupportIcon = 'assets/icons/help_and_support_icon.svg';
   static const String iconsHelps = 'assets/icons/helps.png';
@@ -43,6 +64,7 @@ class Assets {
   static const String iconsMastercardLogo = 'assets/icons/mastercard_logo.svg';
   static const String iconsMessage = 'assets/icons/message.png';
   static const String iconsNeutralDecision = 'assets/icons/neutral-decision.png';
+  static const String iconsNightClubIcon = 'assets/icons/night-club_icon.svg';
   static const String iconsNotification = 'assets/icons/notification.png';
   static const String iconsNotificationIcon = 'assets/icons/notification_icon.svg';
   static const String iconsNotificationsIcon = 'assets/icons/notifications_icon.svg';
@@ -54,6 +76,7 @@ class Assets {
   static const String iconsPrivacy = 'assets/icons/privacy.png';
   static const String iconsPrivacyIcon = 'assets/icons/privacy_icon.svg';
   static const String iconsProfile1 = 'assets/icons/profile1.png';
+  static const String iconsProfileIcon = 'assets/icons/profile_icon.svg';
   static const String iconsProfileInformationIcon = 'assets/icons/profile_information_icon.svg';
   static const String iconsQr = 'assets/icons/qr.png';
   static const String iconsRating = 'assets/icons/rating.png';
@@ -85,8 +108,10 @@ class Assets {
   static const String imagesPizzaTopScreen = 'assets/images/pizzaTopScreen.png';
   static const String imagesPp = 'assets/images/pp.png';
   static const String imagesProfileBackground = 'assets/images/profile_background.png';
+  static const String imagesRectangle159 = 'assets/images/Rectangle 159.png';
   static const String imagesRestaurant = 'assets/images/restaurant.png';
   static const String imagesWelcomeBackgorund2 = 'assets/images/welcome_backgorund_2.png';
   static const String imagesWelcomeBackground = 'assets/images/welcome_background.jpg';
+  static const String videosBackground = 'assets/videos/background.mp4';
 
 }
