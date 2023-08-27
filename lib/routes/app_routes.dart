@@ -16,4 +16,6 @@ abstract class Routes {
   static const CATEGORY_DETAIL = '/category-detail';
   static const CATEGORY = '/category';
   static const STORE_DETAIL = '/store-detail';
+  static const PLAY_LIST = '/play-list';
+  static const NEXT_SONG = '/next-song';
 }

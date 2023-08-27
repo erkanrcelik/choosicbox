@@ -63,6 +63,7 @@ dependencies:
   reorderable_tabbar: ^1.0.5
   bottom_sheet: ^4.0.0
   cupertino_range_slider_improved: ^2.0.1
+  avatar_glow: ^2.0.2
 
 dev_dependencies:
   flutter_test:

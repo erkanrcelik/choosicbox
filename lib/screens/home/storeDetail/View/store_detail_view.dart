@@ -260,23 +260,28 @@ class _StoreDetailViewState extends State<StoreDetailView> {
               bottom: 30.h,
               left: 27.w,
               right: 27.w,
-              child: Container(
-                width: MediaQuery.of(context).size.width,
-                decoration: BoxDecoration(
-                  color: const Color(0xFFFE724C),
-                  borderRadius: BorderRadius.circular(36),
+              child: InkWell(
+                onTap: () {
+                  Get.toNamed('/play-list');
+                },
+                child: Container(
+                  width: MediaQuery.of(context).size.width,
+                  decoration: BoxDecoration(
+                    color: const Color(0xFFFE724C),
+                    borderRadius: BorderRadius.circular(36),
+                  ),
+                  height: 48,
+                  child: const Center(
+                      child: Text(
+                    'Müzik Çal',
+                    style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 16,
+                        fontFamily: 'Poppins',
+                        fontWeight: FontWeight.w700),
+                    textAlign: TextAlign.center,
+                  )),
                 ),
-                height: 48,
-                child: const Center(
-                    child: Text(
-                  'Müzik Çal',
-                  style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 16,
-                      fontFamily: 'Poppins',
-                      fontWeight: FontWeight.w700),
-                  textAlign: TextAlign.center,
-                )),
               ))
         ],
       ),

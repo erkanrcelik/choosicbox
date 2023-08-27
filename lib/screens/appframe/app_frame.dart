@@ -14,11 +14,11 @@ class AppFrame extends StatefulWidget {
 
 class _AppFrameState extends State<AppFrame> {
   int _page = 1;
-  final GlobalKey<CurvedNavigationBarState> _bottomNavigationKey = GlobalKey();
+  static final GlobalKey<CurvedNavigationBarState> _bottomNavigationKey = GlobalKey();
 
   final List<Widget> _pages = [
-    SearchView(),
-    HomeView(),
+    SearchView(key: PageStorageKey('search'),),
+    HomeView(key: PageStorageKey('home')),
     const ProfilePageView(),
   ];
 

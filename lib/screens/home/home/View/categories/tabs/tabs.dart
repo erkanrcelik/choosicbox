@@ -7,19 +7,18 @@ import '../../../../../../utils/ui/card/store_card.dart';
 import '../../../../../../utils/ui/card/store_features_card.dart';
 
 class CategoriesTabs extends StatelessWidget {
-  const CategoriesTabs({super.key, required this.onTap, required this.imgList, this.onTapCard});
+  const CategoriesTabs(
+      {super.key, required this.onTap, required this.imgList, this.onTapCard});
 
   final VoidCallback onTap;
   final String? onTapCard;
   final List<Map<String, String>> imgList;
 
-
-
   @override
   Widget build(BuildContext context) {
     final List<Widget> imageSliders = imgList.map((item) {
       return StoreCard(
-        onTap: (){
+        onTap: () {
           Get.toNamed(onTapCard!);
         },
         restaurant: item['image'] ?? '',
@@ -69,6 +68,9 @@ class CategoriesTabs extends StatelessWidget {
                 height: double.infinity,
                 viewportFraction: 0.7,
                 aspectRatio: 500.0,
+                pauseAutoPlayInFiniteScroll: true,
+                pauseAutoPlayOnManualNavigate: true,
+                pauseAutoPlayOnTouch: true,
                 enlargeCenterPage: true,
                 autoPlayInterval: const Duration(milliseconds: 1500),
                 scrollDirection: Axis.horizontal,

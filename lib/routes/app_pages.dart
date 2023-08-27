@@ -8,6 +8,8 @@ import 'package:choosicbox/screens/authentication/register/verifyPhone/View/veri
 import 'package:choosicbox/screens/authentication/resetPassword/View/reset_password_view.dart';
 import 'package:choosicbox/screens/authentication/splash/View/splash_view.dart';
 import 'package:choosicbox/screens/home/storeDetail/View/store_detail_view.dart';
+import 'package:choosicbox/screens/music/nextSong/View/next_song_view.dart';
+import 'package:choosicbox/screens/music/playlist/View/playlist_view.dart';
 import 'package:get/get.dart';
 
 import '../../screens/appframe/app_frame.dart';
@@ -73,6 +75,14 @@ class AppPages {
     GetPage(
       name: Routes.CATEGORY,
       page: () => CategoryView(),
+    ),
+    GetPage(
+      name: Routes.PLAY_LIST,
+      page: () => PlaylistView(),
+    ),
+    GetPage(
+      name: Routes.NEXT_SONG,
+      page: () => NextSongView(),
     ),
   ];
 }
