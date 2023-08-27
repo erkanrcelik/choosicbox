@@ -2,12 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_rating_stars/flutter_rating_stars.dart';
 import '../../../appframe/app_frame.dart';
 
-class StoreDetailScreen extends StatefulWidget {
+class StoreDetailView extends StatefulWidget {
   @override
-  State<StoreDetailScreen> createState() => _StoreDetailScreenState();
+  State<StoreDetailView> createState() => _StoreDetailViewState();
 }
 
-class _StoreDetailScreenState extends State<StoreDetailScreen> {
+class _StoreDetailViewState extends State<StoreDetailView> {
   double value = 3.5;
 
   @override

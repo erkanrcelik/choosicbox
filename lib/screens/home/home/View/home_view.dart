@@ -124,6 +124,7 @@ class _HomeViewState extends State<HomeView> {
           key: ValueKey<int>(pageIndex),
           child: CategoriesTabs(
             onTap: () {},
+            onTapCard: 'store-detail',
             imgList: categoriesList[pageIndex],
           ),
         );
