@@ -43,18 +43,17 @@ class ActivitiesListTile extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: List.generate(
-                  3,
+                  4,
                       (index) => Padding(
-                    padding: const EdgeInsets.all(2.0),
+                    padding: const EdgeInsets.only(left: 20.0),
                     child: Chip(
                       backgroundColor: index < 3 ? Colors.deepOrange : Colors.grey,
                       elevation: 6.0,
                       shape: StadiumBorder(
                           side: BorderSide(
                             width: 1,
-                            color: Colors.deepOrange,
                           )),
-                      label: Text('Choosicbox'),
+                      label: Text('        '),
                     ),
                   ),
                 ),

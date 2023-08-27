@@ -42,7 +42,6 @@ class DrawerPage extends StatelessWidget {
                   style: TextStyle(fontSize: 13.sp, color: Colors.grey),
                 ),
                 SizedBox(height: 30.h),
-                const drawerListWidget(icon: 'document', text: 'My Orders'),
                 drawerListWidget(
                     icon: 'profile1',
                     onTap: () {
@@ -53,10 +52,8 @@ class DrawerPage extends StatelessWidget {
                       );
                     },
                     text: 'My Profile'),
-                const drawerListWidget(
-                    icon: 'location', text: 'Delivery Adress'),
                 drawerListWidget(
-                    icon: 'wallet',
+                    icon: 'payment1',
                     onTap: () {
                       Navigator.push(
                         context,
@@ -66,7 +63,7 @@ class DrawerPage extends StatelessWidget {
                     },
                     text: 'Payment Methods'),
                 drawerListWidget(
-                    icon: 'message',
+                    icon: 'feedback',
                     onTap: () {
                       Navigator.push(
                         context,
@@ -76,7 +73,7 @@ class DrawerPage extends StatelessWidget {
                     },
                     text: 'Contact Us'),
                 drawerListWidget(
-                    icon: 'setting',
+                    icon: 'settings',
                     onTap: () {
                       Navigator.push(
                         context,
@@ -86,7 +83,7 @@ class DrawerPage extends StatelessWidget {
                     },
                     text: 'Settings'),
                 drawerListWidget(
-                    icon: 'helps',
+                    icon: 'support',
                     onTap: () {
                       Navigator.push(
                         context,
@@ -105,7 +102,7 @@ class DrawerPage extends StatelessWidget {
                       );
                     },
                     text: 'Languages'),
-                SizedBox(height: 50.h),
+                SizedBox(height: 40.h),
                 InkWell(
                   child: Container(
                     width: 120.w,

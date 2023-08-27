@@ -306,7 +306,7 @@ class _HomeViewState extends State<HomeView> {
                         ),
                         MusicTypeItem(
                           isOrange: pageIndex == 1 ? true : false,
-                          icon: SvgPath(svgPath: "alcohol",height: 50,width:50),
+                          icon: SvgPath(svgPath: "food-drink",),
                           text: 'Cafe',
                           onTap: () {
                             setState(() {
@@ -316,7 +316,7 @@ class _HomeViewState extends State<HomeView> {
                         ),
                         MusicTypeItem(
                           isOrange: pageIndex == 2 ? true : false,
-                          icon: SvgPath(svgPath: "alcohol",height: 50,width:50),
+                          icon: SvgPath(svgPath: "night-club"),
                           text: 'Bar',
                           onTap: () {
                             setState(() {
@@ -326,7 +326,7 @@ class _HomeViewState extends State<HomeView> {
                         ),
                         MusicTypeItem(
                           isOrange: pageIndex == 3 ? true : false,
-                          icon: SvgPath(svgPath: "alcohol",height: 50,width:50),
+                          icon: SvgPath(svgPath: "coffee-mug-cup"),
                           text: 'Kahve',
                           onTap: () {
                             setState(() {
@@ -336,7 +336,7 @@ class _HomeViewState extends State<HomeView> {
                         ),
                         MusicTypeItem(
                           isOrange: pageIndex == 4 ? true : false,
-                          icon: SvgPath(svgPath: "alcohol",height: 50,width:50),
+                          icon: SvgPath(svgPath: "food-dish"),
                           text: 'Restorant',
                           onTap: () {
                             setState(() {
