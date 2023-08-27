@@ -1,6 +1,12 @@
+import 'package:choosicbox/screens/home/profile/editView/paymentView/View/payment_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import '../../../profile/View/profile_view.dart';
+import '../../../profile/editView/languageView/View/language_settings_view.dart';
+import '../../../profile/editView/profileSettingsView/View/profile_setting_view.dart';
+import '../../../profile/editView/profileSettingsView/help&supportView/View/help_support_view.dart';
+import '../../../profile/editView/profileSettingsView/help&supportView/feedbackView/View/feedback_view.dart';
 import 'drawerList/drawer_list.dart';
 
 class DrawerPage extends StatelessWidget {
@@ -17,7 +23,7 @@ class DrawerPage extends StatelessWidget {
       width: screenWidth * 0.8,
       elevation: 0,
       child: Padding(
-        padding: EdgeInsets.only(left:16).r,
+        padding: EdgeInsets.only(left: 16).r,
         child: SafeArea(
           child: SingleChildScrollView(
             child: Column(
@@ -37,13 +43,68 @@ class DrawerPage extends StatelessWidget {
                 ),
                 SizedBox(height: 30.h),
                 const drawerListWidget(icon: 'document', text: 'My Orders'),
-                const drawerListWidget(icon: 'profile1', text: 'My Profile'),
+                drawerListWidget(
+                    icon: 'profile1',
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => ProfilePageView()),
+                      );
+                    },
+                    text: 'My Profile'),
                 const drawerListWidget(
                     icon: 'location', text: 'Delivery Adress'),
-                const drawerListWidget(icon: 'wallet', text: 'Payment Methods'),
-                const drawerListWidget(icon: 'message', text: 'Contact Us'),
-                const drawerListWidget(icon: 'setting', text: 'Settings'),
-                const drawerListWidget(icon: 'helps', text: 'Help & FAQs'),
+                drawerListWidget(
+                    icon: 'wallet',
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => PaymentSettingsScreen()),
+                      );
+                    },
+                    text: 'Payment Methods'),
+                drawerListWidget(
+                    icon: 'message',
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => FeedbackScreen()),
+                      );
+                    },
+                    text: 'Contact Us'),
+                drawerListWidget(
+                    icon: 'setting',
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => ProfileSettingScreen()),
+                      );
+                    },
+                    text: 'Settings'),
+                drawerListWidget(
+                    icon: 'helps',
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => HelpAndSupportScreen()),
+                      );
+                    },
+                    text: 'Help & Support'),
+                drawerListWidget(
+                    icon: 'language',
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => LanguageSettingsPage()),
+                      );
+                    },
+                    text: 'Languages'),
                 SizedBox(height: 50.h),
                 InkWell(
                   child: Container(

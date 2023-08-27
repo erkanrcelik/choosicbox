@@ -5,6 +5,7 @@ import 'package:get/get.dart';
 import '../../../../../../config/theme/colors.dart';
 
 import '../../../../../../utils/ui/ListTile/activity_list_view.dart';
+import '../../../../../../utils/ui/ListTile/profile_list_tile.dart';
 
 class ActivitiesPage extends StatelessWidget {
   ActivitiesPage({Key? key}) : super(key: key);
@@ -78,19 +79,19 @@ class ActivitiesPage extends StatelessWidget {
                 child: Column(
                   children: [
                     SizedBox(height: 37),
-                    ActivitiesListTile(
+                    ProfileListTile(
                         title: "Connected Places", onTap: (){}, image: 'assets/icons/bar-building.png'),
                     SizedBox(height: 37),
-                    ActivitiesListTile(
+                    ProfileListTile(
                         title: "Last Played", onTap: (){}, image: 'assets/icons/last-24-hours.png'),
                     SizedBox(height: 37),
-                    ActivitiesListTile(
+                    ProfileListTile(
                         title: "Most Listened", onTap: (){}, image: 'assets/icons/search-more.png'),
                     SizedBox(height: 37),
-                    ActivitiesListTile(
+                    ProfileListTile(
                         title: "Thoughts", onTap: (){}, image: 'assets/icons/neutral-decision.png'),
                     SizedBox(height: 37),
-                    ActivitiesListTile(
+                    ProfileListTile(
                         title: "Your Likes", onTap: (){}, image: 'assets/icons/like.png'),
                     SizedBox(height: 37),
                   ],

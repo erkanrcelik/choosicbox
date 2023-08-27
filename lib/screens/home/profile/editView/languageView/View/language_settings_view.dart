@@ -1,12 +1,14 @@
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+
 import '../../../../../../config/theme/colors.dart';
+
 import '../../../../../../utils/ui/ListTile/activity_list_view.dart';
 import '../../../../../../utils/ui/ListTile/profile_list_tile.dart';
 
-class NotificationPage extends StatelessWidget {
-  NotificationPage({Key? key}) : super(key: key);
+class LanguageSettingsPage extends StatelessWidget {
+  LanguageSettingsPage({Key? key}) : super(key: key);
   final TextEditingController controller = TextEditingController();
 
   @override
@@ -71,23 +73,12 @@ class NotificationPage extends StatelessWidget {
             Positioned(
               left: 25,
               right: 25,
-              bottom: 250,
+              bottom: 60,
               child: SizedBox(
                 width: MediaQuery.of(context).size.width,
                 child: Column(
                   children: [
-                    SizedBox(height: 37),
-                    ProfileListTile(
-                        title: "Thoughts", onTap: (){}, image: 'assets/icons/neutral-decision.png'),
-                    SizedBox(height: 37),
-                    ProfileListTile(
-                        title: "Your Likes", onTap: (){}, image: 'assets/icons/like.png'),
-                    SizedBox(height: 37),
-                    ProfileListTile(
-                        title: "Followers", onTap: (){}, image: 'assets/icons/follow.png'),
-                    SizedBox(height: 37),
-                    ProfileListTile(
-                        title: "Choosicbox", onTap: (){}, image: 'assets/icons/choosicbox.png'),
+
                   ],
                 ),
               ),
