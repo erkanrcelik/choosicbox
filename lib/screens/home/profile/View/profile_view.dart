@@ -88,7 +88,7 @@ class ProfilePageView extends StatelessWidget {
               ),
               SizedBox(height: 16),
               ActivitiesListTile(
-                title: "Hareketlerin",
+                title: "Kalan Kullanimlarim",
                 onTap: () { Navigator.push(
                   context,
                   MaterialPageRoute(
@@ -96,7 +96,7 @@ class ProfilePageView extends StatelessWidget {
                 );},
                 image: 'assets/icons/orderhistory.png',
               ),
-              SizedBox(height: 60),
+              SizedBox(height: 30),
               ProfileListTile(
                 title: "Profil",
                 onTap: () {
@@ -119,22 +119,6 @@ class ProfilePageView extends StatelessWidget {
                   );
                 },
                 image: 'assets/icons/payment1.png',
-              ),
-              SizedBox(height: 16),
-              ProfileListTile(
-                title: "Bildirimlerin",
-                onTap: () {Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                      builder: (context) => NotificationPage()),
-                );},
-                image: 'assets/icons/notification.png',
-              ),
-              SizedBox(height: 16),
-              ProfileListTile(
-                title: "Hedeflerim",
-                onTap: () {},
-                image: 'assets/icons/strategy.png',
               ),
               SizedBox(height: 16),
               ProfileListTile(

@@ -17,10 +17,10 @@ class ActivitiesListTile extends StatelessWidget {
     return InkWell(
       onTap: onTap,
       child: Container(
-        width: 384,
-        height: 81,
+        width: 400,
+        height: 110,
         decoration: BoxDecoration(
-          color: Colors.white, // You can use your own custom color variable here
+          color: Colors.white,
           borderRadius: BorderRadius.circular(19),
           boxShadow: [
             BoxShadow(
@@ -34,18 +34,28 @@ class ActivitiesListTile extends StatelessWidget {
           child: Column(
             children: [
               ListTile(
-                title: Text(title),
-                trailing: Icon(Icons.arrow_right_alt_rounded),
+                title: Center(child: Text(title)),
+                trailing: Padding(
+                  padding: const EdgeInsets.only(top: 40),
+                  child: Icon(Icons.arrow_right_alt_rounded),
+                ),
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: List.generate(
-                  5,
-                      (index) => Container(
-                    width: 200 / 5,
-                    height: 5,
-                    margin: EdgeInsets.symmetric(horizontal: 2.5), // Small gap between line sections
-                    color: Colors.black, // You can use your desired line color
+                  3,
+                      (index) => Padding(
+                    padding: const EdgeInsets.all(2.0),
+                    child: Chip(
+                      backgroundColor: index < 3 ? Colors.deepOrange : Colors.grey,
+                      elevation: 6.0,
+                      shape: StadiumBorder(
+                          side: BorderSide(
+                            width: 1,
+                            color: Colors.deepOrange,
+                          )),
+                      label: Text('Choosicbox'),
+                    ),
                   ),
                 ),
               ),
