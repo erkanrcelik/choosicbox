@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../../../../../../../config/theme/colors.dart';
+import '../../../../../../../generated/assets.dart';
 import '../../../../../../../utils/ui/ListTile/profile_list_tile.dart';
 import '../faqView/View/faq_Support_view.dart';
 import '../feedbackView/View/feedback_view.dart';
@@ -89,7 +90,8 @@ class HelpAndSupportScreen extends StatelessWidget {
                                 builder: (context) => FAQSupportScreen()),
                           );
                         },
-                        image: 'assets/icons/edit-account.png'),
+                      image: Assets.iconsQuestionCircleIcon,
+                    ),
                     SizedBox(height: 37),
                     ProfileListTile(
                         title: "Feedback",
@@ -100,7 +102,8 @@ class HelpAndSupportScreen extends StatelessWidget {
                                 builder: (context) => FeedbackScreen()),
                           );
                         },
-                        image: 'assets/icons/feedback.png'),
+                      image: Assets.iconsFeedbacksIcon,
+                    ),
                     SizedBox(height: 37),
                     ProfileListTile(
                         title: "Support",
@@ -111,7 +114,8 @@ class HelpAndSupportScreen extends StatelessWidget {
                                 builder: (context) => FeedbackScreen()),
                           );
                         },
-                        image: 'assets/icons/support.png'),
+                      image: Assets.iconsSupportIcon,
+                    ),
                   ],
                 ),
               ),

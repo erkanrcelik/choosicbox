@@ -3,10 +3,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../profile/View/profile_view.dart';
+import '../../../profile/editView/help&supportView/View/help_support_view.dart';
+import '../../../profile/editView/help&supportView/feedbackView/View/feedback_view.dart';
 import '../../../profile/editView/languageView/View/language_settings_view.dart';
 import '../../../profile/editView/profileSettingsView/View/profile_setting_view.dart';
-import '../../../profile/editView/profileSettingsView/help&supportView/View/help_support_view.dart';
-import '../../../profile/editView/profileSettingsView/help&supportView/feedbackView/View/feedback_view.dart';
 import 'drawerList/drawer_list.dart';
 
 class DrawerPage extends StatelessWidget {

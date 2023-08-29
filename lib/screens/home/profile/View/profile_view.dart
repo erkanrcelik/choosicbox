@@ -3,10 +3,10 @@ import 'package:flutter/material.dart';
 import '../../../../utils/ui/ListTile/activity_list_view.dart';
 import '../../../../utils/ui/ListTile/profile_list_tile.dart';
 import '../editView/ActivitiesView/View/activities_view.dart';
+import '../editView/help&supportView/View/help_support_view.dart';
 import '../editView/notificationsView/View/notifications_view.dart';
 import '../editView/paymentView/View/payment_view.dart';
 import '../editView/profileSettingsView/View/profile_setting_view.dart';
-import '../editView/profileSettingsView/help&supportView/View/help_support_view.dart';
 import 'package:choosicbox/generated/assets.dart';
 class ProfilePageView extends StatelessWidget {
   const ProfilePageView({Key? key}) : super(key: key);
@@ -135,7 +135,7 @@ class ProfilePageView extends StatelessWidget {
                         builder: (context) => PaymentSettingsScreen()),
                   );
                 },
-                image: 'assets/icons/payment1.png',
+                image: Assets.iconsPayment1Icon,
               ),
               SizedBox(height: 16),
               ProfileListTile(
@@ -147,7 +147,8 @@ class ProfilePageView extends StatelessWidget {
                           builder: (context) => HelpAndSupportScreen()),
                     );
                   },
-                  image: 'assets/icons/support.png'),
+                  image: Assets.iconsHelpSupportIcon,
+              ),
               SizedBox(height: 16),
             ],
           )),

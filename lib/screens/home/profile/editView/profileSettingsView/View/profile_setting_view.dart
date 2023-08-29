@@ -1,69 +1,111 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+import '../../../../../../config/theme/colors.dart';
 import '../../../../../../utils/ui/Input/GeneralInput/general_input.dart';
+import '../../../../../../utils/ui/Input/passwordInput/confirm_new_Password_input.dart';
+import '../../../../../../utils/ui/Input/passwordInput/new_password_input.dart';
 import '../../../../../../utils/ui/Input/passwordInput/password_input.dart';
 import '../../../../../../utils/ui/Input/phoneInput/phone_number.dart';
-import '../../securityView/passwordView/View/password_view.dart';
-
+import '../../../../../../utils/ui/button/general.dart';
+import '../../../View/profile_view.dart';
 
 class ProfileSettingScreen extends StatelessWidget {
   ProfileSettingScreen({Key? key}) : super(key: key);
+  final _formKey = GlobalKey<FormState>();
+  TextEditingController _oldPasswordController = TextEditingController();
+  TextEditingController _newPasswordController = TextEditingController();
+  TextEditingController _confirmPasswordController = TextEditingController();
   final TextEditingController controller = TextEditingController();
-
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: SingleChildScrollView(
-          physics: BouncingScrollPhysics(),
-          child: Column(
+        child: SizedBox(
+          width: MediaQuery.of(context).size.width,
+          height: MediaQuery.of(context).size.height,
+          child: Stack(
             children: [
-              Padding(
-                  padding: const EdgeInsets.only(top:40.0),
-                  child: GestureDetector(
-                    onTap: () {
-                      Get.back();
-                    },
-                    child: Container(
-                      alignment: Alignment.centerLeft,
-                      child: Padding(
-                        padding: const EdgeInsets.all(20.0),
-                        child: Icon(
-                          Icons.arrow_back,
-                          size: 30,
-                        ),
+              Positioned(
+                top: -10,
+                left: -40,
+                child: Container(
+                    height: 120,
+                    width: 120,
+                    decoration: BoxDecoration(
+                      border: Border.all(
+                        color: ColorConstants.firstColor,
+                        width: 30,
                       ),
-                    ),
-                  )
+                      borderRadius: BorderRadius.circular(150),
+                    )),
               ),
-              SizedBox(
-                height: 100,
+              Positioned(
+                top: -80,
+                left: 10,
+                child: Container(
+                    height: 165,
+                    width: 165,
+                    decoration: BoxDecoration(
+                      color: Color(0xFFFFECE7),
+                      borderRadius: BorderRadius.circular(150),
+                    )),
               ),
-              GestureDetector(
-                onTap: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => FullScreenProfilePicture(
-                        imageAssetPath: 'assets/images/gecici.png',
-                      ),
-                    ),
-                  );
-                },
-                child: Center(
-                  child: CircleAvatar(
-                    radius: 60,
-                    backgroundImage: AssetImage('assets/images/gecici.png'),
+              Positioned(
+                top: -80,
+                right: -60,
+                child: Container(
+                    height: 181,
+                    width: 181,
+                    decoration: BoxDecoration(
+                      color: ColorConstants.firstColor,
+                      borderRadius: BorderRadius.circular(150),
+                    )),
+              ),
+              Positioned(
+                top: 50, // Adjust the position as needed
+                left: 20, // Adjust the position as needed
+                child: GestureDetector(
+                  onTap: () {
+                    Get.toNamed("/index");
+                  },
+                  child: Icon(
+                    Icons.arrow_back,
+                    size: 30,
+                    color: Colors.black,
                   ),
                 ),
               ),
-              Padding(
-                padding: EdgeInsets.fromLTRB(24.0, 0, 24.0, 0),
+              Positioned(
+                top: 100,
+                left: 140,
+                child: GestureDetector(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => FullScreenProfilePicture(
+                          imageAssetPath: 'assets/images/gecici.png',
+                        ),
+                      ),
+                    );
+                  },
+                  child: const Center(
+                    child: CircleAvatar(
+                      radius: 60,
+                      backgroundImage: AssetImage('assets/images/gecici.png'),
+                    ),
+                  ),
+                ),
+              ),
+              Positioned(
+                top: 200,
+                left: 140,
                 child: Column(
                   children: [
                     SizedBox(
-                      height: 20,
+                      height: 50,
                     ),
                     Text(
                       'Kullanıcı Adı',
@@ -82,61 +124,55 @@ class ProfileSettingScreen extends StatelessWidget {
                   ],
                 ),
               ),
-              SizedBox(height: 60),
-              GeneralInput(
-                controller: controller,
-                hintText: "Bruce Williams",
-                labelText: "Full Name",
-              ),
-              SizedBox(height: 20),
-              PhoneNumberInput(
-                controller: controller,
-                hintText: 'Phone Number',
-                labelText: 'Phone Number',
-              ),
-              SizedBox(height: 20),
-              InkWell(
-                onTap:() {Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => ChangePasswordPageState(),
+              SizedBox(height: 40,),
+              Positioned(
+                left: 25,
+                right: 25,
+                top: 300,
+                child: SizedBox(
+                  width: MediaQuery.of(context).size.width,
+                  child: Column(
+                    children: [
+                      GeneralInput(
+                        controller: controller,
+                        hintText: "Bruce Williams",
+                        labelText: "Full Name",
+                      ),
+                      SizedBox(height: 20),
+                      PhoneNumberInput(
+                        controller: controller,
+                        hintText: 'Phone Number',
+                        labelText: 'Phone Number',
+                      ),
+                      SizedBox(height: 20),
+                      PasswordInput(
+                        controller: _oldPasswordController,
+                        hintText: "*******",
+                        labelText: "Old Password",
+                      ),
+                      SizedBox(height: 20),
+                      NewPasswordInput(
+                        controller: _newPasswordController,
+                        hintText: '*******',
+                        labelText: 'New Password',
+                      ),
+                      SizedBox(height: 20),
+                      ConfirmNewPasswordInput(
+                        controller: _confirmPasswordController,
+                        hintText: '*******',
+                        labelText: 'Confirm New Password',
+                      ),
+                      SizedBox(height: 47),
+                      CustomButton(
+                        onPressed: () {  },
+                        text: 'Submit',
+                      )
+                    ],
                   ),
-                );},
-                child: PasswordInput(
-                  controller: controller,
-                  hintText: 'Password',
-                  labelText: 'Change Password',
                 ),
               ),
-              SizedBox(height: 20),
             ],
-          )),
-    );
-  }
-}
-
-class FullScreenProfilePicture extends StatelessWidget {
-  final String imageAssetPath;
-
-  FullScreenProfilePicture({required this.imageAssetPath});
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Colors.black,
-      appBar: AppBar(
-        backgroundColor: Colors.transparent,
-        leading: IconButton(
-          icon: Icon(Icons.arrow_back),
-          onPressed: () {
-            Navigator.pop(context);
-          },
-        ),
-      ),
-      body: Center(
-        child: Hero(
-          tag: imageAssetPath,
-          child: Image.asset(imageAssetPath),
+          ),
         ),
       ),
     );

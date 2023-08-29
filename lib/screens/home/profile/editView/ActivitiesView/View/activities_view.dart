@@ -4,6 +4,7 @@ import 'package:get/get.dart';
 
 import '../../../../../../config/theme/colors.dart';
 
+import '../../../../../../generated/assets.dart';
 import '../../../../../../utils/ui/ListTile/activity_list_view.dart';
 import '../../../../../../utils/ui/ListTile/profile_list_tile.dart';
 
@@ -80,19 +81,19 @@ class ActivitiesPage extends StatelessWidget {
                   children: [
                     SizedBox(height: 37),
                     ProfileListTile(
-                        title: "Connected Places", onTap: (){}, image: 'assets/icons/bar-building.png'),
+                        title: "Connected Places", onTap: (){}, image: Assets.iconsConnectedPlacesIcon),
                     SizedBox(height: 37),
                     ProfileListTile(
-                        title: "Last Played", onTap: (){}, image: 'assets/icons/last-24-hours.png'),
+                        title: "Last Played", onTap: (){}, image: Assets.iconsLastPlayedIcon),
                     SizedBox(height: 37),
                     ProfileListTile(
-                        title: "Most Listened", onTap: (){}, image: 'assets/icons/search-more.png'),
+                        title: "Most Listened", onTap: (){}, image: Assets.iconsMostPlayedIcon),
                     SizedBox(height: 37),
                     ProfileListTile(
-                        title: "Thoughts", onTap: (){}, image: 'assets/icons/neutral-decision.png'),
+                        title: "Thoughts", onTap: (){}, image: Assets.iconsThoughtsIcon),
                     SizedBox(height: 37),
                     ProfileListTile(
-                        title: "Your Likes", onTap: (){}, image: 'assets/icons/like.png'),
+                        title: "Your Likes", onTap: (){}, image: Assets.iconsYourLikesIcon),
                     SizedBox(height: 37),
                   ],
                 ),

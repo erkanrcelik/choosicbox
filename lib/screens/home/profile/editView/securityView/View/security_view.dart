@@ -5,7 +5,6 @@ import 'package:get/get.dart';
 import '../../../../../../config/theme/colors.dart';
 import '../../../../../../utils/ui/ListTile/profile_list_tile.dart';
 import '../../../../../../utils/ui/button/general.dart';
-import '../passwordView/View/password_view.dart';
 
 
 class SettingScreen extends StatelessWidget {
@@ -91,16 +90,7 @@ class SettingScreen extends StatelessWidget {
                         },
                         image: 'assets/icons/edit-account.png'),
                     SizedBox(height: 37),
-                    ProfileListTile(
-                        title: "Change Password",
-                        onTap: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => ChangePasswordPageState()),
-                          );
-                        },
-                        image: 'assets/icons/edit-account.png'),
+
                     SizedBox(height: 37),
                     CustomButton(onPressed: () {  }, text: 'Sign Out',)
                   ],

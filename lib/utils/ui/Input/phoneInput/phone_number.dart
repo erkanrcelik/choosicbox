@@ -38,8 +38,15 @@ class _PhoneNumberInputState extends State<PhoneNumberInput> {
         ),
         SizedBox(height: 16),
         Container(
-          width: 320.w,
-          height: 70.h,
+          width: 350,
+          height: 60,
+          decoration: ShapeDecoration(
+            color: Colors.white,
+            shape: RoundedRectangleBorder(
+              side: BorderSide(width: 0.50, color: Color(0xFFE4DEDE)),
+              borderRadius: BorderRadius.circular(12),
+            ),
+          ),
           child: IntlPhoneField(
             textFieldPadding: EdgeInsets.all(0),
             disableLengthCheck: true,
@@ -56,8 +63,6 @@ class _PhoneNumberInputState extends State<PhoneNumberInput> {
             textFieldIsDense: true,
             decoration: InputDecoration(
               labelText: 'Phone Number',
-              border: OutlineInputBorder(),
-
             ),
             languageCode: "tr_TR",
           ),
