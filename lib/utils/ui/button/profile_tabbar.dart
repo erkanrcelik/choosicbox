@@ -30,12 +30,11 @@ class _ProfileTabbarButtonState extends State<ProfileTabbarButton> {
         });
       },
       child: Container(
-        padding: EdgeInsets.only(bottom: 10.h),
         child: Text(
           widget.title,
           style: TextStyle(
-            color: Color(0xFF6F7789),
-            fontSize: 12,
+            color: Colors.black,
+            fontSize: widget.isClicked ? 13.sp : 12.sp,
             fontFamily: 'Poppins',
             fontWeight: widget.isClicked ? FontWeight.bold : FontWeight.w400,
           ),

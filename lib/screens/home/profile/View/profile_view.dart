@@ -1,7 +1,9 @@
+import 'package:choosicbox/screens/home/profile/Activites/View/activites_view.dart';
+import 'package:choosicbox/screens/home/profile/Information/View/information_view.dart';
+import 'package:choosicbox/screens/home/profile/Settings/View/settings_view.dart';
 import 'package:choosicbox/utils/ui/button/profile_tabbar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:get/get.dart';
 
 class ProfilePageView extends StatefulWidget {
   const ProfilePageView({super.key});
@@ -11,70 +13,80 @@ class ProfilePageView extends StatefulWidget {
 }
 
 class _ProfilePageViewState extends State<ProfilePageView> {
+  double value = 3.5;
+  int pageIndex = 0;
+
+  Widget buildPage() {
+    final categoriesList = [
+      const InformationView(),
+      const ActivitiesView(),
+      const SettingsView(),
+    ];
+
+    if (pageIndex >= 0 && pageIndex < categoriesList.length) {
+      return KeyedSubtree(
+        key: ValueKey<int>(pageIndex),
+        child: categoriesList[pageIndex],
+      );
+    } else {
+      return const Text('error');
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       extendBodyBehindAppBar: true,
       appBar: AppBar(
-        toolbarHeight: 50.h,
-        elevation: 0,
-        leadingWidth: 80.w,
         backgroundColor: Colors.transparent,
-        leading: Center(
-          child: GestureDetector(
-            onTap: () {
-              Get.back();
+        elevation: 0,
+        automaticallyImplyLeading: false,
+        actions: [
+          IconButton(
+            icon: Icon(Icons.notification_add_outlined,color: Colors.white,), // Bildirim ikonu
+            onPressed: () {
             },
-            child: Container(
-              height: 38,
-              width: 38,
-              decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.circular(10),
-                boxShadow: const [
-                  BoxShadow(
-                    color: Color(0xffD3D1D8),
-                    offset: Offset(2, 5), // X, Y offset
-                    blurRadius: 10, spreadRadius: 0,
-                  ),
-                ],
-              ),
-              child: Image.asset('assets/icons/back.png'),
-            ),
           ),
-        ),
+        ],
       ),
       body: Stack(
         children: [
           Container(
             decoration: BoxDecoration(
-              color: Theme.of(context).colorScheme.primary,
+                gradient: LinearGradient(
+                  colors: [Theme.of(context).colorScheme.primary, Theme.of(context).colorScheme.secondary,Theme.of(context).colorScheme.primary], // Gradient renkleri
+                  begin: Alignment.topLeft, // Başlangıç pozisyonu
+                  transform: GradientRotation(0.004),
+                  end: Alignment.topRight, // Bitiş pozisyonu
+                  stops: [0.0, 0.5, 1.0], // Renk geçişlerinin pozisyonları
+                ),
             ),
-            width: double.infinity,
-            height: double.infinity,
+            width: MediaQuery.of(context).size.width.w,
+            height: MediaQuery.of(context).size.height.h,
           ),
           SingleChildScrollView(
-            physics: const ClampingScrollPhysics(), // Bu satır eklenmiştir
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                const SizedBox(height: 300),
+                SizedBox(height: 252.h),
                 Container(
-                  width: double.infinity,
-                  height: 550.h,
-                  decoration: const ShapeDecoration(
+                  width: MediaQuery.of(context).size.width.w,
+                  height: 500.h,
+                  decoration: ShapeDecoration(
                     color: Colors.white,
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.only(
-                        topLeft: Radius.circular(18),
-                        topRight: Radius.circular(18),
+                        topLeft: Radius.circular(18).r,
+                        topRight: Radius.circular(18).r,
                       ),
                     ),
                   ),
                   child: Padding(
-                    padding: const EdgeInsets.only(top: 140.0),
-                    child: Container(
-                      child: const Text('asjsdkla'),
+                    padding: EdgeInsets.only(top: 110.0.h),
+                    child: SingleChildScrollView(
+                      child: Container(
+                        child: buildPage(),
+                      ),
                     ),
                   ),
                 ),
@@ -82,11 +94,11 @@ class _ProfilePageViewState extends State<ProfilePageView> {
             ),
           ),
           Positioned(
-            top: 190.h,
-            left: 27.w,
-            right: 27.w,
+            top: 150.h,
+            left: 20.w,
+            right: 20.w,
             child: Container(
-              height: 150.h,
+              height: 180.h,
               decoration: BoxDecoration(
                 boxShadow: const [
                   BoxShadow(
@@ -96,44 +108,74 @@ class _ProfilePageViewState extends State<ProfilePageView> {
                   ),
                 ],
                 color: Colors.white,
-                borderRadius: BorderRadius.circular(10),
+                borderRadius: BorderRadius.circular(10).r,
               ),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
-                  const Text('asjsdkla'),
-                  const Text('asjsdkla'),
+                  Text('erkanrcelik',style: Theme.of(context).textTheme.headlineMedium,),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text('ID:',style: Theme.of(context).textTheme.bodySmall,),
+                      Text('123456789'),
+                    ],
+                  ),
+                  SizedBox(height: 20.h,),
                   Container(
-                    padding: EdgeInsets.symmetric(horizontal: 20.w),
                     decoration: const BoxDecoration(
                       border: Border(
                         top: BorderSide(
-                          color: Colors.black,
+                          color: Color(0xFFEEEEEE),
                           width: 1,
                         ),
                       ),
                     ),
-                    child: Row(
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        ProfileTabbarButton(
-                            title: 'Personal Info', onTap: () {}),
-                        Container(
-                          width: 1, // Çizgi kalınlığı
-                          height: 30, // Çizgi yüksekliği
-                          color: Colors.black, // Çizgi rengi
-                        ),
-                        ProfileTabbarButton(
-                            title: 'Personal Info', onTap: () {}),
-                        Container(
-                          width: 1, // Çizgi kalınlığı
-                          height: 30, // Çizgi yüksekliği
-                          color: Colors.black, // Çizgi rengi
-                        ),
-                        ProfileTabbarButton(
-                            title: 'Personal Info', onTap: () {}),
-                      ],
+                    child: Padding(
+                      padding: EdgeInsets.only(left: 15.0.w,right: 30.0.w),
+                      child: Row(
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          ProfileTabbarButton(
+                            isClicked: pageIndex == 0 ? true : false,
+                            title: 'Kullanıcı Bilgileri',
+                            onTap: () {
+                              setState(() {
+                                pageIndex = 0;
+                              });
+                            },
+                          ),
+                          Container(
+                            width: 1.w,
+                            height: 55.h,
+                            color: Color(0xFFEEEEEE),
+                          ),
+                          ProfileTabbarButton(
+                            isClicked: pageIndex == 1 ? true : false,
+                            title: 'Faliyetler',
+                            onTap: () {
+                              setState(() {
+                                pageIndex = 1;
+                              });
+                            },
+                          ),
+                          Container(
+                            width: 1.w,
+                            height: 55.h,
+                            color: Color(0xFFEEEEEE),
+                          ),
+                          ProfileTabbarButton(
+                            isClicked: pageIndex == 2 ? true : false,
+                            title: 'Ayarlar',
+                            onTap: () {
+                              setState(() {
+                                pageIndex = 2;
+                              });
+                            },
+                          ),
+                        ],
+                      ),
                     ),
                   )
                 ],
@@ -141,11 +183,11 @@ class _ProfilePageViewState extends State<ProfilePageView> {
             ),
           ),
           Positioned(
-            top: 150.h,
+            top: 95.h,
             left: 27.w,
             right: 27.w,
-            child: const CircleAvatar(
-              radius: 52,
+            child: CircleAvatar(
+              radius: 52.r,
               backgroundColor: Colors.black,
             ),
           ),
