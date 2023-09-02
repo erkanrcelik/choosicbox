@@ -47,6 +47,11 @@ class _ProfilePageViewState extends State<ProfilePageView> {
             onPressed: () {
             },
           ),
+          IconButton(
+            icon: Icon(Icons.exit_to_app,color: Colors.white,), // Bildirim ikonu
+            onPressed: () {
+            },
+          ),
         ],
       ),
       body: Stack(
@@ -65,6 +70,7 @@ class _ProfilePageViewState extends State<ProfilePageView> {
             height: MediaQuery.of(context).size.height.h,
           ),
           SingleChildScrollView(
+            physics: ClampingScrollPhysics(),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -84,6 +90,7 @@ class _ProfilePageViewState extends State<ProfilePageView> {
                   child: Padding(
                     padding: EdgeInsets.only(top: 110.0.h),
                     child: SingleChildScrollView(
+                      physics: ClampingScrollPhysics(),
                       child: Container(
                         child: buildPage(),
                       ),
@@ -183,12 +190,44 @@ class _ProfilePageViewState extends State<ProfilePageView> {
             ),
           ),
           Positioned(
-            top: 95.h,
-            left: 27.w,
-            right: 27.w,
-            child: CircleAvatar(
-              radius: 52.r,
-              backgroundColor: Colors.black,
+            top: 85.h,
+            left: MediaQuery.of(context).size.width.w / 2.w - 52.r,
+            child: Stack(
+              children: [
+                CircleAvatar(
+                  radius: 52.r,
+                  backgroundColor: Colors.black,
+                ),
+                Positioned(
+                  bottom: 0,
+                  right: 0,
+                  child: GestureDetector(
+                    onTap: () {
+                      // Düzenleme işlemi için yapılacak işlemleri burada ekleyin
+                    },
+                    child: Container(
+                      width: 40.w,
+                      height: 40.h,
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        shape: BoxShape.circle,
+                        boxShadow: [
+                          BoxShadow(
+                            color: Colors.grey.withOpacity(0.3),
+                            spreadRadius: 2.w,
+                            blurRadius: 3.w,
+                            offset: Offset(0.w, 2.h),
+                          ),
+                        ],
+                      ),
+                      child: Icon(
+                        Icons.edit_outlined,
+                        color: Theme.of(context).colorScheme.primary,
+                      ),
+                    ),
+                  ),
+                ),
+              ],
             ),
           ),
         ],
