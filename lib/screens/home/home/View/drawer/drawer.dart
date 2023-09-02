@@ -1,11 +1,7 @@
-import 'package:choosicbox/screens/home/profile/editView/paymentView/View/payment_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+
 import '../../../profile/View/profile_view.dart';
-import '../../../profile/editView/help&supportView/View/help_support_view.dart';
-import '../../../profile/editView/help&supportView/feedbackView/View/feedback_view.dart';
-import '../../../profile/editView/languageView/View/language_settings_view.dart';
-import '../../../profile/editView/profileSettingsView/View/profile_setting_view.dart';
 import 'drawerList/drawer_list.dart';
 
 class DrawerPage extends StatelessWidget {
@@ -52,55 +48,15 @@ class DrawerPage extends StatelessWidget {
                     },
                     text: 'My Profile'),
                 drawerListWidget(
-                    icon: 'payment1',
-                    onTap: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => PaymentSettingsScreen()),
-                      );
-                    },
-                    text: 'Payment Methods'),
+                    icon: 'payment1', onTap: () {}, text: 'Payment Methods'),
                 drawerListWidget(
-                    icon: 'feedback',
-                    onTap: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => FeedbackScreen()),
-                      );
-                    },
-                    text: 'Contact Us'),
+                    icon: 'feedback', onTap: () {}, text: 'Contact Us'),
                 drawerListWidget(
-                    icon: 'settings',
-                    onTap: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => ProfileSettingScreen()),
-                      );
-                    },
-                    text: 'Settings'),
+                    icon: 'settings', onTap: () {}, text: 'Settings'),
                 drawerListWidget(
-                    icon: 'support',
-                    onTap: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => HelpAndSupportScreen()),
-                      );
-                    },
-                    text: 'Help & Support'),
+                    icon: 'support', onTap: () {}, text: 'Help & Support'),
                 drawerListWidget(
-                    icon: 'language',
-                    onTap: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => LanguageSettingsPage()),
-                      );
-                    },
-                    text: 'Languages'),
+                    icon: 'language', onTap: () {}, text: 'Languages'),
                 SizedBox(height: 40.h),
                 InkWell(
                   child: Container(
