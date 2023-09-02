@@ -41,7 +41,7 @@ class AppPages {
     ),
     GetPage(
       name: Routes.PROFILE,
-      page: () => const ProfilePageView(),
+      page: () => ProfilePageView(),
       middlewares: [RouteGuard()]
     ),
     GetPage(

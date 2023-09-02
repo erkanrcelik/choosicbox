@@ -22,7 +22,7 @@ class _AppFrameState extends State<AppFrame> {
   final List<Widget> _pages = [
     SearchView(key: PageStorageKey('search'),),
     HomeView(key: PageStorageKey('home')),
-    const ProfilePageView(),
+    ProfilePageView(),
   ];
 
   @override

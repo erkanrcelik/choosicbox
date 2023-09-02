@@ -8,7 +8,6 @@ import '../../../../../../utils/ui/Input/passwordInput/new_password_input.dart';
 import '../../../../../../utils/ui/Input/passwordInput/password_input.dart';
 import '../../../../../../utils/ui/Input/phoneInput/phone_number.dart';
 import '../../../../../../utils/ui/button/general.dart';
-import '../../../View/profile_view.dart';
 
 class ProfileSettingScreen extends StatelessWidget {
   ProfileSettingScreen({Key? key}) : super(key: key);
@@ -82,14 +81,6 @@ class ProfileSettingScreen extends StatelessWidget {
                 left: 140,
                 child: GestureDetector(
                   onTap: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => FullScreenProfilePicture(
-                          imageAssetPath: 'assets/images/gecici.png',
-                        ),
-                      ),
-                    );
                   },
                   child: const Center(
                     child: CircleAvatar(
