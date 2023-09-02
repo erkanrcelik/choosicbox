@@ -42,7 +42,7 @@ class _FilterCategoryCardState extends State<FilterCategoryCard> {
         height: containerHeight,
         padding: EdgeInsets.all(8.0).r,
         decoration: BoxDecoration(
-          color: widget.selected ? Color(0xFFFE724C) : Colors.white,
+          color: widget.selected ? Theme.of(context).colorScheme.primary : Colors.white,
           borderRadius: BorderRadius.circular(20.0).r,
           boxShadow: [
             BoxShadow(

@@ -3,7 +3,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 
-import '../../../../config/theme/colors.dart';
 
 class AuthenticationLayout extends StatelessWidget {
   final Widget child;
@@ -60,7 +59,7 @@ class AuthenticationLayout extends StatelessWidget {
                 width: 120.w,
                 decoration: BoxDecoration(
                   border: Border.all(
-                    color: ColorConstants.firstColor,
+                    color: Theme.of(context).colorScheme.primary,
                     width: 30.w,
                   ),
                   borderRadius: BorderRadius.circular(150.w),
@@ -86,7 +85,7 @@ class AuthenticationLayout extends StatelessWidget {
                 height: 181.h,
                 width: 181.w,
                 decoration: BoxDecoration(
-                  color: ColorConstants.firstColor,
+                  color: Theme.of(context).colorScheme.primary,
                   borderRadius: BorderRadius.circular(150.w),
                 ),
               ),

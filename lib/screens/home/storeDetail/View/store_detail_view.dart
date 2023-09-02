@@ -8,7 +8,6 @@ import 'package:flutter_rating_stars/flutter_rating_stars.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
-import '../../../appframe/app_frame.dart';
 
 class StoreDetailView extends StatefulWidget {
   const StoreDetailView({super.key});
@@ -123,11 +122,11 @@ class _StoreDetailViewState extends State<StoreDetailView> {
                                 const SizedBox(
                                   height: 13,
                                 ),
-                                const Row(
+                                Row(
                                   children: [
                                     Icon(
                                       Icons.location_on,
-                                      color: Colors.deepOrange,
+                                      color: Theme.of(context).colorScheme.primary,
                                     ),
                                     SizedBox(
                                       width: 5,
@@ -180,7 +179,7 @@ class _StoreDetailViewState extends State<StoreDetailView> {
                                       valueLabelMargin:
                                           const EdgeInsets.only(right: 8),
                                       starOffColor: const Color(0xffe7e8ea),
-                                      starColor: Colors.yellow,
+                                      starColor: Theme.of(context).colorScheme.primary,
                                     ),
                                   ],
                                 ),
@@ -267,7 +266,7 @@ class _StoreDetailViewState extends State<StoreDetailView> {
                 child: Container(
                   width: MediaQuery.of(context).size.width,
                   decoration: BoxDecoration(
-                    color: const Color(0xFFFE724C),
+                    color: Theme.of(context).colorScheme.primary,
                     borderRadius: BorderRadius.circular(36),
                   ),
                   height: 48,

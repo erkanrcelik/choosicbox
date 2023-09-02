@@ -72,7 +72,7 @@ class PlaylistView extends StatelessWidget {
                 height: 360.h,
                 width: MediaQuery.of(context).size.width,
                 decoration: BoxDecoration(
-                  color: Color(0xffff6e06),
+                  color: Theme.of(context).colorScheme.primary,
                   borderRadius: BorderRadius.only(
                     bottomLeft: Radius.circular(180.r),
                     bottomRight: Radius.circular(180.r),
@@ -87,7 +87,7 @@ class PlaylistView extends StatelessWidget {
                 height: 230.h,
                 width: 180.w,
                 decoration: BoxDecoration(
-                  color: Color(0xffff6e06),
+                  color: Theme.of(context).colorScheme.primary,
                   borderRadius: BorderRadius.circular(18.0),
                   boxShadow: [
                     BoxShadow(
@@ -121,7 +121,7 @@ class PlaylistView extends StatelessWidget {
                           height: 30.h,
                           width: 200.w,
                           decoration: BoxDecoration(
-                            color: Color(0xFFFE724C),
+                            color: Theme.of(context).colorScheme.primary,
                             borderRadius: BorderRadius.circular(15).r,
                             boxShadow: const [
                               BoxShadow(

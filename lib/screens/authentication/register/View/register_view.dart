@@ -2,7 +2,6 @@ import 'package:choosicbox/utils/ui/layout/authenticatin_layout.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-
 import '../../../../utils/ui/button/general.dart';
 import '../../../../utils/ui/button/social.dart';
 import '../../../../utils/ui/textField/custom_text_field.dart';

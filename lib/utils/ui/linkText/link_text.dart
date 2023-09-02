@@ -1,4 +1,3 @@
-import 'package:choosicbox/utils/ui/text/custom_text.dart';
 import 'package:flutter/material.dart';
 
 class LinkText extends StatelessWidget {
@@ -17,7 +16,7 @@ class LinkText extends StatelessWidget {
       onTap: onTap,
       child: Text(
         title,
-        style: CustomTextStyle.linkText
+
       ),
     );
   }

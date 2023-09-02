@@ -42,7 +42,7 @@ class ActivitiesListTile extends StatelessWidget {
                       (index) => Padding(
                     padding: const EdgeInsets.only(left: 20.0),
                     child: Chip(
-                      backgroundColor: index < 3 ? Colors.deepOrange : Colors.grey,
+                      backgroundColor: index < 3 ? Theme.of(context).colorScheme.primary : Colors.grey,
                       elevation: 6.0,
                       shape: StadiumBorder(
                           side: BorderSide(

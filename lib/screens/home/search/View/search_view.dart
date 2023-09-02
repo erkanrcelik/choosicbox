@@ -146,7 +146,7 @@ void _showFilterBottomSheet(BuildContext context) {
                       height: 50.h,
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(20.0).r,
-                        color: Color(0xFFFE724C),
+                        color:Theme.of(context).colorScheme.primary,
                       ),
                       child: Center(
                         child: Text(
@@ -159,7 +159,7 @@ void _showFilterBottomSheet(BuildContext context) {
                     Center(
                         child: Text(
                           'Filtreleri Sıfırla',
-                          style: TextStyle(color: Color(0xFFFE724C),fontSize: 16.0.sp,fontWeight: FontWeight.bold),
+                          style: TextStyle(color: Theme.of(context).colorScheme.primary,fontSize: 16.0.sp,fontWeight: FontWeight.bold),
                         )
                     )
                   ],

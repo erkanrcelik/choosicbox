@@ -7,7 +7,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_advanced_drawer/flutter_advanced_drawer.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-
 import '../../../../generated/assets.dart';
 import '../../../../utils/ui/button/music_type.dart';
 
@@ -319,7 +318,7 @@ class _HomeViewState extends State<HomeView> {
                     child: Row(
                       children: [
                         MusicTypeItem(
-                          isOrange: pageIndex == 0 ? true : false,
+                          isPurple: pageIndex == 0 ? true : false,
                           icon: SvgPath(
                             svgPath: "food-drink",
                           ),
@@ -331,7 +330,7 @@ class _HomeViewState extends State<HomeView> {
                           },
                         ),
                         MusicTypeItem(
-                          isOrange: pageIndex == 1 ? true : false,
+                          isPurple: pageIndex == 1 ? true : false,
                           icon: SvgPath(svgPath: "night-club"),
                           text: 'Bar',
                           onTap: () {
@@ -341,7 +340,7 @@ class _HomeViewState extends State<HomeView> {
                           },
                         ),
                         MusicTypeItem(
-                          isOrange: pageIndex == 2 ? true : false,
+                          isPurple: pageIndex == 2 ? true : false,
                           icon: SvgPath(svgPath: "food-dish"),
                           text: 'Restorant',
                           onTap: () {
@@ -351,7 +350,7 @@ class _HomeViewState extends State<HomeView> {
                           },
                         ),
                         MusicTypeItem(
-                          isOrange: pageIndex == 3 ? true : false,
+                          isPurple: pageIndex == 3 ? true : false,
                           icon: SvgPath(svgPath: "alcohol"),
                           text: 'Alkollü',
                           onTap: () {
@@ -361,7 +360,7 @@ class _HomeViewState extends State<HomeView> {
                           },
                         ),
                         MusicTypeItem(
-                          isOrange: pageIndex == 4 ? true : false,
+                          isPurple: pageIndex == 4 ? true : false,
                           icon: SvgPath(svgPath: "coffee-mug-cup"),
                           text: 'Kahve',
                           onTap: () {
@@ -371,7 +370,7 @@ class _HomeViewState extends State<HomeView> {
                           },
                         ),
                         MusicTypeItem(
-                          isOrange: pageIndex == 5 ? true : false,
+                          isPurple: pageIndex == 5 ? true : false,
                           icon: SvgPath(
                             svgPath: "dumbbell",
                           ),
@@ -410,7 +409,7 @@ class _HomeViewState extends State<HomeView> {
                         style: TextStyle(
                           fontSize: 13.sp,
                           fontWeight: FontWeight.w400,
-                          color: const Color(0xffFE724C),
+                          color: Theme.of(context).colorScheme.primary,
                         ),
                       ),
                     ],

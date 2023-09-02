@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../../../../../../../../config/theme/colors.dart';
-import '../../../../../../../../utils/ui/ListTile/profile_list_tile.dart';
-import '../../feedbackView/View/feedback_view.dart';
+
 
 
 
@@ -29,7 +27,7 @@ class FAQSupportScreen extends StatelessWidget {
                   width: 120,
                   decoration: BoxDecoration(
                     border: Border.all(
-                      color: ColorConstants.firstColor,
+                      color: Theme.of(context).colorScheme.primary,
                       width: 30,
                     ),
                     borderRadius: BorderRadius.circular(150),
@@ -53,7 +51,7 @@ class FAQSupportScreen extends StatelessWidget {
                   height: 181,
                   width: 181,
                   decoration: BoxDecoration(
-                    color: ColorConstants.firstColor,
+                    color: Theme.of(context).colorScheme.primary,
                     borderRadius: BorderRadius.circular(150),
                   )),
             ),

@@ -67,7 +67,7 @@ class SearchCard extends StatelessWidget {
             width: 25.w,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(5).r,
-              color: const Color(0xFFFE724C),
+              color: Theme.of(context).colorScheme.primary,
             ),
             child: const Icon(
               Icons.arrow_forward,

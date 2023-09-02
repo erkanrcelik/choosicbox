@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:video_player/video_player.dart';
 
-import '../../../../config/theme/colors.dart';
 
 class WelcomeView extends StatefulWidget {
   const WelcomeView({Key? key}) : super(key: key);
@@ -70,7 +69,7 @@ class _WelcomeViewState extends State<WelcomeView> {
                       style: TextStyle(
                           fontSize: 53,
                           fontWeight: FontWeight.w700,
-                          color: ColorConstants.firstColor),
+                          color: Theme.of(context).colorScheme.primary,),
                     ),
                   ],
                 ),
@@ -243,7 +242,7 @@ class _WelcomeViewState extends State<WelcomeView> {
                       style: TextStyle(
                         fontSize: 14,
                         fontWeight: FontWeight.w400,
-                        color: ColorConstants.firstColor,
+                        color: Theme.of(context).colorScheme.primary,
                       ),
                     ))),
           ),

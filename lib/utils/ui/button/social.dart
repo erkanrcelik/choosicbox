@@ -1,4 +1,3 @@
-import 'package:choosicbox/utils/ui/text/custom_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -49,7 +48,7 @@ class SocialLoginButton extends StatelessWidget {
                 ),
                 Text(
                   title,
-                  style: CustomTextStyle.socialButtonText
+
                 ),
               ],
             )

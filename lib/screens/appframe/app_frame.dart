@@ -40,7 +40,7 @@ class _AppFrameState extends State<AppFrame> {
           ],
           color: Colors.white,
           buttonBackgroundColor: Colors.white,
-          backgroundColor: const Color(0xFFff7f00),
+          backgroundColor: Theme.of(context).colorScheme.primary,
           animationCurve: Curves.easeInOut,
           animationDuration: const Duration(milliseconds: 600),
           onTap:landingPageController.changeTabIndex,

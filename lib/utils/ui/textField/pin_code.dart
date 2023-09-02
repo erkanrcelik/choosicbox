@@ -23,7 +23,7 @@ class _PinCodeTextFieldState extends State<PinCodeTextField> {
 
   @override
   Widget build(BuildContext context) {
-    const focusedBorderColor = Color(0xFFFE724C);
+    var focusedBorderColor = Theme.of(context).colorScheme.primary;
     const fillColor = Colors.white;
     const borderColor = Color(0xFFcfcfcf);
 
@@ -104,7 +104,7 @@ class _PinCodeTextFieldState extends State<PinCodeTextField> {
                 ),
               ),
               errorPinTheme: defaultPinTheme.copyBorderWith(
-                border: Border.all(color: Colors.redAccent),
+                border: Border.all(color: Theme.of(context).colorScheme.primary),
               ),
             ),
           ),

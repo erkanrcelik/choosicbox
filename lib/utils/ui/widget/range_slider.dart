@@ -42,8 +42,8 @@ class _RangeSliderItemState extends State<RangeSliderItem> {
         maxValue: maxValue.roundToDouble(),
         min: 1.0,
         max: 100.0,
-        thumbColor: Color(0xFFFE724C),
-        activeColor: Color(0xFFFE724C),
+        thumbColor: Theme.of(context).colorScheme.primary,
+        activeColor: Theme.of(context).colorScheme.primary,
         onMinChanged: (minVal) {
           setState(() {
             minValue = minVal.round();

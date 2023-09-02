@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-
 import '../../../../utils/ui/card/category_store_card.dart';
 
 class CategoryView extends StatefulWidget {
@@ -74,7 +73,7 @@ class _CategoryViewState extends State<CategoryView> {
                 style: TextStyle(
                   fontSize: 40.sp,
                   fontWeight: FontWeight.w700,
-                  color: const Color(0xffFE724C),
+                  color: Theme.of(context).colorScheme.primary,
                 ),
               ),
             ],
@@ -107,7 +106,7 @@ class _CategoryViewState extends State<CategoryView> {
                           style: TextStyle(
                               fontSize: 14.sp,
                               fontWeight: FontWeight.w400,
-                              color: const Color(0xffFE724C))),
+                              color: Theme.of(context).colorScheme.primary,)),
                           SizedBox(
                         width: 5.w,
                           ),

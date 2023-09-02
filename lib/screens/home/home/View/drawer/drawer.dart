@@ -1,7 +1,6 @@
 import 'package:choosicbox/screens/home/profile/editView/paymentView/View/payment_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
 import '../../../profile/View/profile_view.dart';
 import '../../../profile/editView/help&supportView/View/help_support_view.dart';
 import '../../../profile/editView/help&supportView/feedbackView/View/feedback_view.dart';
@@ -110,7 +109,7 @@ class DrawerPage extends StatelessWidget {
                             left: 9, top: 9, bottom: 9, right: 14)
                         .r,
                     decoration: BoxDecoration(
-                        color: const Color(0xffFE724C),
+                        color: Theme.of(context).colorScheme.primary,
                         borderRadius: BorderRadius.circular(29).r),
                     child: Row(
                       children: [

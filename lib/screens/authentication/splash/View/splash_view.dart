@@ -1,11 +1,9 @@
 import 'dart:async';
-
 import 'package:choosicbox/config/path/svg_path.dart';
 import 'package:choosicbox/screens/authentication/welcome/View/welcome_view.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../../../../config/theme/colors.dart';
 import '../../../../constants/app_string.dart';
 
 class SplashView extends StatefulWidget {
@@ -25,8 +23,8 @@ class _SplashViewState extends State<SplashView> {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      backgroundColor: ColorConstants.firstColor,
+    return  Scaffold(
+      backgroundColor: Theme.of(context).colorScheme.primary,
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,

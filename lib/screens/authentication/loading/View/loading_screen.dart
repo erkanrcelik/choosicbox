@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'dart:async';
 import 'package:simple_ripple_animation/simple_ripple_animation.dart';
-
 import '../../../appframe/app_frame.dart';
 
 class LoadingScreen extends StatefulWidget {
@@ -22,11 +21,11 @@ class _LoadingScreenState extends State<LoadingScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    return Scaffold(
       backgroundColor: Colors.white,
       body: Center(
         child: RippleAnimation(
-          color: Colors.deepOrange,
+          color: Theme.of(context).colorScheme.primary,
           delay: Duration(milliseconds: 300),
           repeat: true,
           minRadius: 75,

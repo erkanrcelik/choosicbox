@@ -6,13 +6,13 @@ class MusicTypeItem extends StatefulWidget {
     Key? key,
     required this.icon,
     required this.text,
-    this.isOrange = false,
+    this.isPurple = false,
     this.onTap,
   }) : super(key: key);
 
   final Widget icon;
   final String text;
-  bool isOrange;
+  bool isPurple;
   final VoidCallback? onTap;
 
   @override
@@ -31,12 +31,12 @@ class _MusicTypeItemState extends State<MusicTypeItem> {
           widget.onTap!();
         }
         setState(() {
-          widget.isOrange = true;
+          widget.isPurple = true;
         });
       },
       onHover: (isHovered) {
         setState(() {
-          widget.isOrange = isHovered;
+          widget.isPurple = isHovered;
         });
       },
       child: Container(
@@ -45,7 +45,7 @@ class _MusicTypeItemState extends State<MusicTypeItem> {
         width: 80.w,
         decoration: BoxDecoration(
           boxShadow: [
-            !widget.isOrange
+            !widget.isPurple
                 ? const BoxShadow(
               color: Color.fromRGBO(211, 209, 216, 0.25),
               offset: Offset(0, 20),
@@ -60,7 +60,7 @@ class _MusicTypeItemState extends State<MusicTypeItem> {
             )
           ],
           borderRadius: BorderRadius.circular(15).r,
-          color: widget.isOrange ? const Color(0xffFE724C) : Colors.white,
+          color: widget.isPurple ? Theme.of(context).colorScheme.primary : Colors.white,
         ),
         child: Column(
           children: [
@@ -70,7 +70,7 @@ class _MusicTypeItemState extends State<MusicTypeItem> {
               width: 50.w,
               padding: EdgeInsets.all(10.w),
               decoration:BoxDecoration(
-                color: widget.isOrange ? Colors.white : Colors.white,
+                color: widget.isPurple ? Colors.white : Colors.white,
                 borderRadius: BorderRadius.circular(100).r,
               ),
               child: widget.icon,
@@ -83,7 +83,7 @@ class _MusicTypeItemState extends State<MusicTypeItem> {
               style: TextStyle(
                   fontSize: 14.sp,
                   fontWeight: FontWeight.w500,
-                  color: widget.isOrange ? Colors.white : const Color(0xff67666D)),
+                  color: widget.isPurple ? Colors.white : const Color(0xff67666D)),
             )
           ],
         ),

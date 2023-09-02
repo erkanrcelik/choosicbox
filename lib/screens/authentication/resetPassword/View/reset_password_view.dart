@@ -2,10 +2,8 @@ import 'package:choosicbox/utils/ui/layout/authenticatin_layout.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-
 import '../../../../../utils/ui/button/general.dart';
 import '../../../../../utils/ui/textField/custom_text_field.dart';
-import '../../../../../utils/ui/widget/row_link_text.dart';
 
 class ResetPasswordView extends StatelessWidget {
   ResetPasswordView({Key? key}) : super(key: key);

@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-
-import '../../../../../../config/theme/colors.dart';
 import '../../../../../../utils/ui/Input/GeneralInput/general_input.dart';
 import '../../../../../../utils/ui/Input/passwordInput/confirm_new_Password_input.dart';
 import '../../../../../../utils/ui/Input/passwordInput/new_password_input.dart';
@@ -34,7 +32,7 @@ class ProfileSettingScreen extends StatelessWidget {
                     width: 120,
                     decoration: BoxDecoration(
                       border: Border.all(
-                        color: ColorConstants.firstColor,
+                        color: Theme.of(context).colorScheme.primary,
                         width: 30,
                       ),
                       borderRadius: BorderRadius.circular(150),
@@ -58,7 +56,7 @@ class ProfileSettingScreen extends StatelessWidget {
                     height: 181,
                     width: 181,
                     decoration: BoxDecoration(
-                      color: ColorConstants.firstColor,
+                      color: Theme.of(context).colorScheme.primary,
                       borderRadius: BorderRadius.circular(150),
                     )),
               ),

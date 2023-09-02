@@ -8,7 +8,7 @@ class NextSongCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AvatarGlow(
-      glowColor: Color(0xFFFE724C),
+      glowColor: Theme.of(context).colorScheme.primary,
       endRadius: 120.0,
       duration: Duration(milliseconds: 1000),
       repeat: true,

@@ -1,8 +1,6 @@
-import 'package:choosicbox/utils/ui/text/custom_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../../../config/theme/colors.dart';
 
 class CustomButton extends StatelessWidget {
   const CustomButton({
@@ -25,7 +23,7 @@ class CustomButton extends StatelessWidget {
       height: 57.h,
       alignment: Alignment.center,
       decoration: BoxDecoration(
-        color: ColorConstants.firstColor,
+        color: Theme.of(context).colorScheme.primary,
         boxShadow: const [
           BoxShadow(
             color: Color.fromRGBO(122, 129, 190, 0.16),

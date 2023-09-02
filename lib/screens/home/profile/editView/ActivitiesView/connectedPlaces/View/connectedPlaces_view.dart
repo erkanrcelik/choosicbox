@@ -1,9 +1,7 @@
 
-import 'package:choosicbox/utils/ui/textField/custom_text_field.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../../../../../../../config/theme/colors.dart';
 
 
 
@@ -28,7 +26,7 @@ class ConnectedPlacesScreen extends StatelessWidget {
                   width: 120,
                   decoration: BoxDecoration(
                     border: Border.all(
-                      color: ColorConstants.firstColor,
+                      color: Theme.of(context).colorScheme.primary,
                       width: 30,
                     ),
                     borderRadius: BorderRadius.circular(150),
@@ -52,7 +50,7 @@ class ConnectedPlacesScreen extends StatelessWidget {
                   height: 181,
                   width: 181,
                   decoration: BoxDecoration(
-                    color: ColorConstants.firstColor,
+                    color: Theme.of(context).colorScheme.primary,
                     borderRadius: BorderRadius.circular(150),
                   )),
             ),

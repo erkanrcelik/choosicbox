@@ -2,7 +2,6 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-
 import '../../../../../../utils/ui/card/store_card.dart';
 import '../../../../../../utils/ui/card/store_features_card.dart';
 
@@ -53,7 +52,7 @@ class CategoriesTabs extends StatelessWidget {
                       style: TextStyle(
                           fontSize: 13.sp,
                           fontWeight: FontWeight.w400,
-                          color: const Color(0xffFE724C))),
+                          color: Theme.of(context).colorScheme.primary,)),
                 )
               ],
             ),

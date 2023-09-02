@@ -35,7 +35,7 @@ class _TabbarButtonState extends State<TabbarButton> {
           border: Border(
             bottom: widget.isOrange
                 ? BorderSide(
-                    color: Color(0xFFFE724C),
+                    color: Theme.of(context).colorScheme.primary,
                     width: 3,
                   )
                 : BorderSide(

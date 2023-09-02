@@ -59,7 +59,7 @@ class PlayListCard extends StatelessWidget {
             Icon(
               Icons.play_circle,
               size: 35.h,
-              color: Color(0xFFFE724C),
+              color: Theme.of(context).colorScheme.primary,
             ),
           ],
         ),
