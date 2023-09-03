@@ -225,8 +225,12 @@ class _HomeViewState extends State<HomeView> {
             ),
           ),
           actions: [
-            CircleAvatar(
-              backgroundColor: Colors.black,
+            GestureDetector(
+              onTap: () {
+                Get.toNamed('/profile');              },
+              child: CircleAvatar(
+                backgroundColor: Colors.black,
+              ),
             ),
             const SizedBox(width: 20)
           ],
