@@ -14,7 +14,6 @@ import 'package:choosicbox/screens/home/welcome/View/welcome_home_view.dart';
 import 'package:choosicbox/screens/music/nextSong/View/next_song_view.dart';
 import 'package:choosicbox/screens/music/playlist/View/playlist_view.dart';
 import 'package:get/get.dart';
-
 import '../../screens/appframe/app_frame.dart';
 import '../../screens/authentication/login/View/login_view.dart';
 import '../../screens/authentication/register/View/register_view.dart';
@@ -22,7 +21,6 @@ import '../../screens/home/profile/View/profile_view.dart';
 import '../screens/home/profile/Settings/View/Pages/AccountSettings/AccountActivityHistory/View/account_activity_history_view.dart';
 import '../screens/home/profile/Settings/View/Pages/AccountSettings/CommunicationUpdates/View/communication_updates_view.dart';
 import '../screens/home/profile/Settings/View/Pages/AccountSettings/DeleteAccount/View/delete_account_view.dart';
-import '../screens/home/profile/Settings/View/Pages/LanguageAppSettings/CloseAnimationSettings/View/close_animation_settings_view.dart';
 import '../screens/home/profile/Settings/View/Pages/LanguageAppSettings/LanguageSettings/View/language_settings_view.dart';
 import '../screens/home/profile/Settings/View/Pages/LanguageAppSettings/View/language_app_settings_view.dart';
 
