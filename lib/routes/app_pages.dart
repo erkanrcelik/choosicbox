@@ -24,7 +24,7 @@ import '../screens/home/profile/Settings/View/Pages/LanguageAppSettings/View/lan
 part 'app_routes.dart';
 
 class AppPages {
-  static const INITIAL = Routes.WELCOME_HOME;
+  static const INITIAL = Routes.SPLASH;
 
   static final routes = [
     GetPage(

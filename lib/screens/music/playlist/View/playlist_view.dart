@@ -69,7 +69,7 @@ class PlaylistView extends StatelessWidget {
               top: 0.h,
               left: 0.w,
               child: Container(
-                height: 360.h,
+                height: 260.h,
                 width: MediaQuery.of(context).size.width,
                 decoration: BoxDecoration(
                   color: Theme.of(context).colorScheme.primary,
@@ -81,11 +81,11 @@ class PlaylistView extends StatelessWidget {
               ),
             ),
             Positioned(
-              top: 150.h,
-              left: (MediaQuery.of(context).size.width - 180.w) / 2,
+              top: 130.h,
+              left: (MediaQuery.of(context).size.width - 150.w) / 2,
               child: Container(
-                height: 230.h,
-                width: 180.w,
+                height: 180.h,
+                width: 150.w,
                 decoration: BoxDecoration(
                   color: Theme.of(context).colorScheme.primary,
                   borderRadius: BorderRadius.circular(18.0),
@@ -101,7 +101,7 @@ class PlaylistView extends StatelessWidget {
               ),
             ),
             Positioned(
-              top: 410.h,
+              top: 330.h,
               child: SingleChildScrollView(
                 child: Column(
                   children: [
@@ -167,7 +167,7 @@ class PlaylistView extends StatelessWidget {
                         )
                       ),
                       padding: EdgeInsets.only(left: 5.w, right: 5.w,bottom: 15.h,top: 10.h),
-                      height: 350.h,
+                      height: 420.h,
                       width: MediaQuery.of(context).size.width,
                       child: SingleChildScrollView(
                         child: Column(

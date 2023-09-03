@@ -2,6 +2,7 @@ import 'dart:async';
 import 'package:choosicbox/config/path/svg_path.dart';
 import 'package:choosicbox/screens/authentication/welcome/View/welcome_view.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
 import '../../../../constants/app_string.dart';
@@ -15,8 +16,7 @@ class _SplashViewState extends State<SplashView> {
   @override
   void initState() {
     super.initState();
-    // Splash Screen süresi sonunda ana sayfaya yönlendirme
-    Timer(const Duration(seconds: 3), () {
+    Timer(const Duration(seconds: 2), () {
       Get.to(() => const WelcomeView());
     });
   }
@@ -24,18 +24,16 @@ class _SplashViewState extends State<SplashView> {
   @override
   Widget build(BuildContext context) {
     return  Scaffold(
-      backgroundColor: Theme.of(context).colorScheme.primary,
+      backgroundColor: Theme.of(context).colorScheme.surface,
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            SvgPath(svgPath: 'icon', width: 200, height: 200),
+            SvgPath(svgPath: 'choosicbox_logo', width: 150.w, height: 150.h),
+            SizedBox(height: 20.h),
             Text(
               AppStrings.appName,
-              style: TextStyle(
-                fontSize: 24,
-                fontWeight: FontWeight.bold,
-              ),
+              style: Theme.of(context).textTheme.headlineLarge
             ),
           ],
         ),

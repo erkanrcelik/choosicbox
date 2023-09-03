@@ -12,10 +12,9 @@ class WelcomeHomeView extends StatefulWidget {
 
 class _WelcomeHomeViewState extends State<WelcomeHomeView> {
   void initState() {
-
     super.initState();
 
-    Future.delayed(Duration(seconds: 3), () {
+    Future.delayed(Duration(seconds: 1), () {
       Get.toNamed('/overview');
     });
   }
@@ -27,8 +26,10 @@ class _WelcomeHomeViewState extends State<WelcomeHomeView> {
         LayerModel(
           points: [],
           viscosity: 0.9,
-          touchForce: 0, // İçerik hareket etmeyecek
-          forceLimit: 0, // İçerik hareket etmeyecek
+          touchForce: 0,
+          // İçerik hareket etmeyecek
+          forceLimit: 0,
+          // İçerik hareket etmeyecek
           color: Theme.of(context).colorScheme.surface, // Kırmızı renk
         ),
         LayerModel(
@@ -36,7 +37,7 @@ class _WelcomeHomeViewState extends State<WelcomeHomeView> {
           viscosity: 0.7,
           touchForce: 30,
           forceLimit: 15,
-          color:Theme.of(context).colorScheme.secondary,
+          color: Theme.of(context).colorScheme.secondary,
         ),
         LayerModel(
           points: [],
@@ -53,6 +54,7 @@ class _WelcomeHomeViewState extends State<WelcomeHomeView> {
       scaleOptionLayer: [1.5, 1.2, 1],
     );
     return Column(
+      crossAxisAlignment: CrossAxisAlignment.center,
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         Container(
@@ -64,7 +66,7 @@ class _WelcomeHomeViewState extends State<WelcomeHomeView> {
             boxDecorationLabel: _borderForm(),
             child: Center(
               child: FlutterLogo(
-                size: 100,
+                size: 100.w,
               ),
             ),
           ),

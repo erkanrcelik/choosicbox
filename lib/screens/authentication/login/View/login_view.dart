@@ -45,7 +45,7 @@ class LoginView extends StatelessWidget {
           SizedBox(height: 33.h),
           CustomButton(
             onPressed: () {
-              Get.toNamed('/index');
+              Get.toNamed('/welcome-home');
             },
             text: 'login'.tr,
           ),

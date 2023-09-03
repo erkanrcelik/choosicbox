@@ -1,5 +1,7 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:choosicbox/config/path/svg_path.dart';
+import 'package:choosicbox/screens/appframe/app_frame.dart';
+import 'package:choosicbox/screens/appframe/app_frame_controller.dart';
 import 'package:choosicbox/screens/home/home/View/categories/tabs/tabs.dart';
 import 'package:choosicbox/screens/home/home/View/drawer/drawer.dart';
 import 'package:choosicbox/utils/ui/card/popular_store_card.dart';
@@ -238,77 +240,73 @@ class _HomeViewState extends State<HomeView> {
         body: SingleChildScrollView(
           child: Column(
             children: [
-              InkWell(
-                onTap: () {
-                },
-                child: Padding(
-                  padding: EdgeInsets.only(left: 27.w),
-                  child: Container(
-                    margin: EdgeInsets.only(top: 19.h, bottom: 0.h),
-                    height: 56.h,
-                    width: screenWidth,
-                    child: Row(
-                      children: [
-                        Container(
-                          height: 53.h,
-                          width: screenWidth * 0.70,
-                          padding: EdgeInsets.only(
-                              top: 15.h, bottom: 15.h, right: 9.w, left: 18.w),
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(10).r,
-                            color: const Color(0xffFCFCFD),
-                            border: Border.all(
-                                width: 1.w, color: const Color(0xffEFEFEF)),
-                          ),
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            crossAxisAlignment: CrossAxisAlignment.center,
-                            children: [
-                              const Icon(
-                                Icons.search,
-                                color: Color(0xff767F9D),
-                              ),
-                              SizedBox(width: 14.w),
-                              Expanded(
-                                child: TextFormField(
-                                  decoration: InputDecoration(
-                                    contentPadding: EdgeInsets.zero,
-                                    label: const Text(
-                                        'Find for food or restaurant...'),
-                                    labelStyle: TextStyle(
-                                      color: const Color(0xff9AA0B4),
-                                      fontWeight: FontWeight.w400,
-                                      fontSize: 14.sp,
-                                    ),
-                                    border: InputBorder.none,
+              Padding(
+                padding: EdgeInsets.only(left: 27.w),
+                child: Container(
+                  margin: EdgeInsets.only(top: 19.h, bottom: 0.h),
+                  height: 56.h,
+                  width: screenWidth,
+                  child: Row(
+                    children: [
+                      Container(
+                        height: 53.h,
+                        width: screenWidth * 0.70,
+                        padding: EdgeInsets.only(
+                            top: 15.h, bottom: 15.h, right: 9.w, left: 18.w),
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(10).r,
+                          color: const Color(0xffFCFCFD),
+                          border: Border.all(
+                              width: 1.w, color: const Color(0xffEFEFEF)),
+                        ),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: [
+                            const Icon(
+                              Icons.search,
+                              color: Color(0xff767F9D),
+                            ),
+                            SizedBox(width: 14.w),
+                            Expanded(
+                              child: TextFormField(
+                                decoration: InputDecoration(
+                                  contentPadding: EdgeInsets.zero,
+                                  label: const Text(
+                                      'Find for food or restaurant...'),
+                                  labelStyle: TextStyle(
+                                    color: const Color(0xff9AA0B4),
+                                    fontWeight: FontWeight.w400,
+                                    fontSize: 14.sp,
                                   ),
+                                  border: InputBorder.none,
                                 ),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                      SizedBox(width: 18.w),
+                      Container(
+                          height: 50.h,
+                          width: 50.w,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(14).r,
+                            color: Colors.white,
+                            boxShadow: const [
+                              BoxShadow(
+                                color: Color(0xffE9EDF2),
+                                offset: Offset(0, 15),
+                                // X, Y offset
+                                blurRadius: 30,
+                                spreadRadius: 0,
                               ),
                             ],
                           ),
-                        ),
-                        SizedBox(width: 18.w),
-                        Container(
-                            height: 50.h,
-                            width: 50.w,
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(14).r,
-                              color: Colors.white,
-                              boxShadow: const [
-                                BoxShadow(
-                                  color: Color(0xffE9EDF2),
-                                  offset: Offset(0, 15),
-                                  // X, Y offset
-                                  blurRadius: 30,
-                                  spreadRadius: 0,
-                                ),
-                              ],
-                            ),
-                            child: Image.asset(
-                              'assets/buttons/filter.png',
-                            ))
-                      ],
-                    ),
+                          child: Image.asset(
+                            'assets/buttons/filter.png',
+                          ))
+                    ],
                   ),
                 ),
               ),

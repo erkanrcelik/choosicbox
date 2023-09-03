@@ -1,103 +1,74 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class StoreCard extends StatelessWidget {
-  StoreCard({
+class CloseLocationCard extends StatelessWidget {
+  const CloseLocationCard({
     Key? key,
-    required this.restaurant,
+    required this.location,
     required this.businessName,
-    required this.cardTextList, this.onTap,
+    this.onTap,
   }) : super(key: key);
 
-  final String restaurant;
+  final String location;
   final String businessName;
-  final List<Widget> cardTextList;
   final VoidCallback? onTap;
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: onTap,
-      child: Container(
-        width: 266.w,
-        margin: EdgeInsets.only(bottom: 30.h),
-        decoration: BoxDecoration(
-          color: Colors.white,
-          borderRadius: BorderRadius.circular(15),
-          boxShadow: const [
-            BoxShadow(
-              color: Color.fromRGBO(211, 209, 216, 0.25),
-              offset: Offset(15, 15),
-              blurRadius: 30,
-              spreadRadius: 0,
-            ),
-          ],
-        ),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          mainAxisAlignment: MainAxisAlignment.start,
-          children: [
-            Stack(
-              children: [
-                SizedBox(
-                  width: MediaQuery.of(context).size.width,
-                  child: Image.asset('assets/images/$restaurant.png', fit: BoxFit.fill),
-                ),
-                Positioned(
-                  top: 11.h,
-                  left: 10.w,
-                  child: Container(
-                    decoration: BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: BorderRadius.circular(100.w),
+        onTap: onTap,
+        child: Container(
+          width: MediaQuery.of(context).size.width,
+          height: 100.h,
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(10.r),
+            color: Colors.white,
+            boxShadow: [
+              BoxShadow(
+                color: Colors.grey.withOpacity(0.5),
+                spreadRadius: 1.r,
+                blurRadius: 1.r,
+                offset: const Offset(0, 1), // changes position of shadow
+              ),
+            ],
+          ),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      businessName,
+                      style: Theme.of(context).textTheme.bodyMedium,
                     ),
-                    padding: EdgeInsets.all(8.w),
-                    child: Image.asset('assets/icons/rating.png'),
-                  ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: [
+                        Icon(Icons.location_on_rounded),
+                        Text(
+                          location,
+                          style: Theme.of(context).textTheme.bodyMedium,
+                        ),
+                      ],
+                    )
+                  ],
                 ),
-                Positioned(
-                  top: -5.h,
-                  right: -3.w,
-                  child: Container(
-                    padding: EdgeInsets.all(8.w),
-                    child: Image.asset('assets/icons/favorite.png'),
-                  ),
+              ),
+              Container(
+                width: 130.w,
+                height: double.infinity,
+                decoration: BoxDecoration(),
+                child: Image.asset(
+                  'assets/images/restaurant.png',
+                  fit: BoxFit.cover,
                 ),
-              ],
-            ),
-            Padding(
-              padding: EdgeInsets.only(left: 13.w, top: 13.h, bottom: 6.h),
-              child: Text(
-                businessName,
-                style: TextStyle(fontSize: 15.sp, fontWeight: FontWeight.w600),
               ),
-            ),
-            Padding(
-              padding: EdgeInsets.only(left: 13.w, bottom: 10.h),
-              child: Row(
-                children: [
-                  Image.asset('assets/icons/bike.png'),
-                  SizedBox(width: 7.w),
-                  Text(
-                    'Free Delivery',
-                    style: TextStyle(
-                      fontSize: 12.sp,
-                      fontWeight: FontWeight.w400,
-                      color: Color(0xff7E8392),
-                    ),
-                  ),
-                ],
-              ),
-            ),
-            Container(
-              margin: EdgeInsets.only(left: 13.w,bottom: 15.h),
-              child: Row(
-                children: cardTextList,
-              ),
-            ),
-          ],
-        ),
-      ),
-    );
+            ],
+          ),
+        ));
   }
 }
