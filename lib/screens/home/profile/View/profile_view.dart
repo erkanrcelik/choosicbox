@@ -203,7 +203,6 @@ class _ProfilePageViewState extends State<ProfilePageView> {
                   right: 0,
                   child: GestureDetector(
                     onTap: () {
-                      // Düzenleme işlemi için yapılacak işlemleri burada ekleyin
                     },
                     child: Container(
                       width: 40.w,

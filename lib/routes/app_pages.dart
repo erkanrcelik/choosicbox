@@ -9,6 +9,8 @@ import 'package:choosicbox/screens/authentication/resetPassword/View/reset_passw
 import 'package:choosicbox/screens/authentication/splash/View/splash_view.dart';
 import 'package:choosicbox/screens/home/profile/Settings/View/Pages/AccountSettings/View/account_settings_view.dart';
 import 'package:choosicbox/screens/home/storeDetail/View/store_detail_view.dart';
+import 'package:choosicbox/screens/home/welcome/OverView/View/overview_view.dart';
+import 'package:choosicbox/screens/home/welcome/View/welcome_home_view.dart';
 import 'package:choosicbox/screens/music/nextSong/View/next_song_view.dart';
 import 'package:choosicbox/screens/music/playlist/View/playlist_view.dart';
 import 'package:get/get.dart';
@@ -21,7 +23,7 @@ import '../../screens/home/profile/View/profile_view.dart';
 part 'app_routes.dart';
 
 class AppPages {
-  static const INITIAL = Routes.SPLASH;
+  static const INITIAL = Routes.WELCOME_HOME;
 
   static final routes = [
     GetPage(
@@ -88,6 +90,14 @@ class AppPages {
     GetPage(
       name: Routes.ACCOUNT_SETTINGS,
       page: () => AccountSettingsView(),
+    ),
+    GetPage(
+      name: Routes.WELCOME_HOME,
+      page: () => WelcomeHomeView(),
+    ),
+    GetPage(
+      name: Routes.OVERVIEW,
+      page: () => OverViewView(),
     ),
   ];
 }
