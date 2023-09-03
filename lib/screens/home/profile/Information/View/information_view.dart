@@ -13,25 +13,31 @@ class InformationView extends StatelessWidget {
         children: [
           InformationCard(
             title: 'Ad Soyad',
-            icon: const Icon(Icons.person),
+            icon: Icon(
+              Icons.person,
+              color: Theme.of(context).colorScheme.surface,
+            ),
             text: 'Erkan Çelik',
           ),
           SizedBox(height: 25.h),
           InformationCard(
             title: 'Telefon Numarası',
-            icon: const Icon(Icons.phone),
+            icon:
+                Icon(color: Theme.of(context).colorScheme.surface, Icons.phone),
             text: '+90 534 241 96 63',
           ),
           SizedBox(height: 25.h),
           InformationCard(
             title: 'E-Posta',
-            icon: const Icon(Icons.email),
+            icon:
+                Icon(color: Theme.of(context).colorScheme.surface, Icons.email),
             text: 'erkan.celik@gmail.com',
           ),
           SizedBox(height: 25.h),
           InformationCard(
             title: 'Şifre',
-            icon: const Icon(Icons.password),
+            icon: Icon(
+                color: Theme.of(context).colorScheme.surface, Icons.password),
             text: '**********',
           ),
           SizedBox(height: 60.h),

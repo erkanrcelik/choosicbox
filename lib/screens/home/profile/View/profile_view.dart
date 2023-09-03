@@ -47,11 +47,6 @@ class _ProfilePageViewState extends State<ProfilePageView> {
             onPressed: () {
             },
           ),
-          IconButton(
-            icon: Icon(Icons.exit_to_app,color: Colors.white,), // Bildirim ikonu
-            onPressed: () {
-            },
-          ),
         ],
       ),
       body: Stack(

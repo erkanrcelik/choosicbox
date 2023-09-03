@@ -29,13 +29,19 @@ class LanguageAppSettingsView extends StatelessWidget {
                 Get.toNamed('/language-settings');
               },
               title: 'Dil Ayarları',
-              icon: Icon(Icons.language),
+              icon: Icon(
+                  Icons.language,
+                  color: Theme.of(context).colorScheme.surface,
+            ),
             ),
             SizedBox(height: 20.h,),
             SettingsCard(
               isSwitched: true,
               title: 'Animasyonlari kapat',
-              icon: Icon(Icons.animation),
+              icon: Icon(
+                  Icons.animation,
+                  color: Theme.of(context).colorScheme.surface,
+            ),
             ),
           ],
         ),

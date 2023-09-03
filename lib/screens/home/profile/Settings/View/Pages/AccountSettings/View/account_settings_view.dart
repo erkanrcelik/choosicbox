@@ -28,21 +28,19 @@ class AccountSettingsView extends StatelessWidget {
                 onTap: (){
                   Get.toNamed('/communication-updates');
                 },
-                title: 'İletişim Tercihlerimi Güncelle'
+                title: 'İletişim Tercihlerimi Güncelle',
+                icon: Icon(
+                    Icons.quick_contacts_mail_outlined,
+                    color: Theme.of(context).colorScheme.surface,
+                ),
             ),
             SizedBox(height: 20.h,),
             SettingsCard(
-                onTap: () {
-                  Get.toNamed('/account-activity-history');
-                },
-                title: 'Hesap Giriş Geçmişi'
+              title: 'Çıkış Yap',
+              icon: Icon(
+                  Icons.logout,
+                  color: Theme.of(context).colorScheme.surface,
             ),
-            SizedBox(height: 20.h,),
-            SettingsCard(
-                onTap: () {
-                  Get.toNamed('/delete-account');
-                },
-                title: 'Hesabımı Sil'
             ),
           ],
         ),

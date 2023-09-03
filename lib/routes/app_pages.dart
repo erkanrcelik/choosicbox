@@ -1,6 +1,5 @@
 import 'package:choosicbox/routes/app_route_guard.dart';
 import 'package:choosicbox/screens/home/category/View/category_view.dart';
-import 'package:choosicbox/screens/home/home/View/home_view.dart';
 import 'package:choosicbox/screens/authentication/register/password/View/register_password_view.dart';
 import 'package:choosicbox/screens/authentication/register/personalInformation/View/personal_information_view.dart';
 import 'package:choosicbox/screens/authentication/register/verifyMail/View/verify_mail_view.dart';
@@ -18,9 +17,7 @@ import '../../screens/appframe/app_frame.dart';
 import '../../screens/authentication/login/View/login_view.dart';
 import '../../screens/authentication/register/View/register_view.dart';
 import '../../screens/home/profile/View/profile_view.dart';
-import '../screens/home/profile/Settings/View/Pages/AccountSettings/AccountActivityHistory/View/account_activity_history_view.dart';
 import '../screens/home/profile/Settings/View/Pages/AccountSettings/CommunicationUpdates/View/communication_updates_view.dart';
-import '../screens/home/profile/Settings/View/Pages/AccountSettings/DeleteAccount/View/delete_account_view.dart';
 import '../screens/home/profile/Settings/View/Pages/LanguageAppSettings/LanguageSettings/View/language_settings_view.dart';
 import '../screens/home/profile/Settings/View/Pages/LanguageAppSettings/View/language_app_settings_view.dart';
 
@@ -104,16 +101,8 @@ class AppPages {
       page: () => OverViewView(),
     ),
     GetPage(
-      name: Routes.ACCOUNT_ACTIVITY_HISTORY,
-      page: () => AccountActivityHistoryView(),
-    ),
-    GetPage(
       name: Routes.COMMUNICATION_UPDATES,
       page: () => CommunicationUpdatesView(),
-    ),
-    GetPage(
-      name: Routes.DELETE_ACCOUNT,
-      page: () => DeleteAccountView(),
     ),
     GetPage(
       name: Routes.LANGUAGE_APP_SETTINGS,

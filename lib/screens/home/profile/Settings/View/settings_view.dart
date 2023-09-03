@@ -17,7 +17,10 @@ class SettingsView extends StatelessWidget {
               Get.toNamed('/account-settings');
             },
             title: 'Hesap Ayarları',
-            icon: Icon(Icons.account_circle),
+            icon: Icon(
+                Icons.account_circle,
+                color: Theme.of(context).colorScheme.surface,
+    ),
           ),
           SizedBox(height: 20.h),
           SettingsCard(
@@ -25,12 +28,21 @@ class SettingsView extends StatelessWidget {
               Get.toNamed('/account-app-settings');
             },
             title: 'Dil ve Uygulama Ayarları',
-            icon: Icon(Icons.settings),
+            icon: Icon(
+                Icons.settings,
+                color: Theme.of(context).colorScheme.surface,
+              ),
           ),
           SizedBox(height: 20.h),
           SettingsCard(
-            title: 'Çıkış Yap',
-            icon: Icon(Icons.logout),
+            onTap: () {
+              Get.toNamed('/account-app-settings');
+            },
+            title: 'Destek',
+            icon: Icon(
+                Icons.support_agent,
+                color: Theme.of(context).colorScheme.surface,
+            ),
           ),
         ],
       ),
