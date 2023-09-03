@@ -21,4 +21,9 @@ abstract class Routes {
   static const ACCOUNT_SETTINGS = '/account-settings';
   static const WELCOME_HOME = '/welcome-home';
   static const OVERVIEW = '/overview';
+  static const ACCOUNT_ACTIVITY_HISTORY = '/account-activity-history';
+  static const COMMUNICATION_UPDATES = '/communication-updates';
+  static const DELETE_ACCOUNT = '/delete-account';
+  static const LANGUAGE_APP_SETTINGS = '/account-app-settings';
+  static const LANGUAGE_SETTINGS = '/language-settings';
 }

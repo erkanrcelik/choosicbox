@@ -26,7 +26,7 @@ class AppThemeConfig {
       scaffoldBackgroundColor: Colors.white,
       textTheme: TextTheme(
         headlineLarge: TextStyle(color: Colors.black, fontSize: 32.sp, fontWeight: FontWeight.bold),
-        headlineMedium: TextStyle(color: Colors.black, fontSize: 24.sp, fontWeight: FontWeight.bold),
+        headlineMedium: TextStyle(color: Color(0xFF4FD8EB), fontSize: 18.sp, fontWeight: FontWeight.bold),
         headlineSmall: TextStyle(color: Colors.black, fontSize: 20.sp, fontWeight: FontWeight.bold),
         bodyLarge: TextStyle(color: Colors.black, fontSize: 18.sp, fontWeight: FontWeight.bold),
         bodyMedium: TextStyle(color: Colors.black, fontSize: 18.sp, fontWeight: FontWeight.w600),

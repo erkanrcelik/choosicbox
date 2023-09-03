@@ -17,27 +17,17 @@ class SettingsView extends StatelessWidget {
               Get.toNamed('/account-settings');
             },
             title: 'Hesap Ayarları',
-            icon: Icon(Icons.notification_add),
-          ),
-          SizedBox(height: 20.h),
-          SettingsCard(
-            title: 'Kayıtlı Kartlarım',
-            icon: Icon(Icons.abc),
-          ),
-          SizedBox(height: 20.h),
-          SettingsCard(
-            title: 'Puan ve Çeklerim',
-            icon: Icon(Icons.abc),
+            icon: Icon(Icons.account_circle),
           ),
           SizedBox(height: 20.h),
           SettingsCard(
             title: 'Dil ve Uygulama Ayarları',
-            icon: Icon(Icons.abc),
+            icon: Icon(Icons.settings),
           ),
           SizedBox(height: 20.h),
           SettingsCard(
             title: 'Çıkış Yap',
-            icon: Icon(Icons.abc),
+            icon: Icon(Icons.logout),
           ),
         ],
       ),

@@ -19,6 +19,11 @@ import '../../screens/appframe/app_frame.dart';
 import '../../screens/authentication/login/View/login_view.dart';
 import '../../screens/authentication/register/View/register_view.dart';
 import '../../screens/home/profile/View/profile_view.dart';
+import '../screens/home/profile/Settings/View/Pages/AccountSettings/AccountActivityHistory/View/account_activity_history_view.dart';
+import '../screens/home/profile/Settings/View/Pages/AccountSettings/CommunicationUpdates/View/communication_updates_view.dart';
+import '../screens/home/profile/Settings/View/Pages/AccountSettings/DeleteAccount/View/delete_account_view.dart';
+import '../screens/home/profile/Settings/View/Pages/LanguageAppSettings/LanguageSettings/View/language_settings_view.dart';
+import '../screens/home/profile/Settings/View/Pages/LanguageAppSettings/View/language_app_settings_view.dart';
 
 part 'app_routes.dart';
 
@@ -98,6 +103,26 @@ class AppPages {
     GetPage(
       name: Routes.OVERVIEW,
       page: () => OverViewView(),
+    ),
+    GetPage(
+      name: Routes.ACCOUNT_ACTIVITY_HISTORY,
+      page: () => AccountActivityHistoryView(),
+    ),
+    GetPage(
+      name: Routes.COMMUNICATION_UPDATES,
+      page: () => CommunicationUpdatesView(),
+    ),
+    GetPage(
+      name: Routes.DELETE_ACCOUNT,
+      page: () => DeleteAccountView(),
+    ),
+    GetPage(
+      name: Routes.LANGUAGE_APP_SETTINGS,
+      page: () => LanguageAppSettingsView(),
+    ),
+    GetPage(
+      name: Routes.LANGUAGE_SETTINGS,
+      page: () => LanguageSettingsView(),
     ),
   ];
 }

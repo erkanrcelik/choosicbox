@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
-class AccountSettingsView extends StatelessWidget {
-  const AccountSettingsView({super.key});
+class AccountActivityHistoryView extends StatelessWidget {
+  const AccountActivityHistoryView({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -18,32 +18,15 @@ class AccountSettingsView extends StatelessWidget {
           },
         ),
         centerTitle: true,
-        title: Text('Hesap Ayarları',),
+        title: Text('Hesap Giriş Geçmişi', style: Theme.of(context).textTheme.headlineMedium,),
       ),
       body: Padding(
         padding: EdgeInsets.symmetric(horizontal: 20.h,vertical: 20.h),
         child: Column(
           children: [
-            SettingsCard(
-                onTap: (){
-                  Get.toNamed('/communication-updates');
-                },
-                title: 'İletişim Tercihlerimi Güncelle'
-            ),
+            Text("Son Başarılı veya Hatalı Giriş", style: Theme.of(context).textTheme.headlineSmall,),
             SizedBox(height: 20.h,),
-            SettingsCard(
-                onTap: () {
-                  Get.toNamed('/account-activity-history');
-                },
-                title: 'Hesap Giriş Geçmişi'
-            ),
-            SizedBox(height: 20.h,),
-            SettingsCard(
-                onTap: () {
-                  Get.toNamed('/delete-account');
-                },
-                title: 'Hesabımı Sil'
-            ),
+            Text('Eklenecek!!!!')
           ],
         ),
       ),
