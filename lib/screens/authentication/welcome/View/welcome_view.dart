@@ -57,20 +57,7 @@ class _WelcomeViewState extends State<WelcomeView> {
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    Text(
-                      'Welcome to',
-                      style: TextStyle(
-                          fontSize: 53,
-                          fontWeight: FontWeight.w700,
-                          color: Colors.white),
-                    ),
-                    Text(
-                      'Choosicbox',
-                      style: TextStyle(
-                          fontSize: 53,
-                          fontWeight: FontWeight.w700,
-                          color: Theme.of(context).colorScheme.primary,),
-                    ),
+
                   ],
                 ),
                 Column(
@@ -221,30 +208,6 @@ class _WelcomeViewState extends State<WelcomeView> {
                 )
               ],
             ),
-          ),
-          Positioned(
-            top: 40, // Adjust the top position as needed
-            right: 20, // Adjust the right position as needed
-            child: TextButton(
-                onPressed: () {
-                  // Add the action you want the "Skip" button to perform
-                  // For example, you might want to navigate to another screen.
-                },
-                child: Container(
-                    width: 55,
-                    height: 32,
-                    alignment: Alignment.center,
-                    decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(27.405933380126953),
-                        color: Colors.white),
-                    child: Text(
-                      'Skip',
-                      style: TextStyle(
-                        fontSize: 14,
-                        fontWeight: FontWeight.w400,
-                        color: Theme.of(context).colorScheme.primary,
-                      ),
-                    ))),
           ),
         ],
       ),
