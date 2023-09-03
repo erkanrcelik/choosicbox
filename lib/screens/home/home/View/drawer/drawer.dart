@@ -18,24 +18,18 @@ class DrawerPage extends StatelessWidget {
       width: screenWidth * 0.8,
       elevation: 0,
       child: Padding(
-        padding: EdgeInsets.only(left: 16).r,
+        padding: EdgeInsets.symmetric(vertical: 10.h,horizontal: 10.h).r,
         child: SafeArea(
           child: SingleChildScrollView(
             child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 CircleAvatar(
-                  radius: 60.r,
-                  backgroundImage: AssetImage('assets/images/pp.png'),
+                  radius: 40.r,
+                  backgroundColor: Colors.black,
                 ),
                 SizedBox(height: 20.h),
-                Text('Reis Wick',
-                    style: TextStyle(
-                        fontSize: 24.sp, fontWeight: FontWeight.w600)),
-                Text(
-                  'reiswick@gmail.com',
-                  style: TextStyle(fontSize: 13.sp, color: Colors.grey),
-                ),
+                Text('erkanrcelik',style: Theme.of(context).textTheme.headlineMedium,),
                 SizedBox(height: 30.h),
                 drawerListWidget(
                     icon: 'profile1',
@@ -48,42 +42,10 @@ class DrawerPage extends StatelessWidget {
                     },
                     text: 'My Profile'),
                 drawerListWidget(
-                    icon: 'payment1', onTap: () {}, text: 'Payment Methods'),
-                drawerListWidget(
-                    icon: 'feedback', onTap: () {}, text: 'Contact Us'),
-                drawerListWidget(
                     icon: 'settings', onTap: () {}, text: 'Settings'),
                 drawerListWidget(
                     icon: 'support', onTap: () {}, text: 'Help & Support'),
-                drawerListWidget(
-                    icon: 'language', onTap: () {}, text: 'Languages'),
-                SizedBox(height: 40.h),
-                InkWell(
-                  child: Container(
-                    width: 120.w,
-                    padding: const EdgeInsets.only(
-                            left: 9, top: 9, bottom: 9, right: 14)
-                        .r,
-                    decoration: BoxDecoration(
-                        color: Theme.of(context).colorScheme.primary,
-                        borderRadius: BorderRadius.circular(29).r),
-                    child: Row(
-                      children: [
-                        InkWell(
-                            onTap: () {},
-                            child: Image.asset('assets/buttons/log_out.png')),
-                        SizedBox(width: 9.w),
-                        Text(
-                          'Log Out',
-                          style: TextStyle(
-                              fontSize: 16.sp,
-                              fontWeight: FontWeight.w400,
-                              color: Colors.white),
-                        )
-                      ],
-                    ),
-                  ),
-                ),
+                SizedBox(height: 160.h),
               ],
             ),
           ),

@@ -51,7 +51,7 @@ class ActivitiesCard extends StatelessWidget {
           SizedBox(height: 25.h),
           Text(
             text,
-            style: Theme.of(context).textTheme.bodyLarge,
+            style: Theme.of(context).textTheme.displaySmall,
           )
         ],
       ),

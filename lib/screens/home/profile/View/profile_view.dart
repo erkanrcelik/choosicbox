@@ -121,13 +121,6 @@ class _ProfilePageViewState extends State<ProfilePageView> {
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
                   Text('erkanrcelik',style: Theme.of(context).textTheme.headlineMedium,),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Text('ID:',style: Theme.of(context).textTheme.bodySmall,),
-                      Text('123456789'),
-                    ],
-                  ),
                   SizedBox(height: 20.h,),
                   Container(
                     decoration: const BoxDecoration(

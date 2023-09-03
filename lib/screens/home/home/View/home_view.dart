@@ -193,7 +193,7 @@ class _HomeViewState extends State<HomeView> {
               Column(crossAxisAlignment: CrossAxisAlignment.center, children: [
             Row(mainAxisAlignment: MainAxisAlignment.center, children: [
               Text(
-                'deliver_to'.tr,
+                'Mevcut Lokasyon'.tr,
                 style: TextStyle(color: Colors.grey, fontSize: 17.sp),
               ),
               Icon(
@@ -226,10 +226,7 @@ class _HomeViewState extends State<HomeView> {
           ),
           actions: [
             CircleAvatar(
-              child: Image.asset(
-                Assets.imagesPp,
-                fit: BoxFit.cover,
-              ),
+              backgroundColor: Colors.black,
             ),
             const SizedBox(width: 20)
           ],

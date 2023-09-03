@@ -14,9 +14,22 @@ class ActivitiesView extends StatelessWidget {
         children: [
           ActivitiesCard(
             width: MediaQuery.of(context).size.width.w,
-            title: 'Açılan toplam şarkılar',
-            icon: Icon(Icons.person),
+            title: 'Çaldırılan toplam şarkılar',
+            icon: Icon(
+                Icons.music_note,
+                color: Theme.of(context).colorScheme.surface,
+            ),
             text: '150',
+          ),
+          SizedBox(height: 20.h),
+          ActivitiesCard(
+            width: MediaQuery.of(context).size.width.w,
+            title: 'En son ziyaret edilen yerler',
+            icon: Icon(
+              Icons.place,
+              color: Theme.of(context).colorScheme.surface,
+            ),
+            text: '40',
           ),
           SizedBox(height: 20.h),
           Row(
@@ -24,21 +37,21 @@ class ActivitiesView extends StatelessWidget {
               Column(
                 children: [
                   ActivitiesCard(
-                    title: 'Aylık çalınan şarkı',
+                    title: 'Begeniler',
                     icon: Icon(
-                      Icons.music_note,
+                      Icons.favorite,
                       color: Theme.of(context).colorScheme.surface,
                     ),
-                    text: 'Hakkımda',
+                    text: '450',
                   ),
                   SizedBox(height: 20.h),
                   ActivitiesCard(
-                    title: 'Hakkımda',
+                    title: 'Istekler',
                     icon: Icon(
-                      Icons.music_note,
+                      Icons.accessibility,
                       color: Theme.of(context).colorScheme.surface,
                     ),
-                    text: 'Hakkımda',
+                    text: '4',
                   ),
                 ],
               ),
@@ -46,21 +59,21 @@ class ActivitiesView extends StatelessWidget {
               Column(
                 children: [
                   ActivitiesCard(
-                    title: 'Hakkımda',
+                    title: 'Yorumlar',
                     icon: Icon(
-                      Icons.music_note,
+                      Icons.comment_outlined,
                       color: Theme.of(context).colorScheme.surface,
                     ),
-                    text: 'Hakkımda',
+                    text: '.....',
                   ),
                   SizedBox(height: 20.h),
                   ActivitiesCard(
-                    title: 'Alınan Beğeni',
+                    title: 'Firsatlar',
                     icon: Icon(
-                      Icons.music_note,
+                      Icons.campaign,
                       color: Theme.of(context).colorScheme.surface,
                     ),
-                    text: '15',
+                    text: '....',
                   ),
                 ],
               )
