@@ -21,6 +21,9 @@ class SettingsView extends StatelessWidget {
           ),
           SizedBox(height: 20.h),
           SettingsCard(
+            onTap: () {
+              Get.toNamed('/account-app-settings');
+            },
             title: 'Dil ve Uygulama Ayarları',
             icon: Icon(Icons.settings),
           ),

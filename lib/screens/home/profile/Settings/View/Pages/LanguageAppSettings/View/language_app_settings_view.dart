@@ -18,7 +18,7 @@ class LanguageAppSettingsView extends StatelessWidget {
           },
         ),
         centerTitle: true,
-        title: Text('Dil & Uygulama Ayarları', style: Theme.of(context).textTheme.headlineMedium,),
+        title: Text('Dil ve Uygulama Ayarları', style: Theme.of(context).textTheme.headlineMedium,),
       ),
       body: Padding(
         padding: EdgeInsets.symmetric(horizontal: 20.h,vertical: 20.h),
@@ -26,10 +26,16 @@ class LanguageAppSettingsView extends StatelessWidget {
           children: [
             SettingsCard(
               onTap: () {
-                Get.toNamed('/account-settings');
+                Get.toNamed('/language-settings');
               },
-              title: 'Hesap Ayarları',
+              title: 'Dil Ayarları',
               icon: Icon(Icons.language),
+            ),
+            SizedBox(height: 20.h,),
+            SettingsCard(
+              isSwitched: true,
+              title: 'Animasyonlari kapat',
+              icon: Icon(Icons.animation),
             ),
           ],
         ),

@@ -22,6 +22,7 @@ import '../../screens/home/profile/View/profile_view.dart';
 import '../screens/home/profile/Settings/View/Pages/AccountSettings/AccountActivityHistory/View/account_activity_history_view.dart';
 import '../screens/home/profile/Settings/View/Pages/AccountSettings/CommunicationUpdates/View/communication_updates_view.dart';
 import '../screens/home/profile/Settings/View/Pages/AccountSettings/DeleteAccount/View/delete_account_view.dart';
+import '../screens/home/profile/Settings/View/Pages/LanguageAppSettings/CloseAnimationSettings/View/close_animation_settings_view.dart';
 import '../screens/home/profile/Settings/View/Pages/LanguageAppSettings/LanguageSettings/View/language_settings_view.dart';
 import '../screens/home/profile/Settings/View/Pages/LanguageAppSettings/View/language_app_settings_view.dart';
 

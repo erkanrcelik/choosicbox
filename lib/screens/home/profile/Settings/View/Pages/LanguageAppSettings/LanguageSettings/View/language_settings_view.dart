@@ -1,4 +1,3 @@
-import 'package:choosicbox/utils/ui/card/settings_card.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
@@ -18,19 +17,13 @@ class LanguageSettingsView extends StatelessWidget {
           },
         ),
         centerTitle: true,
-        title: Text('Dil & Uygulama Ayarları', style: Theme.of(context).textTheme.headlineMedium,),
+        title: Text('Dil Ayarları', style: Theme.of(context).textTheme.headlineMedium,),
       ),
       body: Padding(
         padding: EdgeInsets.symmetric(horizontal: 20.h,vertical: 20.h),
         child: Column(
           children: [
-            SettingsCard(
-              onTap: () {
-                Get.toNamed('/account-settings');
-              },
-              title: 'Hesap Ayarları',
-              icon: Icon(Icons.language),
-            ),
+
           ],
         ),
       ),

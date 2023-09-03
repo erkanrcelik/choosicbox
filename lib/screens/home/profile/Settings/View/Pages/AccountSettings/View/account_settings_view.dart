@@ -18,7 +18,7 @@ class AccountSettingsView extends StatelessWidget {
           },
         ),
         centerTitle: true,
-        title: Text('Hesap Ayarları',),
+        title: Text('Hesap Ayarları',style: Theme.of(context).textTheme.headlineMedium,),
       ),
       body: Padding(
         padding: EdgeInsets.symmetric(horizontal: 20.h,vertical: 20.h),
