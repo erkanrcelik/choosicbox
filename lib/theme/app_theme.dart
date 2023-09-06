@@ -4,10 +4,10 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 class AppThemeConfig {
   ThemeData lightTheme = ThemeData(
       colorScheme: ColorScheme(
-        primary: const Color(0xFF322251),
-        secondary: const Color(0xFF7368EF),
-        surface: const Color(0xFF9668EF),
-        background: const Color(0xFFFFDFCFF),
+        primary: const Color(0xFFcc0033),
+        secondary: const Color(0xFFb90333),
+        surface: const Color(0xFFcc0033),
+        background: const Color(0xFFf8f8f8),
         error: const Color(0xFFFFBA1A1A),
         onPrimary: const Color(0xFF4FD8EB),
         onSecondary: const Color(0xFFFFFFFF),

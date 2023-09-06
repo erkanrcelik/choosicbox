@@ -102,7 +102,7 @@ flutter:
     - assets/icons/
     - assets/buttons/
     - assets/
-    - assets/fonts/
+    - fonts/
     - assets/videos/
   #   - images/a_dot_ham.jpeg
 
@@ -120,22 +120,22 @@ flutter:
   fonts:
     - family: Sofia Pro
       fonts:
-        - asset: assets/fonts/Sofia Pro Black Az.otf
-        - asset: assets/fonts/Sofia Pro Black Italic Az.otf
-        - asset: assets/fonts/Sofia Pro Bold Az.otf
-        - asset: assets/fonts/Sofia Pro Bold Italic Az.otf
-        - asset: assets/fonts/Sofia Pro ExtraLight Az.otf
-        - asset: assets/fonts/Sofia Pro ExtraLight Italic Az.otf
-        - asset: assets/fonts/Sofia Pro Light Az.otf
-        - asset: assets/fonts/Sofia Pro Light Italic Az.otf
-        - asset: assets/fonts/Sofia Pro Medium Az.otf
-        - asset: assets/fonts/Sofia Pro Medium Italic Az.otf
-        - asset: assets/fonts/Sofia Pro Regular Az.otf
-        - asset: assets/fonts/Sofia Pro Regular Italic Az.otf
-        - asset: assets/fonts/Sofia Pro Semi Bold Az.otf
-        - asset: assets/fonts/Sofia Pro Semi Bold Italic Az.otf
-        - asset: assets/fonts/Sofia Pro UltraLight Az.otf
-        - asset: assets/fonts/Sofia Pro UltraLight Italic Az.otf
+        - asset: fonts/Sofia Pro Black Az.otf
+        - asset: fonts/Sofia Pro Black Italic Az.otf
+        - asset: fonts/Sofia Pro Bold Az.otf
+        - asset: fonts/Sofia Pro Bold Italic Az.otf
+        - asset: fonts/Sofia Pro ExtraLight Az.otf
+        - asset: fonts/Sofia Pro ExtraLight Italic Az.otf
+        - asset: fonts/Sofia Pro Light Az.otf
+        - asset: fonts/Sofia Pro Light Italic Az.otf
+        - asset: fonts/Sofia Pro Medium Az.otf
+        - asset: fonts/Sofia Pro Medium Italic Az.otf
+        - asset: fonts/Sofia Pro Regular Az.otf
+        - asset: fonts/Sofia Pro Regular Italic Az.otf
+        - asset: fonts/Sofia Pro Semi Bold Az.otf
+        - asset: fonts/Sofia Pro Semi Bold Italic Az.otf
+        - asset: fonts/Sofia Pro UltraLight Az.otf
+        - asset: fonts/Sofia Pro UltraLight Italic Az.otf
   #         style: italic
   #   - family: Trajan Pro
   #     fonts:

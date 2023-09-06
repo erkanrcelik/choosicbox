@@ -3,10 +3,11 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class InformationCard extends StatelessWidget {
   const InformationCard(
-      {super.key, required this.title, required this.icon, required this.text});
+      {super.key, required this.title, required this.icon, required this.text, this.editIcon});
 
   final String title;
   final Widget icon;
+  final bool? editIcon;
   final String text;
 
   @override
@@ -39,7 +40,7 @@ class InformationCard extends StatelessWidget {
                   Text(title,style:Theme.of(context).textTheme.bodySmall),
                 ],
               ),
-              Icon(Icons.edit,color: Theme.of(context).colorScheme.secondary,)
+              editIcon != null ? Icon(Icons.edit,color: Theme.of(context).colorScheme.secondary,) : Container(),
             ],
           ),
           SizedBox(height: 10.h),

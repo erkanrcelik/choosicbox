@@ -12,12 +12,13 @@ class InformationView extends StatelessWidget {
       child: Column(
         children: [
           InformationCard(
-            title: 'Ad Soyad',
+            title: 'Kullanıcı Adı',
             icon: Icon(
               Icons.person,
               color: Theme.of(context).colorScheme.surface,
             ),
-            text: 'Erkan Çelik',
+            text: 'erkanr.celik',
+            editIcon: true,
           ),
           SizedBox(height: 25.h),
           InformationCard(
@@ -25,6 +26,7 @@ class InformationView extends StatelessWidget {
             icon:
                 Icon(color: Theme.of(context).colorScheme.surface, Icons.phone),
             text: '+90 534 241 96 63',
+            editIcon: true,
           ),
           SizedBox(height: 25.h),
           InformationCard(
@@ -39,6 +41,7 @@ class InformationView extends StatelessWidget {
             icon: Icon(
                 color: Theme.of(context).colorScheme.surface, Icons.password),
             text: '**********',
+            editIcon: true,
           ),
           SizedBox(height: 60.h),
         ],
