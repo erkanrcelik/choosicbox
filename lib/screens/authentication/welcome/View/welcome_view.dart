@@ -64,7 +64,7 @@ class _WelcomeViewState extends State<WelcomeView> {
                         Padding(
                           padding: const EdgeInsets.symmetric(horizontal: 16),
                           child: Text(
-                            'Sign In With',
+                            'Sign In ',
                             style: TextStyle(
                               fontSize: 16,
                               fontWeight: FontWeight.w600,
@@ -93,7 +93,7 @@ class _WelcomeViewState extends State<WelcomeView> {
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
                                 SvgPath(
-                                  svgPath: 'facebook',
+                                  svgPath: 'apple',
                                   width: 24,
                                   height: 24,
                                 ),
@@ -101,7 +101,7 @@ class _WelcomeViewState extends State<WelcomeView> {
                                   width: 16,
                                 ),
                                 Text(
-                                  'FACEBOOK',
+                                  'Apple',
                                   style: TextStyle(
                                       fontSize: 16,
                                       fontWeight: FontWeight.w600,

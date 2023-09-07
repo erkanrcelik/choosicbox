@@ -67,6 +67,7 @@ dependencies:
   video_player: ^2.7.0
   avatar_glow: ^2.0.2
   liquid_container: ^1.0.4
+  custom_accordion: ^0.0.5
 
 
 dev_dependencies:

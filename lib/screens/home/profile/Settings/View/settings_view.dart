@@ -36,7 +36,7 @@ class SettingsView extends StatelessWidget {
           SizedBox(height: 20.h),
           SettingsCard(
             onTap: () {
-              Get.toNamed('/account-app-settings');
+              Get.toNamed('/faq-settings');
             },
             title: 'Destek',
             icon: Icon(

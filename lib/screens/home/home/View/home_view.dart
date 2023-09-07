@@ -191,24 +191,6 @@ class _HomeViewState extends State<HomeView> {
           toolbarHeight: 80.h,
           backgroundColor: Colors.transparent,
           elevation: 0,
-          title:
-              Column(crossAxisAlignment: CrossAxisAlignment.center, children: [
-            Row(mainAxisAlignment: MainAxisAlignment.center, children: [
-              Text(
-                'Mevcut Lokasyon'.tr,
-                style: TextStyle(color: Colors.grey, fontSize: 17.sp),
-              ),
-              Icon(
-                Icons.keyboard_arrow_down_outlined,
-                color: Colors.grey,
-                size: 17.h,
-              )
-            ]),
-            Text(
-              '4102 Pretty View Lane',
-              style: TextStyle(fontSize: 18.sp),
-            )
-          ]),
           leading: IconButton(
             onPressed: _handleMenuButtonPressed,
             icon: ValueListenableBuilder<AdvancedDrawerValue>(
@@ -219,7 +201,7 @@ class _HomeViewState extends State<HomeView> {
                   child: Icon(
                     color: Colors.grey,
                     size: 30.h,
-                    value.visible ? Icons.clear : Icons.menu,
+                    value.visible ? Icons.menu : Icons.menu,
                     key: ValueKey<bool>(value.visible),
                   ),
                 );
@@ -272,13 +254,6 @@ class _HomeViewState extends State<HomeView> {
                               child: TextFormField(
                                 decoration: InputDecoration(
                                   contentPadding: EdgeInsets.zero,
-                                  label: const Text(
-                                      'Find for food or restaurant...'),
-                                  labelStyle: TextStyle(
-                                    color: const Color(0xff9AA0B4),
-                                    fontWeight: FontWeight.w400,
-                                    fontSize: 14.sp,
-                                  ),
                                   border: InputBorder.none,
                                 ),
                               ),
