@@ -1,6 +1,5 @@
 import 'package:choosicbox/routes/app_route_guard.dart';
 import 'package:choosicbox/screens/home/category/View/category_view.dart';
-import 'package:choosicbox/screens/authentication/register/password/View/register_password_view.dart';
 import 'package:choosicbox/screens/authentication/register/personalInformation/View/personal_information_view.dart';
 import 'package:choosicbox/screens/authentication/register/verifyMail/View/verify_mail_view.dart';
 import 'package:choosicbox/screens/authentication/register/verifyPhone/View/verify_phone_view.dart';
@@ -8,9 +7,10 @@ import 'package:choosicbox/screens/authentication/resetPassword/View/reset_passw
 import 'package:choosicbox/screens/authentication/splash/View/splash_view.dart';
 import 'package:choosicbox/screens/home/profile/Settings/View/Pages/AccountSettings/View/account_settings_view.dart';
 import 'package:choosicbox/screens/home/storeDetail/View/store_detail_view.dart';
-import 'package:choosicbox/screens/home/welcome/OverView/View/overview_view.dart';
+import 'package:choosicbox/screens/home/overview/View/overview_view.dart';
 import 'package:choosicbox/screens/music/nextSong/View/next_song_view.dart';
 import 'package:choosicbox/screens/music/playlist/View/playlist_view.dart';
+import 'package:choosicbox/screens/notification/View/notification_view.dart';
 import 'package:get/get.dart';
 import '../../screens/appframe/app_frame.dart';
 import '../../screens/authentication/login/View/login_view.dart';
@@ -65,10 +65,6 @@ class AppPages {
       page: () => ResetPasswordView(),
     ),
     GetPage(
-      name: Routes.REGISTER_PASSWORD,
-      page: () => RegisterPasswordView(),
-    ),
-    GetPage(
       name: Routes.CATEGORY_DETAIL,
       page: () => CategoryView(),
     ),
@@ -111,6 +107,10 @@ class AppPages {
     GetPage(
       name: Routes.FAQ_SETTINGS,
       page: () => FaqSettingsView(),
+    ),
+    GetPage(
+      name: Routes.NOTIFICATION,
+      page: () => NotificationView(),
     ),
   ];
 }

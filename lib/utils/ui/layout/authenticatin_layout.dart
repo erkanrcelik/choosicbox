@@ -1,3 +1,4 @@
+import 'package:choosicbox/config/path/svg_path.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
@@ -40,7 +41,9 @@ class AuthenticationLayout extends StatelessWidget {
                   ),
                 ],
               ),
-              child: Image.asset('assets/icons/back.png'),
+              child: SvgPath(
+                svgPath: 'arrow_left',
+              ),
             ),
           ),
         ),

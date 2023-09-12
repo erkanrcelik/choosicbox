@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import '../../../../../../config/path/svg_path.dart';
+
 class drawerListWidget extends StatelessWidget {
   const drawerListWidget({super.key, required this.icon, required this.text, this.onTap});
 
@@ -18,7 +20,7 @@ class drawerListWidget extends StatelessWidget {
           height: 23.h,
           child: Row(
             children: [
-              Image.asset('assets/icons/$icon.png', height: 23, width: 23),
+              SvgPath(svgPath:icon, height: 23.h, width: 23.w),
               SizedBox(width: 20.w),
               Text(
                 text,

@@ -40,22 +40,28 @@ class RegisterPersonalInformationView extends StatelessWidget {
                   ),
                 ),
               ),
-              SizedBox(height: 50.h),
+              SizedBox(height: 33.h),
               CustomTextField(
                 controller: controller,
                 hintText: 'Ad Soyad'.tr,
                 labelText: 'Ad Soyad'.tr,
               ),
-              SizedBox(height: 50.h),
+              SizedBox(height: 25.h),
               CustomTextField(
                 controller: controller,
-                hintText: 'Telefon Numarası'.tr,
-                labelText: 'Telefon Numarası'.tr,
+                hintText: 'password'.tr,
+                labelText: 'password'.tr,
               ),
-              SizedBox(height: 50.h),
+              SizedBox(height: 25.h),
+              CustomTextField(
+                controller: controller,
+                hintText: 'password_again'.tr,
+                labelText: 'password_again'.tr,
+              ),
+              SizedBox(height: 33.h),
               CustomButton(
                 onPressed: () {
-                  Get.toNamed('/register-verify-phone');
+                  Get.toNamed('/overview');
                 },
                 text: 'continue'.tr,
               ),

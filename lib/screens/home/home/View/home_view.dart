@@ -1,7 +1,5 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:choosicbox/config/path/svg_path.dart';
-import 'package:choosicbox/screens/appframe/app_frame.dart';
-import 'package:choosicbox/screens/appframe/app_frame_controller.dart';
 import 'package:choosicbox/screens/home/home/View/categories/tabs/tabs.dart';
 import 'package:choosicbox/screens/home/home/View/drawer/drawer.dart';
 import 'package:choosicbox/utils/ui/card/popular_store_card.dart';
@@ -9,20 +7,35 @@ import 'package:flutter/material.dart';
 import 'package:flutter_advanced_drawer/flutter_advanced_drawer.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import '../../../../generated/assets.dart';
+
 import '../../../../utils/ui/button/music_type.dart';
+import '../../../../utils/ui/card/store_features_card.dart';
+import '../../../appframe/app_frame_controller.dart';
 
 class HomeView extends StatefulWidget {
   const HomeView({super.key});
 
   @override
   _HomeViewState createState() => _HomeViewState();
-
 }
 
 class _HomeViewState extends State<HomeView> {
   final _advancedDrawerController = AdvancedDrawerController();
   int pageIndex = 0;
+
+  AppFrameController _controller = AppFrameController();
+
+  @override
+  void initState() {
+    super.initState();
+    _controller.onInit();
+  }
+
+  @override
+  void dispose() {
+    super.dispose();
+    _controller.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -82,20 +95,6 @@ class _HomeViewState extends State<HomeView> {
         'storeName': 'pubCategoriesList3', // İkinci işletme adı
       },
     ];
-    final List<Map<String, String>> coffeeConceptCategoriesList = [
-      {
-        'image': 'restaurant', // Birinci restoran adı
-        'storeName': 'coffeeConceptCategoriesList1', // Birinci işletme adı
-      },
-      {
-        'image': 'restaurant', // İkinci restoran adı
-        'storeName': 'coffeeConceptCategoriesList2', // İkinci işletme adı
-      },
-      {
-        'image': 'restaurant', // İkinci restoran adı
-        'storeName': 'coffeeConceptCategoriesList', // İkinci işletme adı
-      },
-    ];
     final List<Map<String, String>> restaurantCategoriesList = [
       {
         'image': 'restaurant', // Birinci restoran adı
@@ -134,7 +133,6 @@ class _HomeViewState extends State<HomeView> {
         pubCategoriesList,
         restaurantCategoriesList,
         alcoholCategoriesList,
-        coffeeConceptCategoriesList,
         gymCategoriesList,
       ];
 
@@ -155,20 +153,31 @@ class _HomeViewState extends State<HomeView> {
     }
 
     final List<Widget> imageSliders = popularStoreCard.map(
-      (item) {
+          (item) {
         return PopularStoreCard(
-            image: item['image'] ?? '',
-            businessName: item['image'] ?? '',
-            description: item['image'] ?? '');
+          image: item['image'] ?? '',
+          businessName: item['image'] ?? '',
+          cardTextList: [
+            StoreFeaturesCard(text: 'Klasik Müzik'),
+            SizedBox(width: 10.w),
+            StoreFeaturesCard(text: 'Arabesk'),
+          ],);
       },
     ).toList();
-    final screenWidth = MediaQuery.of(context).size.width;
+    final screenWidth = MediaQuery
+        .of(context)
+        .size
+        .width;
     return AdvancedDrawer(
       openScale: 0.80,
       openRatio: 0.50,
       backdrop: SizedBox(
-        width: MediaQuery.sizeOf(context).width,
-        height: MediaQuery.sizeOf(context).height,
+        width: MediaQuery
+            .sizeOf(context)
+            .width,
+        height: MediaQuery
+            .sizeOf(context)
+            .height,
       ),
       controller: _advancedDrawerController,
       animationCurve: Curves.easeInOut,
@@ -185,7 +194,9 @@ class _HomeViewState extends State<HomeView> {
         ],
         borderRadius: BorderRadius.all(const Radius.circular(16).r),
       ),
-      drawer: DrawerPage(screenWidth: MediaQuery.sizeOf(context).width),
+      drawer: DrawerPage(screenWidth: MediaQuery
+          .sizeOf(context)
+          .width),
       child: Scaffold(
         appBar: AppBar(
           toolbarHeight: 80.h,
@@ -199,7 +210,10 @@ class _HomeViewState extends State<HomeView> {
                 return AnimatedSwitcher(
                   duration: const Duration(milliseconds: 250),
                   child: Icon(
-                    color: Colors.grey,
+                    color: Theme
+                        .of(context)
+                        .colorScheme
+                        .primary,
                     size: 30.h,
                     value.visible ? Icons.menu : Icons.menu,
                     key: ValueKey<bool>(value.visible),
@@ -210,14 +224,31 @@ class _HomeViewState extends State<HomeView> {
           ),
           actions: [
             GestureDetector(
-              onTap: () {
-                Get.toNamed('/profile');              },
-              child: CircleAvatar(
-                backgroundColor: Colors.black,
-              ),
-            ),
+                onTap: () {
+                  Get.toNamed('/notification');
+                },
+                child: SvgPath(
+                  svgPath: "notification",
+                  width: 30.w,
+                  height: 30.h,
+                )),
             const SizedBox(width: 20)
           ],
+          title: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              SvgPath(
+                svgPath: "map_pin",
+              ),
+              SizedBox(width: 10.w),
+              Text('Şu an ki konumunuz',
+                  style: Theme
+                      .of(context)
+                      .textTheme
+                      .titleMedium),
+              SvgPath(svgPath: 'arrow_down')
+            ],
+          ),
         ),
         body: SingleChildScrollView(
           child: Column(
@@ -228,47 +259,57 @@ class _HomeViewState extends State<HomeView> {
                   margin: EdgeInsets.only(top: 19.h, bottom: 0.h),
                   height: 56.h,
                   width: screenWidth,
-                  child: Row(
-                    children: [
-                      Container(
-                        height: 53.h,
-                        width: screenWidth * 0.70,
-                        padding: EdgeInsets.only(
-                            top: 15.h, bottom: 15.h, right: 9.w, left: 18.w),
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(10).r,
-                          color: const Color(0xffFCFCFD),
-                          border: Border.all(
-                              width: 1.w, color: const Color(0xffEFEFEF)),
-                        ),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: [
-                            const Icon(
-                              Icons.search,
-                              color: Color(0xff767F9D),
-                            ),
-                            SizedBox(width: 14.w),
-                            Expanded(
-                              child: TextFormField(
-                                decoration: InputDecoration(
-                                  contentPadding: EdgeInsets.zero,
-                                  border: InputBorder.none,
+                  child: InkWell(
+                    onTap: () {
+                      setState(() {
+                        _controller.changeTabIndex(1);
+                        print(_controller.tabIndex);
+                      });
+                    },
+                    child: Row(
+                      children: [
+                        Container(
+                          height: 53.h,
+                          width: screenWidth * 0.70,
+                          padding: EdgeInsets.only(
+                              top: 15.h, bottom: 15.h, right: 9.w, left: 18.w),
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius
+                                .circular(10)
+                                .r,
+                            color: const Color(0xffFCFCFD),
+                            border: Border.all(
+                                width: 1.w, color: const Color(0xffEFEFEF)),
+                          ),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            children: [
+                              SvgPath(svgPath: 'search'),
+                              SizedBox(width: 14.w),
+                              Expanded(
+                                child: TextFormField(
+                                  decoration: InputDecoration(
+                                    labelText: 'Ara',
+                                    contentPadding: EdgeInsets.zero,
+                                    border: InputBorder.none,
+                                  ),
                                 ),
                               ),
-                            ),
-                          ],
+                            ],
+                          ),
                         ),
-                      ),
-                      SizedBox(width: 18.w),
-                      Container(
+                        SizedBox(width: 18.w),
+                        Container(
                           height: 50.h,
                           width: 50.w,
+                          padding: EdgeInsets.all(10.w),
                           decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(14).r,
+                            borderRadius: BorderRadius
+                                .circular(14)
+                                .r,
                             color: Colors.white,
-                            boxShadow: const [
+                            boxShadow: [
                               BoxShadow(
                                 color: Color(0xffE9EDF2),
                                 offset: Offset(0, 15),
@@ -278,10 +319,12 @@ class _HomeViewState extends State<HomeView> {
                               ),
                             ],
                           ),
-                          child: Image.asset(
-                            'assets/buttons/filter.png',
-                          ))
-                    ],
+                          child: SvgPath(
+                            svgPath: "filter_settings",
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
                 ),
               ),
@@ -294,7 +337,7 @@ class _HomeViewState extends State<HomeView> {
                         MusicTypeItem(
                           isPurple: pageIndex == 0 ? true : false,
                           icon: SvgPath(
-                            svgPath: "food-drink",
+                            svgPath: "coffee",
                           ),
                           text: 'Cafe',
                           onTap: () {
@@ -305,7 +348,7 @@ class _HomeViewState extends State<HomeView> {
                         ),
                         MusicTypeItem(
                           isPurple: pageIndex == 1 ? true : false,
-                          icon: SvgPath(svgPath: "night-club"),
+                          icon: SvgPath(svgPath: "club"),
                           text: 'Bar',
                           onTap: () {
                             setState(() {
@@ -315,7 +358,7 @@ class _HomeViewState extends State<HomeView> {
                         ),
                         MusicTypeItem(
                           isPurple: pageIndex == 2 ? true : false,
-                          icon: SvgPath(svgPath: "food-dish"),
+                          icon: SvgPath(svgPath: "restaurant"),
                           text: 'Restorant',
                           onTap: () {
                             setState(() {
@@ -335,23 +378,11 @@ class _HomeViewState extends State<HomeView> {
                         ),
                         MusicTypeItem(
                           isPurple: pageIndex == 4 ? true : false,
-                          icon: SvgPath(svgPath: "coffee-mug-cup"),
-                          text: 'Kahve',
-                          onTap: () {
-                            setState(() {
-                              pageIndex = 4;
-                            });
-                          },
-                        ),
-                        MusicTypeItem(
-                          isPurple: pageIndex == 5 ? true : false,
-                          icon: SvgPath(
-                            svgPath: "dumbbell",
-                          ),
+                          icon: SvgPath(svgPath: "gym"),
                           text: 'Gym',
                           onTap: () {
                             setState(() {
-                              pageIndex = 5;
+                              pageIndex = 4;
                             });
                           },
                         ),
@@ -383,7 +414,10 @@ class _HomeViewState extends State<HomeView> {
                         style: TextStyle(
                           fontSize: 13.sp,
                           fontWeight: FontWeight.w400,
-                          color: Theme.of(context).colorScheme.primary,
+                          color: Theme
+                              .of(context)
+                              .colorScheme
+                              .primary,
                         ),
                       ),
                     ],
@@ -398,7 +432,7 @@ class _HomeViewState extends State<HomeView> {
                     padEnds: false,
                     viewportFraction: 0.7,
                     aspectRatio: 500.0,
-                    height: 300.h,
+                    height: 360.h,
                     disableCenter: true,
                     enableInfiniteScroll: true,
                     enlargeStrategy: CenterPageEnlargeStrategy.scale,
@@ -407,7 +441,7 @@ class _HomeViewState extends State<HomeView> {
                     scrollDirection: Axis.vertical,
                     autoPlay: true,
                     autoPlayAnimationDuration:
-                        const Duration(milliseconds: 800),
+                    const Duration(milliseconds: 800),
                   ),
                   items: imageSliders,
                 ),

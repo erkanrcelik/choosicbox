@@ -1,7 +1,7 @@
 import 'package:get/get.dart';
 
 class AppFrameController extends GetxController {
-  var tabIndex = 1.obs;
+  var tabIndex = 0.obs;
 
   void changeTabIndex(int index) {
     tabIndex.value = index;

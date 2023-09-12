@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_rating_stars/flutter_rating_stars.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class CloseLocationMiniCard extends StatelessWidget {
+import '../../../config/path/svg_path.dart';
+
+class CloseLocationMiniCard extends StatefulWidget {
   const CloseLocationMiniCard({
     Key? key,
     required this.location,
@@ -14,12 +17,18 @@ class CloseLocationMiniCard extends StatelessWidget {
   final VoidCallback? onTap;
 
   @override
+  State<CloseLocationMiniCard> createState() => _CloseLocationMiniCardState();
+}
+
+class _CloseLocationMiniCardState extends State<CloseLocationMiniCard> {
+  double value = 4;
+  @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: onTap,
+      onTap: widget.onTap,
       child: Container(
         width: MediaQuery.of(context).size.width,
-        height: 130.h,
+        height: 157.h,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(10.r),
           color: Colors.white,
@@ -38,8 +47,8 @@ class CloseLocationMiniCard extends StatelessWidget {
               width: double.infinity,
               height: 70.h,
               decoration: BoxDecoration(),
-              child: Image.asset(
-                'assets/images/restaurant.png',
+              child: Image.network(
+                'https://www.meyhankoli.com/img/places/source_seo/mylos-ayvalik-cunda-mutfagi-201911140417411.jpg',
                 fit: BoxFit.fill,
               ),
             ),
@@ -55,16 +64,46 @@ class CloseLocationMiniCard extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        businessName,
+                        widget.businessName,
                         style: Theme.of(context).textTheme.labelMedium,
+                      ),
+                      RatingStars(
+                        value: value,
+                        starBuilder: (index, color) => Icon(
+                          Icons.star,
+                          size: 18.w,
+                          color: color,
+                        ),
+                        starCount: 5,
+                        starSize: 18.w,
+                        valueLabelColor: Color(0xff9b9b9b),
+                        valueLabelPadding: EdgeInsets.symmetric(
+                            vertical: 3.h, horizontal: 8.w),
+                        valueLabelTextStyle: TextStyle(
+                            color: Colors.white,
+                            fontWeight: FontWeight.w400,
+                            fontStyle: FontStyle.normal,
+                            fontSize: 12.0.sp),
+                        valueLabelRadius: 10,
+                        maxValue: 5,
+                        starSpacing: 1.w,
+                        maxValueVisibility: false,
+                        valueLabelVisibility: true,
+                        animationDuration: Duration(milliseconds: 1000),
+                        starOffColor: const Color(0xffe7e8ea),
+                        valueLabelMargin: EdgeInsets.only(top: 8.0.h,right: 5.w),
+                        starColor: Theme.of(context).colorScheme.primary,
+                      ),
+                      SizedBox(
+                        height: 5.h,
                       ),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.start,
                         children: [
-                          Icon(Icons.location_on_rounded),
+                          SvgPath(svgPath: 'close_location'),
                           Text(
-                            location,
-                            style: Theme.of(context).textTheme.labelSmall,
+                            widget.location,
+                            style: Theme.of(context).textTheme.titleMedium,
                           ),
                         ],
                       )

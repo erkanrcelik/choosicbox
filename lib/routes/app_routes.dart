@@ -27,4 +27,5 @@ abstract class Routes {
   static const LANGUAGE_APP_SETTINGS = '/account-app-settings';
   static const LANGUAGE_SETTINGS = '/language-settings';
   static const FAQ_SETTINGS = '/faq-settings';
+  static const NOTIFICATION = '/notification';
 }

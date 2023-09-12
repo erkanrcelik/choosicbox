@@ -16,7 +16,9 @@ class LinkText extends StatelessWidget {
       onTap: onTap,
       child: Text(
         title,
-
+        style: Theme.of(context).textTheme.displayMedium?.copyWith(
+              color: Theme.of(context).colorScheme.primary,
+            )
       ),
     );
   }

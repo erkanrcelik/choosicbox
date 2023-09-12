@@ -4,7 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 class AppThemeConfig {
   ThemeData lightTheme = ThemeData(
       colorScheme: ColorScheme(
-        primary: const Color(0xFFcc0033),
+        primary: const Color(0xFFe20030),
         secondary: const Color(0xFFb90333),
         surface: const Color(0xFFcc0033),
         background: const Color(0xFFf8f8f8),
@@ -21,25 +21,52 @@ class AppThemeConfig {
       ),
       textButtonTheme: TextButtonThemeData(
         style: TextButton.styleFrom(
-            primary: Colors.teal, foregroundColor: Colors.teal),
+          elevation: 0,
+          disabledForegroundColor: Colors.white
+        ),
       ),
-      scaffoldBackgroundColor: Colors.white,
+      scaffoldBackgroundColor: Color(0xFFf8f8f8),
       textTheme: TextTheme(
-        headlineLarge: TextStyle(color: Colors.black, fontSize: 32.sp, fontWeight: FontWeight.bold),
-        headlineMedium: TextStyle(color: Color(0xFF4FD8EB), fontSize: 18.sp, fontWeight: FontWeight.bold),
-        headlineSmall: TextStyle(color: Colors.black, fontSize: 20.sp, fontWeight: FontWeight.bold),
-        bodyLarge: TextStyle(color: Colors.black, fontSize: 18.sp, fontWeight: FontWeight.bold),
-        bodyMedium: TextStyle(color: Colors.black, fontSize: 18.sp, fontWeight: FontWeight.w600),
-        bodySmall: TextStyle(color: Colors.black, fontSize: 18.sp, fontWeight: FontWeight.normal),
-        displayLarge: TextStyle(color: Colors.black, fontSize: 16.sp, fontWeight: FontWeight.bold),
-        displayMedium: TextStyle(color: Colors.black, fontSize: 16.sp, fontWeight: FontWeight.w600),
-        displaySmall: TextStyle(color: Colors.black, fontSize: 16.sp, fontWeight: FontWeight.normal),
-        titleLarge: TextStyle(color: Colors.black, fontSize: 14.sp, fontWeight: FontWeight.bold),
-        titleMedium: TextStyle(color: Colors.black, fontSize: 14.sp, fontWeight: FontWeight.w600),
-        titleSmall: TextStyle(color: Colors.black, fontSize: 14.sp, fontWeight: FontWeight.normal),
-        labelLarge: TextStyle(color: Colors.black, fontSize: 12.sp, fontWeight: FontWeight.bold),
-        labelMedium: TextStyle(color: Colors.black, fontSize: 12.sp, fontWeight: FontWeight.w600),
-        labelSmall: TextStyle(color: Colors.black, fontSize: 12.sp, fontWeight: FontWeight.normal),
+        headlineLarge: TextStyle(
+            color: Colors.black, fontSize: 32.sp, fontWeight: FontWeight.bold),
+        headlineMedium: TextStyle(
+            color: Color(0xFF4FD8EB),
+            fontSize: 18.sp,
+            fontWeight: FontWeight.bold),
+        headlineSmall: TextStyle(
+            color: Colors.black, fontSize: 20.sp, fontWeight: FontWeight.bold),
+        bodyLarge: TextStyle(
+            color: Colors.black, fontSize: 18.sp, fontWeight: FontWeight.bold),
+        bodyMedium: TextStyle(
+            color: Colors.black, fontSize: 18.sp, fontWeight: FontWeight.w600),
+        bodySmall: TextStyle(
+            color: Colors.black,
+            fontSize: 18.sp,
+            fontWeight: FontWeight.normal),
+        displayLarge: TextStyle(
+            color: Colors.black, fontSize: 16.sp, fontWeight: FontWeight.bold),
+        displayMedium: TextStyle(
+            color: Colors.black, fontSize: 16.sp, fontWeight: FontWeight.w600),
+        displaySmall: TextStyle(
+            color: Colors.black,
+            fontSize: 16.sp,
+            fontWeight: FontWeight.normal),
+        titleLarge: TextStyle(
+            color: Colors.black, fontSize: 14.sp, fontWeight: FontWeight.bold),
+        titleMedium: TextStyle(
+            color: Colors.black, fontSize: 14.sp, fontWeight: FontWeight.w600),
+        titleSmall: TextStyle(
+            color: Colors.black,
+            fontSize: 14.sp,
+            fontWeight: FontWeight.normal),
+        labelLarge: TextStyle(
+            color: Colors.black, fontSize: 12.sp, fontWeight: FontWeight.bold),
+        labelMedium: TextStyle(
+            color: Colors.black, fontSize: 12.sp, fontWeight: FontWeight.w600),
+        labelSmall: TextStyle(
+            color: Colors.black,
+            fontSize: 12.sp,
+            fontWeight: FontWeight.normal),
       ).apply(fontFamily: 'Sofia Pro'));
   ThemeData darkTheme = ThemeData(
       appBarTheme: const AppBarTheme(

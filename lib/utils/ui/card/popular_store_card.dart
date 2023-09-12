@@ -1,3 +1,4 @@
+import 'package:choosicbox/config/path/svg_path.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -6,12 +7,12 @@ class PopularStoreCard extends StatelessWidget {
     super.key,
     required this.image,
     required this.businessName,
-    required this.description,
+    required this.cardTextList,
   });
 
   final String image;
   final String businessName;
-  final String description;
+  final List<Widget> cardTextList;
 
   @override
   Widget build(BuildContext context) {
@@ -21,57 +22,81 @@ class PopularStoreCard extends StatelessWidget {
       width: MediaQuery.sizeOf(context).width,
       decoration: BoxDecoration(boxShadow: [
         BoxShadow(
-          color: Color(0xffD3D1D8),
-          offset: Offset(0.w, 2.h), // X, Y offset
-          blurRadius: 15,
-          spreadRadius: 0,
+          color: Color(0xffD3D1D8), offset: Offset(0.w, 2.h), // X, Y offset
+          blurRadius: 15, spreadRadius: 0,
         ),
       ], color: Colors.white, borderRadius: BorderRadius.circular(15).r),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
-          Stack(clipBehavior: Clip.none, children: [
-            Container(
+          Stack(
+            clipBehavior: Clip.none,
+            children: [
+              Container(
                 clipBehavior: Clip.hardEdge,
                 decoration: BoxDecoration(
                     borderRadius: BorderRadius.only(
                         bottomLeft: const Radius.circular(15).r,
                         bottomRight: const Radius.circular(15).r)),
-                child: Image.asset('assets/images/$image.png',
-                    width: MediaQuery.sizeOf(context).width, height: 120.h,fit: BoxFit.fill,),),
-            Positioned(
-                top: -14.h,
-                left: -15.w,
-                child: Image.asset('assets/icons/price.png')),
-            Positioned(
-              top: -5.h,
-              right: -3.w,
-              child: Container(
-                  padding: EdgeInsets.only(
-                      top: 9.h ,left: 8.w, bottom: 7.h, right: 6.w),
-                  child: Image.asset('assets/icons/favorite.png')),
-            ),
-            Positioned(
-              bottom: -12.h,
-              left: 13.w,
-              child: Container(
+                child: Image.network(
+                  'https://www.meyhankoli.com/img/places/source_seo/mylos-ayvalik-cunda-mutfagi-201911140417411.jpg',
+                  width: MediaQuery.sizeOf(context).width,
+                  height: 120.h,
+                  fit: BoxFit.fill,
+                ),
+              ),
+              Positioned(
+                bottom: -12.h,
+                left: 13.w,
+                child: Container(
                   decoration: BoxDecoration(
-                      color: Colors.white,
-                      boxShadow: [
-                        BoxShadow(
-                          color: Color(0xffD3D1D8),
-                          offset: Offset(0, 2.h), // X, Y offset
-                          blurRadius: 15,
-                          spreadRadius: 0,
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(100.w),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Color(0xffD3D1D8), offset: Offset(0.w, 2.h), // X, Y offset
+                        blurRadius: 15, spreadRadius: 0,
+                      ),
+                    ],
+                  ),
+                  padding: EdgeInsets.symmetric(horizontal: 8.w, vertical: 8.h),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      Text(
+                        '4.5',
+                        style: TextStyle(
+                          fontSize: 12.sp,
+                          fontWeight: FontWeight.w600,
                         ),
-                      ],
-                      borderRadius: BorderRadius.circular(100)),
-                  padding: EdgeInsets.only(
-                      top: 9.h, left: 8.w, bottom: 7.h, right: 6.w),
-                  child: Image.asset('assets/icons/rating.png')),
-            ),
-          ]),
+                      ),
+                      SizedBox(
+                        width: 3.w,
+                      ),
+                      Icon(
+                        Icons.star,
+                        color: Color(0xFFFFC529),
+                        size: 19,
+                      ),
+                      SizedBox(
+                        width: 3.w,
+                      ),
+                      Text(
+                        '(25+)',
+                        style: TextStyle(
+                          fontSize: 9.sp,
+                          fontWeight: FontWeight.w400,
+                          color: const Color(0xff323643),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+            ],
+          ),
           Container(
             padding: EdgeInsets.only(left: 14.w, top: 26.h),
             child: Column(
@@ -80,15 +105,30 @@ class PopularStoreCard extends StatelessWidget {
               children: [
                 Text(
                   businessName,
-                  style: TextStyle(fontSize: 18.sp, fontWeight: FontWeight.w700),
+                  style:
+                      TextStyle(fontSize: 18.sp, fontWeight: FontWeight.w700),
                 ),
                 SizedBox(height: 10.h),
-                Text(
-                  description,
-                  style: TextStyle(
-                      color: const Color(0xff5B5B5E),
-                      fontSize: 15.sp,
-                      fontWeight: FontWeight.w400),
+                Container(
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(100.w),
+                  ),
+                  child: Row(
+                    children: [
+                      SvgPath(svgPath: 'close_location'),
+                      Text(
+                        '30m',
+                        style: Theme.of(context).textTheme.titleMedium,
+                      ),
+                    ],
+                  ),
+                ),
+                SizedBox(height: 10.h),
+                Container(
+                  child: Row(
+                    children: cardTextList,
+                  ),
                 ),
               ],
             ),

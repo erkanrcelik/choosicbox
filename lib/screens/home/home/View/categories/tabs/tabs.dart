@@ -22,10 +22,10 @@ class CategoriesTabs extends StatelessWidget {
         },
         restaurant: item['image'] ?? '',
         businessName: item['storeName'] ?? '',
-        cardTextList: const [
-          StoreFeaturesCard(text: 'BURGER'),
-          StoreFeaturesCard(text: 'CHICKEN'),
-          StoreFeaturesCard(text: 'FAST FOOD'),
+        cardTextList: [
+          StoreFeaturesCard(text: 'Klasik Müzik'),
+          SizedBox(width: 10.w),
+          StoreFeaturesCard(text: 'Arabesk'),
         ],
       );
     }).toList();
@@ -61,7 +61,7 @@ class CategoriesTabs extends StatelessWidget {
         SizedBox(height: 15.h),
         Container(
           margin: EdgeInsets.only(bottom: 0.w),
-          height: 300.h,
+          height: 270.h,
           child: CarouselSlider(
             options: CarouselOptions(
                 height: double.infinity,

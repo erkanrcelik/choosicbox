@@ -51,7 +51,7 @@ class _WelcomeViewState extends State<WelcomeView> {
           ),
           Container(
             width: MediaQuery.of(context).size.width,
-            padding: EdgeInsets.fromLTRB(28, 160, 28, 49),
+            padding: EdgeInsets.fromLTRB(28, 160, 28, 49).w,
             color: Colors.transparent,
             child: Column(
               mainAxisAlignment: MainAxisAlignment.end,
@@ -62,64 +62,59 @@ class _WelcomeViewState extends State<WelcomeView> {
                       children: [
                         Expanded(child: Divider(color: Colors.white)),
                         Padding(
-                          padding: const EdgeInsets.symmetric(horizontal: 16),
-                          child: Text(
-                            'Sign In ',
-                            style: TextStyle(
-                              fontSize: 16,
-                              fontWeight: FontWeight.w600,
-                              color: Colors.white,
-                            ),
-                          ),
+                          padding: EdgeInsets.symmetric(horizontal: 16.w),
+                          child: Text('welcome'.tr,
+                              style: Theme.of(context)
+                                  .textTheme
+                                  .displayMedium
+                                  ?.copyWith(color: Colors.white)),
                         ),
                         Expanded(child: Divider(color: Colors.white)),
                       ],
                     ),
                     SizedBox(
-                      height: 18,
+                      height: 18.h,
                     ),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Expanded(
                           child: Container(
-                            height: 50,
+                            height: 50.h,
                             decoration: BoxDecoration(
                               color: Colors.white,
                               borderRadius: BorderRadius.circular(27),
                             ),
                             child: Center(
-                                child: Row(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                SvgPath(
-                                  svgPath: 'apple',
-                                  width: 24,
-                                  height: 24,
-                                ),
-                                SizedBox(
-                                  width: 16,
-                                ),
-                                Text(
-                                  'Apple',
-                                  style: TextStyle(
-                                      fontSize: 16,
-                                      fontWeight: FontWeight.w600,
-                                      color: Colors.black),
-                                ),
-                              ],
-                            )),
+                              child: Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  SvgPath(
+                                    svgPath: 'apple',
+                                    width: 30.w,
+                                    height: 30.h,
+                                  ),
+                                  SizedBox(
+                                    width: 16.w,
+                                  ),
+                                  Text('Apple',
+                                      style: Theme.of(context)
+                                          .textTheme
+                                          .displayMedium),
+                                ],
+                              ),
+                            ),
                           ),
                         ),
                         SizedBox(
-                          width: 35,
+                          width: 35.w,
                         ),
                         Expanded(
                           child: Container(
-                            height: 50,
+                            height: 50.h,
                             decoration: BoxDecoration(
                               color: Colors.white,
-                              borderRadius: BorderRadius.circular(27),
+                              borderRadius: BorderRadius.circular(27).r,
                             ),
                             child: Center(
                                 child: Row(
@@ -127,19 +122,16 @@ class _WelcomeViewState extends State<WelcomeView> {
                               children: [
                                 SvgPath(
                                   svgPath: 'google',
-                                  width: 24,
-                                  height: 24,
+                                  width: 30.w,
+                                  height: 30.h,
                                 ),
                                 SizedBox(
-                                  width: 16,
+                                  width: 16.w,
                                 ),
-                                Text(
-                                  'G00GLE',
-                                  style: TextStyle(
-                                      fontSize: 16,
-                                      fontWeight: FontWeight.w600,
-                                      color: Colors.black),
-                                ),
+                                Text('Google',
+                                    style: Theme.of(context)
+                                        .textTheme
+                                        .displayMedium),
                               ],
                             )),
                           ),
@@ -147,7 +139,7 @@ class _WelcomeViewState extends State<WelcomeView> {
                       ],
                     ),
                     SizedBox(
-                      height: 23,
+                      height: 23.h,
                     ),
                     InkWell(
                       onTap: () {
@@ -156,47 +148,48 @@ class _WelcomeViewState extends State<WelcomeView> {
                       child: Container(
                         alignment: Alignment.center,
                         width: MediaQuery.sizeOf(context).width,
-                        height: 54,
+                        height: 54.h,
                         decoration: BoxDecoration(
                             border: Border.all(color: Colors.white),
-                            borderRadius: BorderRadius.circular(30),
+                            borderRadius: BorderRadius.circular(30).r,
                             color: Color(0x35ffffff)),
                         child: Text(
-                          'Start with email or phone',
-                          style: TextStyle(
-                              fontSize: 16,
-                              fontWeight: FontWeight.w600,
-                              color: Colors.white),
+                          'welcome_text'.tr,
+                          style: Theme.of(context)
+                              .textTheme
+                              .displayMedium
+                              ?.copyWith(color: Colors.white),
                         ),
                       ),
                     ),
                     SizedBox(
-                      height: 25,
+                      height: 25.h,
                     ),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Text(
-                          'Already have an account?',
-                          style: TextStyle(
-                              fontSize: 16,
-                              fontWeight: FontWeight.w400,
-                              color: Colors.white),
+                          'have_account'.tr,
+                          style: Theme.of(context)
+                              .textTheme
+                              .displaySmall
+                              ?.copyWith(color: Colors.white),
                         ),
                         SizedBox(
-                          width: 5,
+                          width: 5.w,
                         ),
                         InkWell(
                           onTap: () {
                             Get.toNamed('/login');
                           },
                           child: Text(
-                            'Sign In',
-                            style: TextStyle(
-                                fontSize: 16,
-                                fontWeight: FontWeight.w600,
-                                color: Colors.white,
-                                decoration: TextDecoration.underline),
+                            'login'.tr,
+                            style: Theme.of(context)
+                                .textTheme
+                                .displayMedium
+                                ?.copyWith(
+                                    color: Colors.white,
+                                    decoration: TextDecoration.underline),
                           ),
                         ),
                       ],

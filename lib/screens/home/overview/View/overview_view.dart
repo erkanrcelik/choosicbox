@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
-import '../../../../../utils/ui/card/close_location_card.dart';
+import '../../../../utils/ui/card/close_location_card.dart';
 
 class OverViewView extends StatelessWidget {
   const OverViewView({super.key});
@@ -18,40 +18,43 @@ class OverViewView extends StatelessWidget {
       'https://www.peple.com.tr/wp-content/uploads/2021/12/cekilis-kampanyasi-993_520.png',
     ];
     final List<Widget> imageSliders = imgList
-        .map((item) => Container(
-              margin: const EdgeInsets.all(5.0),
-              child: ClipRRect(
-                  borderRadius: const BorderRadius.all(Radius.circular(10.0)),
-                  child: Stack(
-                    children: <Widget>[
-                      Image.network(
-                        item,
-                        fit: BoxFit.cover,
-                        width: 1000.0,
-                        height: 1000.0,
-                      ),
-                      Positioned(
-                        bottom: 0.0,
-                        left: 0.0,
-                        right: 0.0,
-                        child: Container(
-                          decoration: const BoxDecoration(
-                            gradient: LinearGradient(
-                              colors: [
-                                Color.fromARGB(200, 0, 0, 0),
-                                Color.fromARGB(0, 0, 0, 0)
-                              ],
-                              begin: Alignment.bottomCenter,
-                              end: Alignment.topCenter,
-                            ),
-                          ),
-                          padding: const EdgeInsets.symmetric(
-                              vertical: 10.0, horizontal: 20.0),
+        .map(
+          (item) => Container(
+            margin: const EdgeInsets.all(5.0),
+            child: ClipRRect(
+              borderRadius: const BorderRadius.all(Radius.circular(10.0)),
+              child: Stack(
+                children: <Widget>[
+                  Image.network(
+                    item,
+                    fit: BoxFit.cover,
+                    width: 1000.0,
+                    height: 1000.0,
+                  ),
+                  Positioned(
+                    bottom: 0.0,
+                    left: 0.0,
+                    right: 0.0,
+                    child: Container(
+                      decoration: const BoxDecoration(
+                        gradient: LinearGradient(
+                          colors: [
+                            Color.fromARGB(200, 0, 0, 0),
+                            Color.fromARGB(0, 0, 0, 0)
+                          ],
+                          begin: Alignment.bottomCenter,
+                          end: Alignment.topCenter,
                         ),
                       ),
-                    ],
-                  )),
-            ))
+                      padding: const EdgeInsets.symmetric(
+                          vertical: 10.0, horizontal: 20.0),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ),
+        )
         .toList();
     return Scaffold(
         appBar: AppBar(
@@ -103,7 +106,7 @@ class OverViewView extends StatelessWidget {
           ],
         ),
         body: Padding(
-          padding: EdgeInsets.fromLTRB(15.0.w,15.0.h,15.0.w,0.h),
+          padding: EdgeInsets.fromLTRB(15.0.w, 15.0.h, 15.0.w, 0.h),
           child: SingleChildScrollView(
             physics: BouncingScrollPhysics(),
             child: Column(
