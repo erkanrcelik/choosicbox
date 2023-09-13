@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
+import '../../../../config/path/svg_path.dart';
 import 'detailTab/activities/dart/store_detail_activities.dart';
 
 class StoreDetailView extends StatefulWidget {
@@ -142,24 +143,18 @@ class _StoreDetailViewState extends State<StoreDetailView> {
                                       .textTheme
                                       .headlineMedium,
                                 ),
+                                SizedBox(height: 30.h,),
                                 Row(
-                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                                   children: [
-                                    Text(
-                                      'ID:',
-                                      style:
-                                          Theme.of(context).textTheme.bodySmall,
+                                    SvgPath(
+                                      svgPath: "map_pin",
                                     ),
-                                    Text('123456789'),
-                                  ],
-                                ),
-                                Row(
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  children: [
+                                    SizedBox(width: 6.h,),
                                     Text(
-                                      'ID:',
+                                      'Uzaklık: ',
                                       style:
-                                          Theme.of(context).textTheme.bodySmall,
+                                          Theme.of(context).textTheme.labelSmall,
                                     ),
                                     Text('30m'),
                                   ],
@@ -188,48 +183,47 @@ class _StoreDetailViewState extends State<StoreDetailView> {
                         ),
                         child: Padding(
                           padding: EdgeInsets.only(left: 15.0.w, right: 30.0.w),
-                          child: Row(
-                            crossAxisAlignment: CrossAxisAlignment.center,
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              ProfileTabbarButton(
-                                isClicked: pageIndex == 0 ? true : false,
-                                title: 'Aktiviteler',
-                                onTap: () {
-                                  setState(() {
-                                    pageIndex = 0;
-                                  });
-                                },
-                              ),
-                              Container(
-                                width: 1.w,
-                                height: 55.h,
-                                color: Color(0xFFEEEEEE),
-                              ),
-                              ProfileTabbarButton(
-                                isClicked: pageIndex == 1 ? true : false,
-                                title: 'Hakkında',
-                                onTap: () {
-                                  setState(() {
-                                    pageIndex = 1;
-                                  });
-                                },
-                              ),
-                              Container(
-                                width: 1.w,
-                                height: 55.h,
-                                color: Color(0xFFEEEEEE),
-                              ),
-                              ProfileTabbarButton(
-                                isClicked: pageIndex == 2 ? true : false,
-                                title: 'Yorumlar',
-                                onTap: () {
-                                  setState(() {
-                                    pageIndex = 2;
-                                  });
-                                },
-                              ),
-                            ],
+                          child: Center(
+                            child: Row(
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                              children: [
+                                ProfileTabbarButton(
+                                  isClicked: pageIndex == 0 ? true : false,
+                                  title: 'Aktiviteler',
+                                  onTap: () {
+                                    setState(() {
+                                      pageIndex = 0;
+                                    });
+                                  },
+                                ),
+                                Container(
+                                  width: 1.w,
+                                  height: 55.h,
+                                  color: Color(0xFFEEEEEE),
+                                ),
+                                ProfileTabbarButton(
+                                  isClicked: pageIndex == 1 ? true : false,
+                                  title: 'Hakkında',
+                                  onTap: () {
+                                    setState(() {
+                                      pageIndex = 1;
+                                    });
+                                  },
+                                ),
+
+                                /*ProfileTabbarButton(
+                                  isClicked: pageIndex == 2 ? true : false,
+                                  title: 'Yorumlar',
+                                  onTap: () {
+                                    setState(() {
+                                      pageIndex = 2;
+                                    });
+                                  },
+                                ),*/
+                                //Mekan yorum alanı şu anlık kaldırılmalıdır.
+                              ],
+                            ),
                           ),
                         ),
                       )
