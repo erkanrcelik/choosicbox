@@ -28,4 +28,5 @@ abstract class Routes {
   static const LANGUAGE_SETTINGS = '/language-settings';
   static const FAQ_SETTINGS = '/faq-settings';
   static const NOTIFICATION = '/notification';
+  static const FEED_BACK = '/feed-back';
 }

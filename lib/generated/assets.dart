@@ -2,6 +2,25 @@
 class Assets {
   Assets._();
 
+  static const String fontsPoppinsBlack = 'fonts/Poppins-Black.ttf';
+  static const String fontsPoppinsBlackItalic = 'fonts/Poppins-BlackItalic.ttf';
+  static const String fontsPoppinsBold = 'fonts/Poppins-Bold.ttf';
+  static const String fontsPoppinsBoldItalic = 'fonts/Poppins-BoldItalic.ttf';
+  static const String fontsPoppinsExtraBold = 'fonts/Poppins-ExtraBold.ttf';
+  static const String fontsPoppinsExtraBoldItalic = 'fonts/Poppins-ExtraBoldItalic.ttf';
+  static const String fontsPoppinsExtraLight = 'fonts/Poppins-ExtraLight.ttf';
+  static const String fontsPoppinsExtraLightItalic = 'fonts/Poppins-ExtraLightItalic.ttf';
+  static const String fontsPoppinsItalic = 'fonts/Poppins-Italic.ttf';
+  static const String fontsPoppinsLight = 'fonts/Poppins-Light.ttf';
+  static const String fontsPoppinsLightItalic = 'fonts/Poppins-LightItalic.ttf';
+  static const String fontsPoppinsMedium = 'fonts/Poppins-Medium.ttf';
+  static const String fontsPoppinsMediumItalic = 'fonts/Poppins-MediumItalic.ttf';
+  static const String fontsPoppinsRegular = 'fonts/Poppins-Regular.ttf';
+  static const String fontsPoppinsSemiBold = 'fonts/Poppins-SemiBold.ttf';
+  static const String fontsPoppinsSemiBoldItalic = 'fonts/Poppins-SemiBoldItalic.ttf';
+  static const String fontsPoppinsThin = 'fonts/Poppins-Thin.ttf';
+  static const String fontsPoppinsThinItalic = 'fonts/Poppins-ThinItalic.ttf';
+  static const String iconsAlcohol = 'assets/icons/alcohol.svg';
   static const String iconsApple = 'assets/icons/apple.svg';
   static const String iconsArrowAbove = 'assets/icons/arrow_above.svg';
   static const String iconsArrowDown = 'assets/icons/arrow_down.svg';
@@ -9,19 +28,24 @@ class Assets {
   static const String iconsBackspace = 'assets/icons/backspace.svg';
   static const String iconsClose = 'assets/icons/close.svg';
   static const String iconsCloseLocation = 'assets/icons/close_location.svg';
+  static const String iconsClub = 'assets/icons/club.svg';
+  static const String iconsCoffee = 'assets/icons/coffee.svg';
   static const String iconsCopy = 'assets/icons/copy.svg';
   static const String iconsCreditCard = 'assets/icons/credit_card.svg';
   static const String iconsDashboard = 'assets/icons/dashboard.svg';
   static const String iconsDot = 'assets/icons/dot.svg';
   static const String iconsEdit = 'assets/icons/edit.svg';
+  static const String iconsFaq = 'assets/icons/faq.svg';
   static const String iconsFilter = 'assets/icons/filter.svg';
   static const String iconsFilterSettings = 'assets/icons/filter_settings.svg';
   static const String iconsGoogle = 'assets/icons/google.svg';
+  static const String iconsGym = 'assets/icons/gym.svg';
   static const String iconsHeart = 'assets/icons/heart.svg';
   static const String iconsHidePassword = 'assets/icons/hide_password.svg';
   static const String iconsHome = 'assets/icons/home.svg';
   static const String iconsImportant = 'assets/icons/important.svg';
   static const String iconsInfo = 'assets/icons/info.svg';
+  static const String iconsLogo = 'assets/icons/logo.svg';
   static const String iconsMapLocation = 'assets/icons/map_location.svg';
   static const String iconsMapPin = 'assets/icons/map_pin.svg';
   static const String iconsMusic = 'assets/icons/music.svg';
@@ -30,6 +54,7 @@ class Assets {
   static const String iconsPlayList = 'assets/icons/play_list.svg';
   static const String iconsProfile = 'assets/icons/profile.svg';
   static const String iconsQuestion = 'assets/icons/question.svg';
+  static const String iconsRestaurant = 'assets/icons/restaurant.svg';
   static const String iconsRightArrow = 'assets/icons/right_arrow.svg';
   static const String iconsSearch = 'assets/icons/search.svg';
   static const String iconsSettings = 'assets/icons/settings.svg';
@@ -38,7 +63,9 @@ class Assets {
   static const String iconsSortByAbove = 'assets/icons/sort_by_above.svg';
   static const String iconsSortByArrow = 'assets/icons/sort_by_arrow.svg';
   static const String iconsTrash = 'assets/icons/trash.svg';
+  static const String iconsVector = 'assets/icons/feature.svg';
   static const String iconsViewPassword = 'assets/icons/view_password.svg';
+  static const String lineSend2 = 'assets/icons/Xnix/Line/Send_2.svg';
   static const String videosBackground = 'assets/videos/background.mp4';
 
 }

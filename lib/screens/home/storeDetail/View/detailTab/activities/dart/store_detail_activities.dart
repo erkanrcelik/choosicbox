@@ -10,7 +10,7 @@ class StoreDetailActivitiesView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(15.0),
+      padding: EdgeInsets.symmetric(horizontal: 15.0.w),
       child: Column(
         children: [
           Container(
@@ -111,8 +111,8 @@ class StoreDetailActivitiesView extends StatelessWidget {
                       color: Colors.orange,
                       title: 'Fiyat',
                       svgPath: 'music',
-                      song: '30 TL',
-                      height: 125.h,
+                      song: 'Saat Başı 1 Hak',
+                      height: 145.h,
                       width: 120.w,
                     ),
                   ],

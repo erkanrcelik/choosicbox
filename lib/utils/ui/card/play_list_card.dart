@@ -2,14 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class PlayListCard extends StatelessWidget {
-  final String imagePath;
   final String name;
   final String category;
   final VoidCallback onTap;
 
   const PlayListCard({
     super.key,
-    required this.imagePath,
     required this.name,
     required this.category, required this.onTap,
   });
@@ -28,10 +26,10 @@ class PlayListCard extends StatelessWidget {
           children: [
             ClipRRect(
               borderRadius: BorderRadius.circular(15).r,
-              child: Image.asset(
-                imagePath,
-                width: 65.w,
-                height: 65.h,
+              child: Image.network(
+                'https://www.meyhankoli.com/img/places/source_seo/mylos-ayvalik-cunda-mutfagi-201911140417411.jpg',
+                width: 50.w,
+                height: 50.h,
                 fit: BoxFit.fitHeight,
               ),
             ),

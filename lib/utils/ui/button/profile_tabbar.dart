@@ -30,8 +30,10 @@ class _ProfileTabbarButtonState extends State<ProfileTabbarButton> {
         });
       },
       child: Container(
+        alignment: Alignment.center,
         child: Text(
           widget.title,
+          textAlign: TextAlign.center,
           style: TextStyle(
             color: Colors.black,
             fontSize: widget.isClicked ? 13.sp : 12.sp,

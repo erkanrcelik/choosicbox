@@ -263,7 +263,7 @@ class _HomeViewState extends State<HomeView> {
                     onTap: () {
                       setState(() {
                         _controller.changeTabIndex(1);
-                        print(_controller.tabIndex);
+                        print(_controller.tabIndex.value);
                       });
                     },
                     child: Row(

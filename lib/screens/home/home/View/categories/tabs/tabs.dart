@@ -61,12 +61,12 @@ class CategoriesTabs extends StatelessWidget {
         SizedBox(height: 15.h),
         Container(
           margin: EdgeInsets.only(bottom: 0.w),
-          height: 270.h,
+          height: 290.h,
           child: CarouselSlider(
             options: CarouselOptions(
                 height: double.infinity,
                 viewportFraction: 0.7,
-                aspectRatio: 500.0,
+                aspectRatio: 510.0,
                 pauseAutoPlayInFiniteScroll: true,
                 pauseAutoPlayOnManualNavigate: true,
                 pauseAutoPlayOnTouch: true,

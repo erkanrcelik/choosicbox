@@ -28,7 +28,7 @@ class _CloseLocationMiniCardState extends State<CloseLocationMiniCard> {
       onTap: widget.onTap,
       child: Container(
         width: MediaQuery.of(context).size.width,
-        height: 157.h,
+        height: 165.h,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(10.r),
           color: Colors.white,

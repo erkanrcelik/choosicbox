@@ -30,7 +30,7 @@ class _StoreCardState extends State<StoreCard> {
       onTap: widget.onTap,
       child: Container(
         width: 266.w,
-        height: 270.h,
+        height: 300.h,
         margin: EdgeInsets.only(bottom: 30.h),
         decoration: BoxDecoration(
           color: Colors.white,

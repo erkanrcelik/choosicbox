@@ -6,6 +6,7 @@ import 'package:choosicbox/screens/authentication/register/verifyPhone/View/veri
 import 'package:choosicbox/screens/authentication/resetPassword/View/reset_password_view.dart';
 import 'package:choosicbox/screens/authentication/splash/View/splash_view.dart';
 import 'package:choosicbox/screens/home/profile/Settings/View/Pages/AccountSettings/View/account_settings_view.dart';
+import 'package:choosicbox/screens/home/profile/Settings/View/Pages/FeedBack/View/feed_back_view.dart';
 import 'package:choosicbox/screens/home/storeDetail/View/store_detail_view.dart';
 import 'package:choosicbox/screens/home/overview/View/overview_view.dart';
 import 'package:choosicbox/screens/music/nextSong/View/next_song_view.dart';
@@ -111,6 +112,10 @@ class AppPages {
     GetPage(
       name: Routes.NOTIFICATION,
       page: () => NotificationView(),
+    ),
+    GetPage(
+      name: Routes.FEED_BACK,
+      page: () => FeedBackView(),
     ),
   ];
 }

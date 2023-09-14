@@ -83,37 +83,6 @@ class _WelcomeViewState extends State<WelcomeView> {
                             height: 50.h,
                             decoration: BoxDecoration(
                               color: Colors.white,
-                              borderRadius: BorderRadius.circular(27),
-                            ),
-                            child: Center(
-                              child: Row(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: [
-                                  SvgPath(
-                                    svgPath: 'apple',
-                                    width: 30.w,
-                                    height: 30.h,
-                                  ),
-                                  SizedBox(
-                                    width: 16.w,
-                                  ),
-                                  Text('Apple',
-                                      style: Theme.of(context)
-                                          .textTheme
-                                          .displayMedium),
-                                ],
-                              ),
-                            ),
-                          ),
-                        ),
-                        SizedBox(
-                          width: 35.w,
-                        ),
-                        Expanded(
-                          child: Container(
-                            height: 50.h,
-                            decoration: BoxDecoration(
-                              color: Colors.white,
                               borderRadius: BorderRadius.circular(27).r,
                             ),
                             child: Center(

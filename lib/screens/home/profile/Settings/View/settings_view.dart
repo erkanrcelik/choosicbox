@@ -44,6 +44,17 @@ class SettingsView extends StatelessWidget {
                 color: Theme.of(context).colorScheme.surface,
             ),
           ),
+          SizedBox(height: 20.h),
+          SettingsCard(
+            onTap: () {
+              Get.toNamed('/feed-back');
+            },
+            title: 'Şikayet/Öneri',
+            icon: Icon(
+              Icons.support_agent,
+              color: Theme.of(context).colorScheme.surface,
+            ),
+          ),
         ],
       ),
     );

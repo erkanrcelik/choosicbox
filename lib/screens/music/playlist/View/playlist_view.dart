@@ -1,3 +1,4 @@
+import 'package:choosicbox/config/path/svg_path.dart';
 import 'package:choosicbox/utils/ui/card/play_list_card.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -11,7 +12,6 @@ class PlaylistView extends StatelessWidget {
     return Scaffold(
       resizeToAvoidBottomInset: false,
       appBar: AppBar(
-        toolbarHeight: 100.h,
         elevation: 0,
         leadingWidth: 80.w,
         backgroundColor: Colors.transparent,
@@ -20,23 +20,7 @@ class PlaylistView extends StatelessWidget {
             onTap: () {
               Get.back();
             },
-            child: Container(
-              height: 38.h,
-              width: 38.w,
-              decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.circular(10).r,
-                boxShadow: [
-                  BoxShadow(
-                    color: Colors.black.withOpacity(0.2),
-                    offset: Offset(0, 0),
-                    blurRadius: 10,
-                    spreadRadius: 2,
-                  ),
-                ],
-              ),
-              child: Image.asset('assets/icons/back.png'),
-            ),
+            child: SvgPath(svgPath: 'arrow_left',color: Colors.white,width: 40.w,height: 40.h,),
           ),
         ),
         title: Text(
@@ -69,7 +53,7 @@ class PlaylistView extends StatelessWidget {
               top: 0.h,
               left: 0.w,
               child: Container(
-                height: 260.h,
+                height: 200.h,
                 width: MediaQuery.of(context).size.width,
                 decoration: BoxDecoration(
                   color: Theme.of(context).colorScheme.primary,
@@ -81,14 +65,16 @@ class PlaylistView extends StatelessWidget {
               ),
             ),
             Positioned(
-              top: 130.h,
-              left: (MediaQuery.of(context).size.width - 150.w) / 2,
+              top: 110.h,
+              left: (MediaQuery.of(context).size.width - 200.w) / 2,
               child: Container(
-                height: 180.h,
-                width: 150.w,
+                height: 150.h,
+                padding: EdgeInsets.all(10.w),
+                width: 200.w,
+                child: Image.network('https://www.meyhankoli.com/img/places/source_seo/mylos-ayvalik-cunda-mutfagi-201911140417411.jpg',fit: BoxFit.cover),
                 decoration: BoxDecoration(
                   color: Theme.of(context).colorScheme.primary,
-                  borderRadius: BorderRadius.circular(18.0),
+                  borderRadius: BorderRadius.circular(18.0).r,
                   boxShadow: [
                     BoxShadow(
                       color: Colors.black.withOpacity(0.4),
@@ -101,7 +87,7 @@ class PlaylistView extends StatelessWidget {
               ),
             ),
             Positioned(
-              top: 330.h,
+              top: 270.h,
               child: SingleChildScrollView(
                 child: Column(
                   children: [
@@ -121,16 +107,7 @@ class PlaylistView extends StatelessWidget {
                           height: 30.h,
                           width: 200.w,
                           decoration: BoxDecoration(
-                            color: Theme.of(context).colorScheme.primary,
                             borderRadius: BorderRadius.circular(15).r,
-                            boxShadow: const [
-                              BoxShadow(
-                                color: Color.fromRGBO(211, 209, 216, 0.5),
-                                offset: Offset(0, 0),
-                                blurRadius: 8,
-                                spreadRadius: 2,
-                              ),
-                            ],
                           ),
                           child: InkWell(
                             onTap: () {
@@ -141,65 +118,88 @@ class PlaylistView extends StatelessWidget {
                               children: [
                                 Text(
                                   'Sıradaki Şarkılar',
-                                  style: TextStyle(
-                                    fontSize: 16.sp,
-                                    color: Colors.white,
-                                    fontFamily: 'Sofia Pro',
-                                    fontWeight: FontWeight.bold,
-                                  ),
+                                  style: Theme.of(context).textTheme.titleSmall,
                                 ),
                                 SizedBox(width: 10.w),
                                 Icon(
                                   Icons.arrow_right_alt_outlined,
-                                  color: Colors.white,
+                                  size: 20.h,
                                 )
                               ],
                             ),
                           ),
                         ),
+
                       ],
                     ),
-                    SizedBox(height:20.h),
                     Container(
-                      decoration: BoxDecoration(
-                        border: Border(
-                          top: BorderSide(width: 1.0, color: Colors.grey.shade400),
-                        )
-                      ),
                       padding: EdgeInsets.only(left: 5.w, right: 5.w,bottom: 15.h,top: 10.h),
-                      height: 420.h,
+                      height: 500.h,
                       width: MediaQuery.of(context).size.width,
                       child: SingleChildScrollView(
                         child: Column(
                           children: [
+                            Container(
+                              width: MediaQuery.of(context).size.width,
+                              color: Colors.white,
+                              child: TextField(
+                                decoration: InputDecoration(
+                                  hintText: 'Şarkı Ara...',
+                                  prefixIcon: Icon(Icons.search),
+                                  border: UnderlineInputBorder(
+                                    borderRadius: BorderRadius.circular(30.r),
+                                  ),
+                                ),
+                                // Arama işlemini burada yapabilirsiniz
+                                onChanged: (value) {
+                                  // Arama işlemini burada gerçekleştirin
+                                  // value, kullanıcının girdiği metni içerir
+                                },
+                              ),
+                            ),
                             PlayListCard(
-                                imagePath: 'assets/images/restaurant.png',
-                                name: 'name',
-                                category: 'category',
+                                name: 'Firuze',
+                                category: 'Sezen Aksu',
                                 onTap: (){}
                             ),
                             PlayListCard(
-                                imagePath: 'assets/images/restaurant.png',
-                                name: 'name',
-                                category: 'category',
+                                name: 'Firuze',
+                                category: 'Sezen Aksu',
                                 onTap: (){}
                             ),
                             PlayListCard(
-                                imagePath: 'assets/images/restaurant.png',
-                                name: 'name',
-                                category: 'category',
+                                name: 'Firuze',
+                                category: 'Sezen Aksu',
                                 onTap: (){}
                             ),
                             PlayListCard(
-                                imagePath: 'assets/images/restaurant.png',
-                                name: 'name',
-                                category: 'category',
+                                name: 'Firuze',
+                                category: 'Sezen Aksu',
                                 onTap: (){}
                             ),
                             PlayListCard(
-                                imagePath: 'assets/images/restaurant.png',
-                                name: 'name',
-                                category: 'category',
+                                name: 'Firuze',
+                                category: 'Sezen Aksu',
+                                onTap: (){}
+                            ),
+                            PlayListCard(
+                                name: 'Firuze',
+                                category: 'Sezen Aksu',
+                                onTap: (){}
+                            ),
+                            PlayListCard(
+                                name: 'Firuze',
+                                category: 'Sezen Aksu',
+                                onTap: (){}
+                            ),
+                            PlayListCard(
+                                name: 'Firuze',
+                                category: 'Sezen Aksu',
+                                onTap: (){}
+                            ),
+                            PlayListCard(
+                                name: 'Firuze',
+                                category: 'Sezen Aksu',
                                 onTap: (){}
                             ),
                           ],

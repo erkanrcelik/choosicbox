@@ -19,7 +19,7 @@ class _ProfilePageViewState extends State<ProfilePageView> {
   Widget buildPage() {
     final categoriesList = [
       const InformationView(),
-      const ActivitiesView(),
+      // const ActivitiesView(),
       const SettingsView(),
     ];
 
@@ -132,6 +132,7 @@ class _ProfilePageViewState extends State<ProfilePageView> {
                         crossAxisAlignment: CrossAxisAlignment.center,
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
+                          SizedBox(width: 1.w,),
                           ProfileTabbarButton(
                             isClicked: pageIndex == 0 ? true : false,
                             title: 'Kullanıcı Bilgileri',
@@ -146,7 +147,7 @@ class _ProfilePageViewState extends State<ProfilePageView> {
                             height: 55.h,
                             color: Color(0xFFEEEEEE),
                           ),
-                          ProfileTabbarButton(
+                          /*ProfileTabbarButton(
                             isClicked: pageIndex == 1 ? true : false,
                             title: 'Faliyetler',
                             onTap: () {
@@ -159,16 +160,17 @@ class _ProfilePageViewState extends State<ProfilePageView> {
                             width: 1.w,
                             height: 55.h,
                             color: Color(0xFFEEEEEE),
-                          ),
+                          ),*/
                           ProfileTabbarButton(
-                            isClicked: pageIndex == 2 ? true : false,
+                            isClicked: pageIndex == 1 ? true : false,
                             title: 'Ayarlar',
                             onTap: () {
                               setState(() {
-                                pageIndex = 2;
+                                pageIndex = 1;
                               });
                             },
                           ),
+                          SizedBox(width: 1.w,),
                         ],
                       ),
                     ),

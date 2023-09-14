@@ -17,7 +17,7 @@ class PopularStoreCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 500.h,
+      height: 510.h,
       margin: EdgeInsets.only(left: 10.w, right: 10.w),
       width: MediaQuery.sizeOf(context).width,
       decoration: BoxDecoration(boxShadow: [

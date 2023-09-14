@@ -67,7 +67,7 @@ class _StoreDetailViewState extends State<StoreDetailView> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                SizedBox(height: 150.h),
+                SizedBox(height: 130.h),
                 Container(
                   width: MediaQuery.of(context).size.width.w,
                   height: 700.h,
@@ -98,7 +98,7 @@ class _StoreDetailViewState extends State<StoreDetailView> {
             left: 10.w,
             right: 10.w,
             child: Container(
-              height: 180.h,
+              height: 160.h,
               decoration: BoxDecoration(
                 boxShadow: const [
                   BoxShadow(
@@ -122,52 +122,59 @@ class _StoreDetailViewState extends State<StoreDetailView> {
                         color: Colors.black,
                       ),
                     ),
-                    top: 35.h,
+                    top: 15.h,
                     left: 20.w,
                   ),
                   Column(
-                    mainAxisAlignment: MainAxisAlignment.end,
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Padding(
-                        padding: EdgeInsets.only(left: 50.0.w, right: 15.w),
-                        child: Row(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Text(
+                      Row(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Padding(
+                                padding: EdgeInsets.only(left:50.0.w,right: 20.w,top: 13.h),
+                                child: Text(
                                   'Mylos Meyhane',
                                   style: Theme.of(context)
                                       .textTheme
                                       .headlineMedium,
                                 ),
-                                SizedBox(height: 30.h,),
-                                Row(
-                                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                              ),
+                              SizedBox(height: 15.h,),
+                              Padding(
+                                padding: EdgeInsets.only(left:15.0.w),
+                                child: Row(
+                                  mainAxisAlignment: MainAxisAlignment.start,
                                   children: [
-                                    SvgPath(
-                                      svgPath: "map_pin",
-                                    ),
-                                    SizedBox(width: 6.h,),
+                                    SvgPath(svgPath: 'map_location'),
+                                    SizedBox(width: 5.w,),
                                     Text(
-                                      'Uzaklık: ',
-                                      style:
-                                          Theme.of(context).textTheme.labelSmall,
+                                      'Atatürk Caddesi Koşuyolu...',
+                                      style: Theme.of(context)
+                                          .textTheme
+                                          .labelSmall
+                                          ?.copyWith(
+                                              color: Colors.black
+                                                  .withOpacity(0.8)),
                                     ),
-                                    Text('30m'),
                                   ],
                                 ),
-                              ],
-                            ),
-                            CircleAvatar(
+                              ),
+                            ],
+                          ),
+                          Padding(
+                            padding: EdgeInsets.only(right:20.0.w,top: 10.h),
+                            child: CircleAvatar(
                               radius: 35.r,
                               backgroundImage:
                                   AssetImage('assets/images/restaurant.png'),
-                            )
-                          ],
-                        ),
+                            ),
+                          )
+                        ],
                       ),
                       SizedBox(
                         height: 20.h,
