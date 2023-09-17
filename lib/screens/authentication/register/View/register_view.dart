@@ -138,7 +138,7 @@ class _RegisterViewState extends State<RegisterView> {
               SizedBox(height: 33.h),
               CustomButton(
                 onPressed: () {
-                  Get.toNamed('/register-verify-phone');
+                  Get.toNamed('/register-personal-information');
                 },
                 text: 'continue'.tr,
               ),

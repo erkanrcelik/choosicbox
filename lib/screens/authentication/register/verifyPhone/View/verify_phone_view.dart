@@ -51,7 +51,7 @@ class RegisterVerifyPhoneView extends StatelessWidget {
               SizedBox(height: 50.h),
               CustomButton(
                 onPressed: () {
-                  Get.toNamed('/register-personal-information');
+                  Get.toNamed('/overview');
                 },
                 text: 'continue'.tr,
               ),
